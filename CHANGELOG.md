@@ -23,7 +23,9 @@ between specification/planning changes and feature implementation.
 
 ### 📋 Specification & Planning Changes
 - Specified Phase 0 in [specs/2026-09-20-phase-0-foundation-ia-switcher/](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-0-foundation-ia-switcher/) (`requirements.md`, `plan.md`, `validation.md`).
-- Synchronized [specs/roadmap.md](file:///home/zeshan6a/Projects/dental_clinic/specs/roadmap.md) to mark Phase 0 `Implementation Status: Implemented`.
+- Completed Independent QA Audit (`QA VERDICT: PASSED`).
+- Validated and merged to `main` upon explicit stakeholder acceptance.
+- Synchronized [specs/roadmap.md](file:///home/zeshan6a/Projects/dental_clinic/specs/roadmap.md) to mark Phase 0 `Validation Status: Validated`.
 
 ---
 
