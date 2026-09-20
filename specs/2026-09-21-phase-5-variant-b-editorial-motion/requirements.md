@@ -4,7 +4,7 @@
 
 Variant B must feel alive throughout the full page without becoming the less animated counterpart to Variant A. Its motion is a distinct, slow-medium editorial language informed by direct interactive observation of `dentaldesignsd.com`, not copied markup or layout.
 
-**Lifecycle:** Specification: Ready | Implementation: Not Started | Validation: Pending.
+**Lifecycle:** Specification: Ready | Implementation: In Progress | Validation: Pending.
 
 ## 2. Scope
 

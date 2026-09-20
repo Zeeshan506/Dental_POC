@@ -38,3 +38,10 @@
 - [ ] AC-1 through AC-8 have passing evidence.
 - [ ] Focused tests, build, format, line-count, and whitespace checks pass.
 - [ ] Desktop and mobile Playwright evidence is recorded for both local Variant B and the reference comparison.
+
+## Validation Status Breakdown
+
+- **Automated Tests**: PASS — focused Variant A/B, testimonials, and variant-resolution suites passed (37 tests, 576 assertions).
+- **Manual User Verification**: Passed — user confirmed manual verification on 2026-09-21.
+- **Independent QA Audit**: Interrupted before final verdict at user direction; a fresh targeted audit remains required before lifecycle completion.
+- **Overall Feature Status**: In Progress (Paused for continuation; do not merge).

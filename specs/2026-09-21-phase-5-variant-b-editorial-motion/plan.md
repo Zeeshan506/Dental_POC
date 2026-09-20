@@ -32,3 +32,9 @@ Use the Phase 4 semantic observer and tokens; do not create a parallel Variant B
 - [ ] Task 4.2: Rework doctor, treatments, journey, and testimonials into a coherent alternating editorial sequence with restrained photographic blocks, service rows, and dark contrast bands while preserving existing data and controls.
 - [ ] Task 4.3: Rework booking/location and the shared footer into an original reference-informed finale while retaining maps, hours, direct contacts, and the persistent variant switcher.
 - [ ] Task 4.4: Extend focused rendering/accessibility tests and repeat local Playwright desktop/mobile, carousel/modal, keyboard, reduced-motion, JavaScript-disabled, and no-overflow checks against AC-9 through AC-12.
+
+## Paused Implementation Checkpoint (2026-09-21)
+
+- The reference audit, motion integration, reference-informed composition, focused regression tests, build, and local Playwright checks are complete on `fix/phase-5-variant-b-editorial-motion`.
+- The user manually verified the work and directed that implementation stop here for later continuation.
+- Resume with a fresh independent QA audit of the existing branch using only targeted Variant A/B, testimonial, and variant-resolution test paths; do not restart the entire test suite.
