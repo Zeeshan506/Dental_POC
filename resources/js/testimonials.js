@@ -1,12 +1,12 @@
 /**
  * Testimonials & Patient Reviews Carousel & Interactive Engine
- * Handles smooth carousel navigation, desktop popovers with hover bridge, and mobile modal drawers.
+ * Standard centered modal dialog for full review inspection and smooth carousel navigation.
  */
 
 function initTestimonials() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // --- Carousel Controls ---
+    // --- Carousel Navigation Controls ---
     const carouselWrappers = document.querySelectorAll('[data-testimonials-carousel]');
     carouselWrappers.forEach((wrapper) => {
         const track = wrapper.querySelector('[data-testimonials-track]');
@@ -50,94 +50,8 @@ function initTestimonials() {
         return starsHtml;
     };
 
-    // --- Desktop Popover Elements & State ---
-    const popover = document.getElementById('review-desktop-popover');
-    const popoverName = document.getElementById('popover-name');
-    const popoverTreatment = document.getElementById('popover-treatment');
-    const popoverStars = document.getElementById('popover-stars');
-    const popoverDate = document.getElementById('popover-date');
-    const popoverBody = document.getElementById('popover-body');
-    const popoverSourceLink = document.getElementById('popover-source-link');
-
-    let popoverHideTimer = null;
-    let activeCard = null;
-
-    const showPopover = (card) => {
-        if (!popover || window.innerWidth < 768) return;
-        clearTimeout(popoverHideTimer);
-        activeCard = card;
-
-        const { patientName, treatment, rating, date, sourceUrl, sourceLabel } = card.dataset;
-        const fullTextElem = card.querySelector('[data-full-text-content]');
-        const fullText = fullTextElem ? fullTextElem.innerHTML : card.dataset.fullText || '';
-
-        if (popoverName) popoverName.textContent = patientName || '';
-        if (popoverTreatment) popoverTreatment.textContent = treatment || '';
-        if (popoverStars) popoverStars.innerHTML = renderStars(rating || 5);
-        if (popoverDate) popoverDate.textContent = date || '';
-        if (popoverBody) popoverBody.innerHTML = fullText;
-        if (popoverSourceLink && sourceUrl) {
-            popoverSourceLink.href = sourceUrl;
-            popoverSourceLink.target = '_blank';
-            popoverSourceLink.rel = 'noopener noreferrer';
-        }
-
-        // Positioning logic
-        popover.classList.remove('hidden');
-        const cardRect = card.getBoundingClientRect();
-        const popoverWidth = popover.offsetWidth || 384;
-        const popoverHeight = popover.offsetHeight || 260;
-
-        let left = cardRect.left;
-        let top = cardRect.bottom + 8;
-
-        // Viewport collision avoidance
-        if (top + popoverHeight > window.innerHeight - 16) {
-            top = cardRect.top - popoverHeight - 8;
-        }
-        if (left + popoverWidth > window.innerWidth - 16) {
-            left = window.innerWidth - popoverWidth - 16;
-        }
-        if (left < 16) {
-            left = 16;
-        }
-
-        popover.style.top = `${top}px`;
-        popover.style.left = `${left}px`;
-        popover.classList.remove('opacity-0', 'pointer-events-none');
-        popover.classList.add('opacity-100');
-    };
-
-    const scheduleHidePopover = () => {
-        clearTimeout(popoverHideTimer);
-        popoverHideTimer = setTimeout(() => {
-            hidePopover();
-        }, 180);
-    };
-
-    const hidePopover = () => {
-        if (!popover) return;
-        popover.classList.remove('opacity-100');
-        popover.classList.add('opacity-0', 'pointer-events-none');
-        setTimeout(() => {
-            if (popover.classList.contains('opacity-0')) {
-                popover.classList.add('hidden');
-            }
-        }, 200);
-        activeCard = null;
-    };
-
-    if (popover) {
-        popover.addEventListener('mouseenter', () => {
-            clearTimeout(popoverHideTimer);
-        });
-        popover.addEventListener('mouseleave', () => {
-            scheduleHidePopover();
-        });
-    }
-
-    // --- Mobile Modal Elements & State ---
-    const modal = document.getElementById('review-mobile-modal');
+    // --- Standard Review Modal Dialog (Centered, Fixed, Non-Drifting) ---
+    const modal = document.getElementById('review-modal');
     const modalBackdrop = document.getElementById('review-modal-backdrop');
     const modalCloseBtn = document.getElementById('review-modal-close');
     const modalName = document.getElementById('review-modal-name');
@@ -151,10 +65,9 @@ function initTestimonials() {
 
     const openModal = (card) => {
         if (!modal) return;
-        hidePopover();
         previousActiveElement = document.activeElement;
 
-        const { patientName, treatment, rating, date, sourceUrl, sourceLabel } = card.dataset;
+        const { patientName, treatment, rating, date, sourceUrl } = card.dataset;
         const fullTextElem = card.querySelector('[data-full-text-content]');
         const fullText = fullTextElem ? fullTextElem.innerHTML : card.dataset.fullText || '';
 
@@ -201,7 +114,6 @@ function initTestimonials() {
     // Global escape key handler
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            hidePopover();
             closeModal();
         }
     });
@@ -209,33 +121,27 @@ function initTestimonials() {
     // --- Card Interaction Listeners ---
     const reviewCards = document.querySelectorAll('[data-review-card]');
     reviewCards.forEach((card) => {
-        // Desktop Hover Bridge
-        card.addEventListener('mouseenter', () => showPopover(card));
-        card.addEventListener('mouseleave', () => scheduleHidePopover());
-
-        // Keyboard Focus
-        card.addEventListener('focusin', () => showPopover(card));
-        card.addEventListener('focusout', (e) => {
-            if (!popover || !popover.contains(e.relatedTarget)) {
-                scheduleHidePopover();
-            }
-        });
-
-        // Click / Tap Action: Open Modal on mobile or when explicit trigger clicked
+        // Explicit "Read ->" trigger button
         const triggerBtn = card.querySelector('[data-review-trigger]');
         if (triggerBtn) {
             triggerBtn.addEventListener('click', (e) => {
                 e.preventDefault();
+                e.stopPropagation();
                 openModal(card);
             });
         }
 
+        // Clicking anywhere on card opens standard modal dialog
         card.addEventListener('click', (e) => {
-            // If click target was external source link, let browser open link
             if (e.target.closest('a[target="_blank"]')) return;
+            openModal(card);
+        });
 
-            // On mobile or touch devices, clicking anywhere on card opens modal
-            if (window.innerWidth < 768 || window.matchMedia('(pointer: coarse)').matches) {
+        // Keyboard activation via Enter or Space
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                if (e.target.closest('a[target="_blank"]')) return;
+                e.preventDefault();
                 openModal(card);
             }
         });

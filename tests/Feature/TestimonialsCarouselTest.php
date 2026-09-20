@@ -99,24 +99,25 @@ class TestimonialsCarouselTest extends TestCase
         $responseB->assertSee('snap-mandatory');
     }
 
-    public function test_desktop_and_mobile_modal_popover_elements_present(): void
+    public function test_standard_review_modal_dialog_elements_present(): void
     {
         foreach (['a', 'b'] as $variant) {
             $response = $this->get('/?variant='.$variant);
             $response->assertStatus(200);
 
-            // Desktop Popover container
-            $response->assertSee('id="review-desktop-popover"', false);
-            $response->assertSee('id="popover-body"', false);
-            $response->assertSee('id="popover-name"', false);
-
-            // Mobile Modal container
-            $response->assertSee('id="review-mobile-modal"', false);
+            // Standard Modal Dialog container (Centered, Fixed, Non-Drifting)
+            $response->assertSee('id="review-modal"', false);
             $response->assertSee('role="dialog"', false);
             $response->assertSee('aria-modal="true"', false);
             $response->assertSee('id="review-modal-close"', false);
             $response->assertSee('id="review-modal-backdrop"', false);
+            $response->assertSee('id="review-modal-panel"', false);
+            $response->assertSee('id="review-modal-name"', false);
+            $response->assertSee('id="review-modal-treatment"', false);
+            $response->assertSee('id="review-modal-stars"', false);
+            $response->assertSee('id="review-modal-date"', false);
             $response->assertSee('id="review-modal-body"', false);
+            $response->assertSee('id="review-modal-source-link"', false);
         }
     }
 
