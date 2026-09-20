@@ -12,10 +12,14 @@
 | AC-6 | Accessible restrained interaction feedback | Keyboard, pointer, and touch checks | [ ] |
 | AC-7 | Reduced motion and JavaScript failure safety | Emulation and JavaScript-disabled check | [ ] |
 | AC-8 | Reference-informed, non-copying quality and mobile safety | Audit comparison plus Playwright desktop/mobile | [ ] |
+| AC-9 | Original full-bleed, compact Variant B hero hierarchy | Focused rendering test plus desktop/mobile Playwright reload | [ ] |
+| AC-10 | Reference-informed editorial section composition and preserved manual review controls | Focused rendering test plus full-scroll and carousel Playwright flow | [ ] |
+| AC-11 | Original booking/location interlude and dark high-contrast footer | Focused rendering test plus desktop/mobile Playwright full-scroll | [ ] |
+| AC-12 | Responsive, accessible, reduced-motion, and JavaScript-disabled safety after recomposition | Playwright desktop/mobile, keyboard, reduced-motion, JavaScript-disabled, and overflow checks | [ ] |
 
 ## 2. Automated Test Suite
 
-- `tests/Feature/VariantBTest.php`: Extend only for stable motion-hook and preserved accessibility/rendering behavior.
+- `tests/Feature/VariantBTest.php`: Extend for stable motion-hook, reference-informed composition, and preserved accessibility/rendering behavior across AC-1 through AC-12.
 - Existing shared testimonial and variant-resolution coverage: rerun after shared motion integration.
 - Playwright behavioral evaluation is mandatory because timing, scrolling, and repeat triggers cannot be proven by markup assertions alone.
 
@@ -26,6 +30,7 @@
 3. Exercise rows, carousel, long-review modal, map links, CTAs, footer links, and switcher via pointer, keyboard, and touch.
 4. Compare the local scroll rhythm to the audit; verify it is quieter and slower than Variant A.
 5. Emulate reduced motion and disable JavaScript; check immediate visibility, focus, overflow, and absence of nuisance re-triggers.
+6. Compare the full-bleed hero, editorial sequence, dark contrast bands, and final contact/footer rhythm to the audit; confirm the composition is original and uses no reference asset, copy, or branded mark.
 
 ## 4. Merge Readiness
 

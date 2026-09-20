@@ -25,3 +25,10 @@ Use the Phase 4 semantic observer and tokens; do not create a parallel Variant B
 - [ ] Task 3.2: Run Playwright local desktop/mobile full-scroll, reload, carousel/modal, keyboard, switcher, no-overflow, disabled-JS, and reduced-motion checks.
 - [ ] Task 3.3: Revisit the external reference with Playwright and compare rhythm while scrolling, not by screenshots alone; append the comparison result to the audit.
 - [ ] Task 3.4: Run focused tests, build, Pint for changed PHP, line-count, and whitespace checks during implementation.
+
+### Group 4: User-Directed Reference-Informed Composition Alignment
+
+- [ ] Task 4.1: Recompose the Variant B hero and shared shell into an original full-bleed, compact, high-legibility clinical introduction using only project assets and content.
+- [ ] Task 4.2: Rework doctor, treatments, journey, and testimonials into a coherent alternating editorial sequence with restrained photographic blocks, service rows, and dark contrast bands while preserving existing data and controls.
+- [ ] Task 4.3: Rework booking/location and the shared footer into an original reference-informed finale while retaining maps, hours, direct contacts, and the persistent variant switcher.
+- [ ] Task 4.4: Extend focused rendering/accessibility tests and repeat local Playwright desktop/mobile, carousel/modal, keyboard, reduced-motion, JavaScript-disabled, and no-overflow checks against AC-9 through AC-12.
