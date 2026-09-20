@@ -1,7 +1,11 @@
 import { animate } from 'motion/mini';
 import { initTestimonials } from './testimonials.js';
 
+const expressiveEase = [0.16, 1, 0.3, 1];
+const editorialEase = [0.22, 1, 0.36, 1];
+
 const motionProfiles = {
+    ease: expressiveEase,
     action: { distance: 12, duration: 0.42 },
     card: { distance: 20, duration: 0.52 },
     copy: { distance: 14, duration: 0.46 },
@@ -16,6 +20,7 @@ const motionProfiles = {
 };
 
 const editorialMotionProfiles = {
+    ease: editorialEase,
     action: { distance: 8, duration: 0.56 },
     card: { distance: 12, duration: 0.7 },
     copy: { distance: 10, duration: 0.62 },
@@ -56,7 +61,10 @@ const getProfile = (element) => {
         ? editorialMotionProfiles
         : motionProfiles;
 
-    return profiles[element.dataset.motion] ?? profiles.rise;
+    return {
+        ...(profiles[element.dataset.motion] ?? profiles.rise),
+        ease: profiles.ease,
+    };
 };
 
 const getObserverTarget = (element) => {
@@ -125,7 +133,7 @@ function initializeMotion() {
             }, {
                 delay,
                 duration: profile.duration,
-                ease: [0.16, 1, 0.3, 1],
+                ease: profile.ease,
             })
             : isFade
                 ? animate(element, {
@@ -133,7 +141,7 @@ function initializeMotion() {
                 }, {
                     delay,
                     duration: profile.duration,
-                    ease: [0.16, 1, 0.3, 1],
+                    ease: profile.ease,
                 })
                 : animate(element, {
                 opacity: [0, 1],
@@ -141,7 +149,7 @@ function initializeMotion() {
             }, {
                 delay,
                 duration: profile.duration,
-                ease: [0.16, 1, 0.3, 1],
+                ease: profile.ease,
             });
 
         animationControls.add(animation);

@@ -155,9 +155,19 @@ class VariantBTest extends TestCase
         $script = file_get_contents($scriptPath);
 
         $this->assertStringContainsString('const editorialMotionProfiles', $script);
+        $this->assertStringContainsString('const editorialEase = [0.22, 1, 0.36, 1]', $script);
         $this->assertStringContainsString('headline: { distance: 12, duration: 0.72 }', $script);
         $this->assertStringContainsString('image: { distance: 10, duration: 0.76, scale: 1.02 }', $script);
+        $this->assertStringContainsString('ease: profile.ease', $script);
         $this->assertStringContainsString("window.matchMedia('(max-width: 639px)').matches", $script);
+    }
+
+    public function test_keyboard_focus_indicators_cover_review_cards_and_carousel_track(): void
+    {
+        $response = $this->get('/?variant=b');
+
+        $response->assertSee('focus-visible:ring-charcoal-900', false);
+        $response->assertSee('focus-visible:ring-inset', false);
     }
 
     public function test_reference_informed_composition_preserves_original_variant_b_content(): void

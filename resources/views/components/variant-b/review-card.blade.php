@@ -15,7 +15,7 @@
 @endphp
 
 <article
-    class="group relative flex flex-col justify-between rounded-2xl bg-stone-warm-100/40 border border-stone-warm-200 p-6 sm:p-8 transition-colors duration-200 hover:bg-stone-warm-100/80 hover:border-stone-warm-300 focus-within:ring-2 focus-within:ring-charcoal-900 cursor-pointer h-full select-none"
+    class="group relative flex flex-col justify-between rounded-2xl bg-stone-warm-100/40 border border-stone-warm-200 p-6 sm:p-8 transition-colors duration-200 hover:bg-stone-warm-100/80 hover:border-stone-warm-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 focus-within:ring-2 focus-within:ring-charcoal-900 cursor-pointer h-full select-none"
     data-review-card
     data-review-id="{{ $id }}"
     data-patient-name="{{ $name }}"

@@ -1,6 +1,6 @@
 # Dental Design SD Motion Audit — Phase 5
 
-**Audited:** 2026-09-21 before Variant B source edits  
+**Audited:** 2026-09-21 before Variant B source edits
 **Method:** Playwright 1.57 with Chromium; repeated reloads, slow full-page scrolling, and navigation/control inspection at 1440×900 and 390×844.
 
 ## Observed Motion Qualities
