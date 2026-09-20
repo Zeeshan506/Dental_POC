@@ -21,46 +21,60 @@
             <!-- Foreground Main Card -->
             <div class="relative rounded-3xl bg-stone-warm-50 border border-stone-warm-300 p-8 sm:p-12 lg:p-14">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-                    <!-- Doctor Identity Column with Technical Anatomy Layer -->
-                    <div class="lg:col-span-5 space-y-6">
-                        <!-- Portrait Composition with Desaturated Technical Anatomy Layer -->
-                        <div class="relative w-full max-w-sm mx-auto lg:mx-0 rounded-2xl bg-stone-warm-200 border-2 border-stone-warm-300 overflow-hidden flex flex-col justify-end">
-                            <!-- Technical Layer: Desaturated Tooth Anatomy Diagram -->
-                            <div class="absolute inset-0 z-0 opacity-20 filter grayscale contrast-125 pointer-events-none">
-                                <img src="{{ asset('images/variant-a/tooth-anatomy.webp') }}" alt="Tooth Anatomy Technical Diagram" class="w-full h-full object-cover object-center" />
+                    <!-- Doctor Identity Column: Clinical Monograph & Anatomical Study Plate -->
+                    <div class="lg:col-span-5">
+                        <!-- Architectural Monograph Plate: Dentist Layered Over Tooth Anatomy Diagram -->
+                        <div class="relative w-full max-w-sm mx-auto lg:mx-0 rounded-2xl bg-stone-warm-100 border border-stone-warm-300 overflow-hidden shadow-none">
+                            <!-- Monograph Header Strip -->
+                            <div class="px-4 py-2.5 bg-stone-warm-200/90 border-b border-stone-warm-300 flex items-center justify-between z-20 relative">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-sm bg-brass-500"></span>
+                                    <span class="text-[10px] font-mono uppercase tracking-widest text-stone-warm-900 font-semibold">Plate 01 &bull; Biomimetic Study</span>
+                                </div>
+                                <span class="text-[10px] font-mono text-stone-warm-600">Fig. 1.0</span>
                             </div>
 
-                            <!-- Photographic Cutout: Doctor with Arms Crossed -->
-                            <div class="relative z-10 w-full flex justify-center pt-8 px-4">
-                                <img src="{{ asset('images/variant-a/dentist-cutout.webp') }}" alt="{{ $doctor['name'] }}" class="w-auto h-72 sm:h-80 object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.08)] filter" />
+                            <!-- Layered Composition: Tooth Anatomy Diagram + Dentist Cutout -->
+                            <div class="relative h-80 sm:h-96 w-full bg-stone-warm-200/50 flex items-end justify-center overflow-hidden">
+                                <!-- Technical Anatomical Plate (Desaturated Background Layer) -->
+                                <div class="absolute inset-0 z-0 opacity-35 filter grayscale contrast-125 pointer-events-none">
+                                    <img src="{{ asset('images/variant-a/tooth-anatomy.webp') }}" alt="Biomimetic Tooth Anatomy Diagram" class="w-full h-full object-cover object-center" />
+                                </div>
+
+                                <!-- Architectural Grid Overlay & Callout Crosshairs -->
+                                <div class="absolute inset-0 z-5 pointer-events-none" aria-hidden="true">
+                                    <div class="absolute top-4 left-4 text-[9px] font-mono text-stone-warm-700 bg-stone-warm-100/90 px-1.5 py-0.5 rounded border border-stone-warm-300/80">
+                                        + Enamel Boundary
+                                    </div>
+                                    <div class="absolute top-16 right-4 text-[9px] font-mono text-stone-warm-700 bg-stone-warm-100/90 px-1.5 py-0.5 rounded border border-stone-warm-300/80">
+                                        + Dentin Matrix
+                                    </div>
+                                    <div class="absolute bottom-12 left-4 text-[9px] font-mono text-stone-warm-700 bg-stone-warm-100/90 px-1.5 py-0.5 rounded border border-stone-warm-300/80">
+                                        + Pulp Vitality
+                                    </div>
+                                </div>
+
+                                <!-- Photographic Cutout: Doctor Layered Over Anatomical Diagram -->
+                                <div class="relative z-10 w-full flex justify-center">
+                                    <img src="{{ asset('images/variant-a/dentist-cutout.webp') }}" alt="{{ $doctor['name'] }}" class="w-auto h-72 sm:h-80 object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.08)] filter" />
+                                </div>
                             </div>
 
-                            <!-- Doctor Tag Badge -->
-                            <div class="relative z-20 m-4 rounded-xl bg-stone-warm-50/95 border border-stone-warm-300 p-4">
-                                <span class="text-[11px] font-semibold uppercase tracking-wider text-brass-600 block">
-                                    {{ $doctor['title'] }}
-                                </span>
-                                <h3 class="font-serif text-xl sm:text-2xl font-bold text-charcoal-900 mt-0.5">
-                                    {{ $doctor['name'] }}
-                                </h3>
-                                <p class="text-xs font-medium text-stone-warm-700 mt-1">
-                                    {{ $doctor['credentials'] }}
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Technical Diagram Detail Card -->
-                        <div class="rounded-xl bg-stone-warm-100 p-4 border border-stone-warm-200 flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-lg bg-stone-warm-200 border border-stone-warm-300 overflow-hidden shrink-0">
-                                <img src="{{ asset('images/variant-a/tooth-anatomy.webp') }}" alt="Enamel & Dentin Anatomy" class="w-full h-full object-cover filter grayscale" />
-                            </div>
-                            <div>
-                                <span class="text-xs font-semibold uppercase tracking-wider text-stone-warm-900 block">
-                                    Biomimetic Anatomy
-                                </span>
-                                <p class="text-xs text-stone-warm-700 leading-tight mt-0.5">
-                                    Preserving natural enamel, dentin, and biological tooth structure.
-                                </p>
+                            <!-- Integrated Architectural Monograph Footer (No Duplicated Floating Badge) -->
+                            <div class="p-4 bg-stone-warm-50 border-t border-stone-warm-300 z-20 relative">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h3 class="font-serif text-base sm:text-lg font-bold text-charcoal-900">
+                                            {{ $doctor['name'] }}
+                                        </h3>
+                                        <p class="text-xs font-medium text-stone-warm-700">
+                                            {{ $doctor['title'] }} &bull; {{ $doctor['credentials'] }}
+                                        </p>
+                                    </div>
+                                    <span class="text-[10px] font-mono uppercase tracking-wider text-stone-warm-600 bg-stone-warm-200 px-2 py-1 rounded border border-stone-warm-300">
+                                        Clinical Ethos
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>

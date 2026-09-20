@@ -28,7 +28,7 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     @foreach(config('clinic.treatments') as $treatment)
-                        <x-variant-a.treatment-tile :treatment="$treatment" />
+                        <x-variant-a.treatment-tile :treatment="$treatment" :index="$loop->iteration" />
                     @endforeach
                 </div>
             </div>

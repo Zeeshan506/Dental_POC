@@ -159,14 +159,20 @@ class VariantATest extends TestCase
         $response = $this->get('/?variant=a');
 
         $response->assertStatus(200);
+
+        // Verify primary intentional visual compositions are retained
         $response->assertSee('images/variant-a/dentist-cutout.webp');
         $response->assertSee('images/variant-a/tooth-anatomy.webp');
-        $response->assertSee('images/variant-a/dental-tools.webp');
-        $response->assertSee('images/variant-a/smile.webp');
-        $response->assertSee('images/variant-a/implant.webp');
-        $response->assertSee('images/variant-a/child-toothbrush.webp');
         $response->assertSee('images/variant-a/clinic-map.webp');
         $response->assertSee('OpenStreetMap');
         $response->assertSee('Demo Location');
+
+        // Verify scrapbook-like floating image stickers have been removed
+        $response->assertDontSee('images/variant-a/dental-tools.webp');
+        $response->assertDontSee('images/variant-a/smile.webp');
+        $response->assertDontSee('images/variant-a/implant.webp');
+        $response->assertDontSee('images/variant-a/child-toothbrush.webp');
+        $response->assertDontSee('images/variant-a/tooth-model.webp');
+        $response->assertDontSee('images/variant-a/dental-xray.webp');
     }
 }

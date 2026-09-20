@@ -56,30 +56,26 @@
                 </div>
             </div>
 
-            <!-- Layered 2D Cutout Composition with Real Photographic Cutouts -->
+            <!-- Layered 2D Cutout Composition with Dentist as Sole Primary Photographic Cutout -->
             <div class="lg:col-span-5 flex justify-center lg:justify-end animate-cutout-settle">
                 <div class="relative w-full max-w-md">
                     <!-- Layer 1: Warm Stone Cutout Backplate -->
                     <div class="absolute -top-4 -left-4 w-full h-[95%] rounded-3xl bg-stone-warm-200 border border-stone-warm-300 rotate-1"></div>
 
-                    <!-- Layer 2: Supporting Secondary Cutout (Tooth Model, partially off-canvas top right) -->
-                    <div class="absolute -top-10 -right-6 z-10 w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-stone-warm-100/90 border border-stone-warm-300 p-2 rotate-6">
-                        <img src="{{ asset('images/variant-a/tooth-model.webp') }}" alt="Biomimetic Tooth Model" class="w-full h-full object-contain filter" />
-                        <span class="absolute -bottom-2 -left-2 text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-stone-warm-200 border border-stone-warm-400 text-charcoal-900">
-                            Biomimetic
-                        </span>
-                    </div>
-
-                    <!-- Layer 3: Supporting Secondary Cutout (Dental Tools, bottom left) -->
-                    <div class="absolute -bottom-6 -left-8 z-10 w-32 h-32 sm:w-36 sm:h-36 rounded-2xl bg-stone-warm-100/90 border border-stone-warm-300 p-2 -rotate-6">
-                        <img src="{{ asset('images/variant-a/dental-tools.webp') }}" alt="Precision Dental Mirror & Instruments" class="w-full h-full object-contain filter" />
-                        <span class="absolute -top-2 -right-2 text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-stone-warm-200 border border-stone-warm-400 text-charcoal-900">
-                            Precision
-                        </span>
-                    </div>
-
-                    <!-- Layer 4: Main Cutout Container (Cream Architectural Surface) -->
+                    <!-- Layer 2: Main Architectural Surface with Subtle Anatomical Line Drawing & Natural Overlap -->
                     <div class="relative rounded-3xl bg-stone-warm-100 border border-stone-warm-300 pt-6 px-6 sm:px-8 pb-0 overflow-hidden flex flex-col items-center">
+                        <!-- Subtle Oversized Dental Anatomical Line Drawing Behind Composition -->
+                        <svg class="absolute -right-10 -top-6 w-80 h-80 text-stone-warm-400/25 stroke-current pointer-events-none z-0" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+                            <!-- Molar Crown & Enamel Contour -->
+                            <path d="M40 70 C40 35, 70 25, 100 30 C130 25, 160 35, 160 70 C160 100, 150 120, 140 170 C135 180, 125 180, 120 160 C115 140, 110 110, 100 110 C90 110, 85 140, 80 160 C75 180, 65 180, 60 170 C50 120, 40 100, 40 70 Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <!-- Internal Dentin & Pulp Chamber Contour -->
+                            <path d="M60 75 C60 50, 80 45, 100 48 C120 45, 140 50, 140 75 C140 95, 132 110, 125 145 C122 152, 118 152, 115 138 C110 120, 108 95, 100 95 C92 95, 90 120, 85 138 C82 152, 78 152, 75 145 C68 110, 60 95, 60 75 Z" stroke-width="1" stroke-dasharray="3 3" />
+                            <!-- Architectural Calibration Crosshairs & Axis Marks -->
+                            <line x1="20" y1="70" x2="180" y2="70" stroke-width="0.75" stroke-dasharray="4 4" />
+                            <line x1="100" y1="15" x2="100" y2="185" stroke-width="0.75" stroke-dasharray="4 4" />
+                            <circle cx="100" cy="70" r="3" stroke-width="1" />
+                        </svg>
+
                         <!-- Top Accent Tag -->
                         <div class="w-full flex items-center justify-between pb-4 border-b border-stone-warm-200 z-10">
                             <div class="flex items-center gap-2">
@@ -89,13 +85,13 @@
                             <span class="text-xs font-mono text-stone-warm-600">{{ $clinic['contact']['address']['city'] }}, {{ $clinic['contact']['address']['state'] }}</span>
                         </div>
 
-                        <!-- Full-Height Cutout of Confident Dentist with Arms Crossed (Paper Cutout Effect) -->
-                        <div class="relative z-20 w-full flex justify-center mt-2">
+                        <!-- Full-Height Cutout of Confident Dentist with Arms Crossed (Natural Architectural Overlap) -->
+                        <div class="relative z-10 w-full flex justify-center mt-2">
                             <img src="{{ asset('images/variant-a/dentist-cutout.webp') }}" alt="Dr. Tariq Bhatti standing with arms crossed" class="w-auto h-80 sm:h-96 object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.06)]" />
                         </div>
 
-                        <!-- Overlapping Floating Identity Badge -->
-                        <div class="absolute bottom-4 left-4 right-4 z-30 rounded-xl bg-stone-warm-50/95 border border-stone-warm-300 p-3 shadow-none">
+                        <!-- Overlapping Identity Badge -->
+                        <div class="absolute bottom-4 left-4 right-4 z-20 rounded-xl bg-stone-warm-50/95 border border-stone-warm-300 p-3 shadow-none">
                             <div class="flex items-center justify-between">
                                 <div>
                                     <p class="font-serif text-sm font-bold text-charcoal-900">
