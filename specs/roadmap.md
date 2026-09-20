@@ -1,7 +1,7 @@
 # Project Roadmap & Implementation Phases
 
 ## Phasing Strategy
-The development of the Dr. Bhatti & Associates Dental Clinic POC follows a strict 5-phase Spec-Driven Development sequence. Each phase delivers an incremental, verified slice of functionality, prioritizing frontend architectural isolation, content equivalence, and client presentation readiness.
+The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-Driven Development sequence. Each phase delivers an incremental, verified slice of functionality, prioritizing frontend architectural isolation, content equivalence, and client presentation readiness.
 
 ## Phase Overview
 
@@ -11,7 +11,10 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a stric
 | Phase 1 | Variant A: Expressive / 2D Cutout Prototype | [Phase 1 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-1-variant-a-expressive-cutout/) | AC-1 to AC-8 | Ready | Implemented | Validated |
 | Phase 2 | Variant B: Calm / Editorial Prototype | [Phase 2 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-2-variant-b-calm-editorial/) | AC-1 to AC-8 | Ready | Implemented | Validated |
 | Phase 3 | Dual-Variant Testimonials & Patient Reviews Carousel | [Phase 3 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-21-phase-3-testimonials-carousel/) | AC-1 to AC-8 | Ready | Implemented | Validated |
-| Phase 4 | Cross-Variant Polish, Accessibility & Presentation Audit | TBD | TBD | Pending | Not Started | Pending |
+| Phase 4 | Motion Foundation & Variant A Site-Wide Choreography | [Phase 4 Spec](2026-09-21-phase-4-motion-foundation-variant-a/) | AC-1 to AC-8 | Ready | Implemented | Validated |
+| Phase 5 | Variant B Calm Editorial Site-Wide Motion | [Phase 5 Spec](2026-09-21-phase-5-variant-b-editorial-motion/) | AC-1 to AC-8 | Ready | Not Started | Pending |
+| Phase 6 | Cross-Variant Polish, Accessibility & Presentation Audit | TBD | TBD | Pending | Not Started | Pending |
+| Phase 7 | Global Animation Guidance Skill | [Phase 7 Spec](2026-09-21-phase-7-global-animation-guidance-skill/) | AC-1 to AC-6 | Ready | Not Started | Pending |
 
 ---
 
@@ -66,10 +69,37 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a stric
 
 ---
 
-### Phase 4: Cross-Variant Polish, Accessibility & Presentation Audit
-- [ ] **Task 4.1**: Validate strict `prefers-reduced-motion: reduce` behavior across both variants, verifying instantaneous or disabled animations.
-- [ ] **Task 4.2**: Audit color contrast ratios to ensure WCAG AA/AAA compliance across all text and interactive buttons.
-- [ ] **Task 4.3**: Verify responsive performance and touch targets (>= 44px) across mobile, tablet, and desktop viewports.
-- [ ] **Task 4.4**: Ensure all tracked files strictly adhere to the <= 300-line modularity constraint.
-- [ ] **Task 4.5**: Prepare client walkthrough documentation demonstrating key design differences and interaction principles.
+### Phase 4: Motion Foundation & Variant A Site-Wide Choreography
+- **Specification**: [specs/2026-09-21-phase-4-motion-foundation-variant-a/](2026-09-21-phase-4-motion-foundation-variant-a/)
+- **Acceptance Criteria**: AC-1 through AC-8
+- **Status**: Specification: Ready | Implementation: Implemented | Validation: Validated
+- [x] **Task 4.1**: Add Motion Mini, one progressively enhanced observer-driven semantic hook system, and reusable motion CSS primitives.
+- [x] **Task 4.2**: Apply expressive, layered choreography to every Variant A and shared page block, including review, booking, footer, and switcher interactions.
+- [x] **Task 4.3**: Verify Variant A with focused tests and local Playwright across desktop, mobile, reduced-motion, keyboard, and JavaScript-disabled flows.
+- **Deliverable / Verification**: Variant A has complete controlled site-wide motion while shared content remains visible without JavaScript.
+
+### Phase 5: Variant B Calm Editorial Site-Wide Motion
+- **Specification**: [specs/2026-09-21-phase-5-variant-b-editorial-motion/](2026-09-21-phase-5-variant-b-editorial-motion/)
+- **Acceptance Criteria**: AC-1 through AC-8
+- **Status**: Specification: Ready | Implementation: Not Started | Validation: Pending
+- [ ] **Task 5.1**: Perform and record the required Playwright-based Dental Design SD motion audit before source changes.
+- [ ] **Task 5.2**: Apply the central motion system to every Variant B and shared page block using a distinct calm editorial profile.
+- [ ] **Task 5.3**: Verify Variant B and the reference-informed rhythm with focused tests and local/external Playwright flows.
+- **Deliverable / Verification**: Variant B is continuously but quietly animated, reference-informed without copying, and visibly slower/softer than Variant A.
+
+### Phase 6: Cross-Variant Polish, Accessibility & Presentation Audit
+- [ ] **Task 6.1**: Validate strict `prefers-reduced-motion: reduce` behavior across both variants, verifying instantaneous or disabled animations.
+- [ ] **Task 6.2**: Audit color contrast ratios to ensure WCAG AA/AAA compliance across all text and interactive buttons.
+- [ ] **Task 6.3**: Verify responsive performance and touch targets (>= 44px) across mobile, tablet, and desktop viewports.
+- [ ] **Task 6.4**: Ensure all tracked files strictly adhere to the <= 300-line modularity constraint.
+- [ ] **Task 6.5**: Prepare client walkthrough documentation demonstrating key design differences and interaction principles.
 - **Deliverable / Verification**: Both variants pass all accessibility, modularity, and responsiveness checks, ready for client review.
+
+### Phase 7: Global Animation Guidance Skill
+- **Specification**: [specs/2026-09-21-phase-7-global-animation-guidance-skill/](2026-09-21-phase-7-global-animation-guidance-skill/)
+- **Acceptance Criteria**: AC-1 through AC-6
+- **Status**: Specification: Ready | Implementation: Not Started | Validation: Pending
+- [ ] **Task 7.1**: Inspect the validated motion system and create a globally available Codex skill through `skill-creator`.
+- [ ] **Task 7.2**: Encode distinct expressive and calm profiles, safe shared-component handling, and centralized architecture rules.
+- [ ] **Task 7.3**: Validate discovery and dry-run guidance for Variant A, Variant B, and ambiguous shared components.
+- **Deliverable / Verification**: Future Codex work can discover a global, inspect-first skill that selects the correct motion profile and enforces the validated safeguards.

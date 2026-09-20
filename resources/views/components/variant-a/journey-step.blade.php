@@ -17,11 +17,11 @@
     $tag = $tagMap[$step] ?? null;
 @endphp
 
-<div class="relative flex flex-col items-start group" data-testid="journey-step-{{ $step }}">
+<div class="relative flex flex-col items-start group" data-motion="card" data-testid="journey-step-{{ $step }}">
     <!-- Connective Progression Line (Desktop Horizontal, Mobile Vertical) -->
     @unless($isLast)
-        <div class="hidden lg:block absolute top-6 left-12 w-[calc(100%-2rem)] h-[2px] bg-stone-warm-300" aria-hidden="true"></div>
-        <div class="lg:hidden absolute top-12 left-5 w-[2px] h-[calc(100%-1.5rem)] bg-stone-warm-300" aria-hidden="true"></div>
+        <div class="hidden lg:block absolute top-6 left-12 w-[calc(100%-2rem)] h-[2px] bg-stone-warm-300" data-motion="timeline" aria-hidden="true"></div>
+        <div class="lg:hidden absolute top-12 left-5 w-[2px] h-[calc(100%-1.5rem)] bg-stone-warm-300" data-motion="timeline" aria-hidden="true"></div>
     @endunless
 
     <!-- Sequence Header with Numbered Badge (Clean Typographic Progression) -->

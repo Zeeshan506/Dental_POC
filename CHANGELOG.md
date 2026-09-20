@@ -12,6 +12,32 @@ between specification/planning changes and feature implementation.
 
 ---
 
+## [0.6.0] - 2026-09-21 - Phase 4: Motion Foundation & Variant A Site-Wide Choreography
+
+### 📋 Specification & Planning Changes
+- **Phase 4 Specification (Motion Foundation & Variant A Site-Wide Choreography)**: Established formal specification contract under [specs/2026-09-21-phase-4-motion-foundation-variant-a/](specs/2026-09-21-phase-4-motion-foundation-variant-a/):
+  - Defined business intent, semantic observer hook contracts, expressive 2D choreography, and acceptance criteria (AC-1 through AC-8) in `requirements.md`.
+  - Structured 3 task groups (Shared Motion Foundation, Variant A Page-Load & Section Choreography, Accessibility & Regression Tests) in `plan.md`.
+  - Created acceptance criteria verification matrix in `validation.md`.
+  - Synchronized [specs/roadmap.md](specs/roadmap.md) to update Phase 4 (`Specification Status: Ready`, `Implementation Status: Implemented`, `Validation Status: Validated`).
+
+### 🚀 Feature Implementations
+- **Motion Foundation (`motion` & `Motion Mini`)**:
+  - Installed `motion` frontend dependency.
+  - Implemented centralized semantic observer hook system in `resources/js/app.js` supporting `data-motion-enter`, `data-motion-group`, `data-motion-delay`, and `data-motion-stagger`.
+  - Defined CSS motion primitives and timing tokens in `resources/css/app.css` with strict `@media (prefers-reduced-motion: reduce)` overrides.
+  - Ensured progressive enhancement and no-JS safety (content remains fully visible if JavaScript fails or is disabled).
+- **Variant A Site-Wide Choreography**:
+  - Annotated header, hero composition, doctor philosophy, treatment landscape, patient journey, testimonials carousel, booking finale, footer, and switcher with ordered semantic hooks.
+  - Directional, tactile entrance motion calibrated to settle cleanly without continuous looping or layout shift.
+
+### 🧪 Automated Regression & Testing
+- Extended `tests/Feature/VariantATest.php` with motion hook and accessibility assertions.
+- Full suite passing cleanly: 35 tests, 549 assertions (`php artisan test`).
+- Manual user acceptance confirmed via `/finish-spec`.
+
+---
+
 ## [0.5.0] - 2026-09-21 - Phase 3: Dual-Variant Testimonials & Patient Reviews Carousel
 
 ### 📋 Specification & Planning Changes

@@ -63,6 +63,42 @@
     animation: editorial-settle 750ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
+:root {
+    --motion-ease-expressive: cubic-bezier(0.16, 1, 0.3, 1);
+    --motion-duration-fast: 360ms;
+    --motion-duration-standard: 520ms;
+    --motion-stagger-standard: 80ms;
+}
+
+.motion-ready [data-motion].motion-pending {
+    opacity: 0;
+    will-change: opacity, transform;
+}
+
+.motion-ready [data-motion].motion-pending:not([data-motion='fade']):not([data-motion='mask']):not([data-motion='timeline']) {
+    transform: translate3d(0, var(--motion-offset, 16px), 0);
+}
+
+.motion-ready [data-motion].motion-pending[data-motion='mask'],
+.motion-ready [data-motion].motion-pending[data-motion='timeline'] {
+    clip-path: inset(0 100% 0 0);
+    will-change: clip-path, opacity;
+}
+
+[data-motion-interactive] {
+    transition: transform var(--motion-duration-fast) var(--motion-ease-expressive),
+        border-color var(--motion-duration-fast) ease, background-color var(--motion-duration-fast) ease,
+        color var(--motion-duration-fast) ease;
+}
+
+[data-motion-interactive]:hover {
+    transform: translateY(-2px);
+}
+
+[data-motion-interactive]:active {
+    transform: scale(0.985);
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     ::before,
@@ -74,9 +110,12 @@
     }
 
     .animate-cutout-settle,
-    .animate-editorial-settle {
+    .animate-editorial-settle,
+    [data-motion] {
         animation: none !important;
+        clip-path: none !important;
         opacity: 1 !important;
         transform: none !important;
+        transition-delay: 0ms !important;
     }
 }
