@@ -21,33 +21,3 @@ When processing this file, every agent must follow this protocol:
 ## Pending Intake Items
 
 <!-- Add raw requirements, team profiles, or notes below this line -->
-
-Add a Testimonials / Patient Reviews section to BOTH design variants while preserving each variant's own visual language.
-
-For now use clearly marked placeholder review content, but structure every review with:
-
-- patient name,
-- 1–5 star rating,
-- short visible review excerpt,
-- Google Reviews source/link,
-- optional date.
-
-Build it as a horizontally navigable carousel rather than a large static grid. Keep controls restrained and consistent with each design.
-
-Long reviews must never increase card height or break the carousel layout. Clamp the visible excerpt to a fixed number of lines.
-
-Desktop interaction:
-
-- hovering or keyboard-focusing a truncated review opens a secondary review panel/popover containing the complete review;
-- the panel must be independently hoverable so it does not disappear when the pointer moves from the card into it;
-- long content inside that panel must scroll internally;
-- keep the full-review panel within the viewport and avoid layout shift.
-
-Mobile/touch:
-
-- use tap to open the same full-review view since hover does not exist;
-- provide an obvious close/back interaction.
-
-Clicking the Google Reviews source should open the real review/reviews destination in a new tab once URLs are supplied.
-
-Keep this frontend-only for now. Store placeholder reviews in structured project data rather than hardcoding individual cards into the Blade markup.

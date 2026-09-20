@@ -10,7 +10,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a stric
 | Phase 0 | Foundation, Shared IA & Switcher Scaffolding | [Phase 0 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-0-foundation-ia-switcher/) | AC-1 to AC-6 | Ready | Implemented | Validated |
 | Phase 1 | Variant A: Expressive / 2D Cutout Prototype | [Phase 1 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-1-variant-a-expressive-cutout/) | AC-1 to AC-8 | Ready | Implemented | Validated |
 | Phase 2 | Variant B: Calm / Editorial Prototype | [Phase 2 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-2-variant-b-calm-editorial/) | AC-1 to AC-8 | Ready | Implemented | Validated |
-| Phase 3 | Dual-Variant Testimonials & Patient Reviews Carousel | [Phase 3 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-21-phase-3-testimonials-carousel/) | AC-1 to AC-8 | Ready | Implemented | Pending |
+| Phase 3 | Dual-Variant Testimonials & Patient Reviews Carousel | [Phase 3 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-21-phase-3-testimonials-carousel/) | AC-1 to AC-8 | Ready | Implemented | Validated |
 | Phase 4 | Cross-Variant Polish, Accessibility & Presentation Audit | TBD | TBD | Pending | Not Started | Pending |
 
 ---
@@ -56,7 +56,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a stric
 ### Phase 3: Dual-Variant Testimonials & Patient Reviews Carousel
 - **Specification**: [specs/2026-09-21-phase-3-testimonials-carousel/](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-21-phase-3-testimonials-carousel/)
 - **Acceptance Criteria**: AC-1 through AC-8
-- **Status**: Specification: Ready | Implementation: Implemented | Validation: Pending
+- **Status**: Specification: Ready | Implementation: Implemented | Validation: Validated
 - [x] **Task 3.1**: Define structured placeholder reviews schema and dataset in `config/clinic.php` with patient name, rating, excerpt, full text, source, source URL, date, and treatment.
 - [x] **Task 3.2**: Build Variant A Testimonials Carousel component (`<x-variant-a.testimonials-carousel>`) featuring 2D cutout warm stone cards, star ratings, and restrained navigation buttons.
 - [x] **Task 3.3**: Build Variant B Testimonials Carousel component (`<x-variant-b.testimonials-carousel>`) featuring calm editorial styling, hairline borders, and understated navigation controls.
