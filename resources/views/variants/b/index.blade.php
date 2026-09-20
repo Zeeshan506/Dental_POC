@@ -18,7 +18,10 @@
         <!-- Chapter 4: The Patient Journey & Stories Section (AC-4) -->
         <x-variant-b.journey-timeline />
 
-        <!-- Chapter 5: Clinic Location, Hours & Editorial Booking Finale (AC-5) -->
+        <!-- Chapter 5: Patient Testimonials & Reviews Carousel (Phase 3) -->
+        <x-variant-b.testimonials-carousel />
+
+        <!-- Chapter 6: Clinic Location, Hours & Editorial Booking Finale (AC-5) -->
         <x-variant-b.booking-finale />
     </main>
 
