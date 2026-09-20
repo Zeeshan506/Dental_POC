@@ -33,3 +33,27 @@ Implemented the complete architectural foundation for the Dr. Bhatti & Associate
 - **Modularity Cap**: All files strictly under 130 lines (cap: 300 lines).
 - **Zero Gradients**: Verified zero gradients across CSS and views.
 - **Git Hygiene**: `git diff --check` passed cleanly.
+
+---
+
+# Walkthrough: Phase 1 Variant A: Expressive / 2D Cutout Prototype Specification
+
+## Context & Purpose
+Specified Phase 1 (Variant A: Expressive / 2D Cutout Prototype) in accordance with [specs/mission.md](file:///home/zeshan6a/Projects/dental_clinic/specs/mission.md) and [specs/roadmap.md](file:///home/zeshan6a/Projects/dental_clinic/specs/roadmap.md).
+
+## Branch & Changes
+- **Branch**: `replanning`
+- **Specification Directory**: `specs/2026-09-20-phase-1-variant-a-expressive-cutout/`
+- **Files Created**:
+  - `specs/2026-09-20-phase-1-variant-a-expressive-cutout/requirements.md` (88 lines): Context, 5 core chapters in-scope, non-goals, 8 Acceptance Criteria (AC-1 through AC-8), edge cases.
+  - `specs/2026-09-20-phase-1-variant-a-expressive-cutout/plan.md` (59 lines): 3 task groups across 10 granular tasks covering component architecture, layout composition, animation tokens, and automated feature testing.
+  - `specs/2026-09-20-phase-1-variant-a-expressive-cutout/validation.md` (83 lines): Verification matrix for AC-1 through AC-8, planned test cases in `VariantATest`, 9-point manual checklist, and merge readiness checklist.
+- **Files Modified**:
+  - `specs/roadmap.md`: Updated Phase 1 row and section with link to spec, AC-1 to AC-8, and `Specification Status: Ready`.
+  - `CHANGELOG.md`: Added `[Unreleased]` section with Phase 1 specification details.
+  - `.agents/walkthrough.md`: Documented Phase 1 specification walkthrough.
+
+## Validation Results
+- **Modularity Cap**: All spec files under 90 lines (strict cap: 300 lines).
+- **Git Hygiene**: `git diff --check` passed cleanly.
+- **Zero Code Modification**: Strictly zero application source code touched during feature specing.

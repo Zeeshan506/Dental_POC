@@ -8,6 +8,16 @@ between specification/planning changes and feature implementation.
 
 ---
 
+## [Unreleased]
+
+### 📋 Specification & Planning Changes
+- Specified Phase 1 (Variant A: Expressive / 2D Cutout Prototype) in [specs/2026-09-20-phase-1-variant-a-expressive-cutout/](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-1-variant-a-expressive-cutout/) (`requirements.md`, `plan.md`, `validation.md`).
+- Defined 8 Acceptance Criteria (AC-1 through AC-8) covering 5 core chapters (Hero Cutout, Clinical Leadership & Accreditations, Treatments Landscape, Patient Journey, Location/Hours & Booking Finale), responsive behavior, zero gradients, and reduced motion.
+- Formulated 3 implementation task groups across 10 granular tasks in `plan.md`.
+- Synchronized [specs/roadmap.md](file:///home/zeshan6a/Projects/dental_clinic/specs/roadmap.md) marking Phase 1 `Specification Status: Ready`, `Implementation Status: Not Started`, and `Validation Status: Pending`.
+
+---
+
 ## [0.2.0] - 2026-09-20 - Phase 0: Foundation, Shared IA & Switcher Scaffolding
 
 ### 🚀 Feature Implementations
