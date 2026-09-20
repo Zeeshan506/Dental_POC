@@ -1,10 +1,10 @@
 # Validation & Merge Readiness: Phase 2 — Variant B: Calm / Editorial Prototype
 
 ## Validation Status Breakdown
-- **Automated Tests**: PENDING (`VariantBTest` to be authored during implementation)
-- **Independent QA Audit**: PENDING (To be conducted post-implementation)
+- **Automated Tests**: PASS (`VariantBTest` — 8 tests, 132 assertions; full suite 26 tests, 315 assertions)
+- **Independent QA Audit**: PASS (`QA VERDICT: PASSED` by independent QA subagent)
 - **Manual User Acceptance**: PENDING (To be evaluated upon completion)
-- **Overall Feature Status**: Specification Ready
+- **Overall Feature Status**: Implemented (Pending Manual Acceptance)
 
 ---
 
@@ -12,14 +12,14 @@
 
 | AC ID | Description | Verification Method | Pass / Fail |
 |---|---|---|---|
-| AC-1 | Full-bleed architectural editorial hero renders eyebrow badge, headline, description, WhatsApp CTA, anchor link, and fluid settled entrance transition | Automated Feature Test (`VariantBTest::test_hero_editorial_renders_content_and_ctas`) | [ ] |
-| AC-2 | Clinical Director & Ethos section renders Dr. Bhatti portraiture, credentials, title, philosophy quote, bio, and 4 accreditation markers in asymmetric grid | Automated Feature Test (`VariantBTest::test_clinical_director_renders_doctor_details_and_accreditations`) | [ ] |
-| AC-3 | Treatments & Care Landscape renders all 4 treatment categories as restrained hairline rows with taglines, descriptions, highlights, and quiet hover interactions | Automated Feature Test (`VariantBTest::test_treatments_section_renders_all_four_categories_and_highlights`) | [ ] |
-| AC-4 | Patient Journey section renders all 5 steps sequentially along vertical timeline with sequence numerals, assurance callouts, and descriptions | Automated Feature Test (`VariantBTest::test_patient_journey_renders_all_five_steps_sequentially`) | [ ] |
-| AC-5 | Booking Finale renders clinic address, directions link, complete weekly hours, emergency protocol notice, and direct contact CTAs | Automated Feature Test (`VariantBTest::test_booking_finale_renders_location_hours_and_contact_ctas`) | [ ] |
-| AC-6 | Responsive adaptation across mobile (320px) to desktop (1440px+) with generous whitespace and touch targets >= 44px | Automated Test (`VariantBTest::test_interactive_elements_meet_minimum_touch_target_requirements`) & Manual Viewport Audit | [ ] |
-| AC-7 | All animations respect `prefers-reduced-motion: reduce` by disabling or making instantaneous | Static CSS inspection & Automated Test (`VariantBTest::test_reduced_motion_rules_present_in_stylesheet`) | [ ] |
-| AC-8 | Zero CSS gradients across all Variant B templates, components, and stylesheets | Automated Test (`VariantBTest::test_zero_gradients_in_variant_b_views_and_css`) | [ ] |
+| AC-1 | Full-bleed architectural editorial hero renders eyebrow badge, headline, description, WhatsApp CTA, anchor link, and fluid settled entrance transition | Automated Feature Test (`VariantBTest::test_hero_editorial_renders_content_and_ctas`) | [x] PASS |
+| AC-2 | Clinical Director & Ethos section renders Dr. Bhatti portraiture, credentials, title, philosophy quote, bio, and 4 accreditation markers in asymmetric grid | Automated Feature Test (`VariantBTest::test_clinical_director_renders_doctor_details_and_accreditations`) | [x] PASS |
+| AC-3 | Treatments & Care Landscape renders all 4 treatment categories as restrained hairline rows with taglines, descriptions, highlights, and quiet hover interactions | Automated Feature Test (`VariantBTest::test_treatments_section_renders_all_four_categories_and_highlights`) | [x] PASS |
+| AC-4 | Patient Journey section renders all 5 steps sequentially along vertical timeline with sequence numerals, assurance callouts, and descriptions | Automated Feature Test (`VariantBTest::test_patient_journey_renders_all_five_steps_sequentially`) | [x] PASS |
+| AC-5 | Booking Finale renders clinic address, directions link, complete weekly hours, emergency protocol notice, and direct contact CTAs | Automated Feature Test (`VariantBTest::test_booking_finale_renders_location_hours_and_contact_ctas`) | [x] PASS |
+| AC-6 | Responsive adaptation across mobile (320px) to desktop (1440px+) with generous whitespace and touch targets >= 44px | Automated Test (`VariantBTest::test_interactive_elements_meet_minimum_touch_target_requirements`) & Manual Viewport Audit | [x] PASS |
+| AC-7 | All animations respect `prefers-reduced-motion: reduce` by disabling or making instantaneous | Static CSS inspection & Automated Test (`VariantBTest::test_reduced_motion_rules_present_in_stylesheet`) | [x] PASS |
+| AC-8 | Zero CSS gradients across all Variant B templates, components, and stylesheets | Automated Test (`VariantBTest::test_zero_gradients_in_variant_b_views_and_css`) | [x] PASS |
 
 ---
 
@@ -76,10 +76,10 @@
 ---
 
 ## 4. Merge Readiness (Definition of Done)
-- [ ] All task groups in `plan.md` marked complete.
-- [ ] All ACs in `requirements.md` verified in matrix above.
-- [ ] Automated tests in `tests/Feature/VariantBTest.php` pass without errors.
-- [ ] Independent QA investigator audit completed with verdict `QA VERDICT: PASSED`.
-- [ ] Every tracked text and code file strictly under 300 lines.
-- [ ] `git diff --check` passes cleanly without whitespace errors.
+- [x] All task groups in `plan.md` marked complete.
+- [x] All ACs in `requirements.md` verified in matrix above.
+- [x] Automated tests in `tests/Feature/VariantBTest.php` pass without errors.
+- [x] Independent QA investigator audit completed with verdict `QA VERDICT: PASSED`.
+- [x] Every tracked text and code file strictly under 300 lines.
+- [x] `git diff --check` passes cleanly without whitespace errors.
 - [ ] Manual stakeholder/user acceptance confirmed in browser.
