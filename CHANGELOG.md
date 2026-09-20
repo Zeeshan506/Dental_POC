@@ -10,6 +10,13 @@ between specification/planning changes and feature implementation.
 
 ## [Unreleased]
 
+### 📋 Specification & Planning Changes
+- **Phase 3 Specification (Dual-Variant Testimonials & Patient Reviews Carousel)**: Established formal specification contract under [specs/2026-09-21-phase-3-testimonials-carousel/](specs/2026-09-21-phase-3-testimonials-carousel/):
+  - Defined business intent, dual-variant visual treatment, desktop popover/mobile modal interaction, constraints, and acceptance criteria (AC-1 through AC-8) in `requirements.md`.
+  - Structured 5 task groups (Review Data Architecture, Variant A 2D Cutout Carousel, Variant B Editorial Carousel, Interactive Popover & Mobile Modal Engine, View Orchestration & Regression Testing) in `plan.md`.
+  - Created acceptance criteria verification matrix and manual verification checklist in `validation.md`.
+  - Synchronized [specs/roadmap.md](specs/roadmap.md) to insert Phase 3 (`Specification Status: Ready`, `Implementation Status: Not Started`, `Validation Status: Pending`) and renumbered subsequent audit phase to Phase 4.
+
 ---
 
 ## [0.4.0] - 2026-09-21 - Phase 2: Variant B: Calm / Editorial Prototype

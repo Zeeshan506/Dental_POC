@@ -154,3 +154,27 @@ Implemented, refined, and validated the complete, interactive frontend prototype
 - **Zero Gradients**: Verified zero gradients across CSS and views.
 - **Touch Targets**: Minimum 44px touch targets verified on all interactive buttons/links.
 - **Git Hygiene**: `git diff --check` passed cleanly.
+
+---
+
+# Walkthrough: Phase 3 Dual-Variant Testimonials & Patient Reviews Carousel Specification
+
+## Context & Purpose
+Specified Phase 3 (Dual-Variant Testimonials & Patient Reviews Carousel) in accordance with user request from [inbox.md](file:///home/zeshan6a/Projects/dental_clinic/inbox.md), [specs/mission.md](file:///home/zeshan6a/Projects/dental_clinic/specs/mission.md), and [specs/roadmap.md](file:///home/zeshan6a/Projects/dental_clinic/specs/roadmap.md). This phase introduces a horizontally navigable review carousel to both Variant A and Variant B with locked card heights, desktop hover popovers, and mobile tap modals.
+
+## Branch & Changes
+- **Branch**: `replanning`
+- **Specification Directory**: `specs/2026-09-21-phase-3-testimonials-carousel/`
+- **Files Created**:
+  - `specs/2026-09-21-phase-3-testimonials-carousel/requirements.md` (90 lines): Context, dual-variant visual treatment, desktop popover/mobile modal interaction, non-goals, 8 Acceptance Criteria (AC-1 through AC-8), edge cases.
+  - `specs/2026-09-21-phase-3-testimonials-carousel/plan.md` (57 lines): 5 task groups across 10 granular tasks covering review schema/data architecture, Variant A 2D cutout carousel, Variant B editorial carousel, interaction engine, and automated feature testing.
+  - `specs/2026-09-21-phase-3-testimonials-carousel/validation.md` (69 lines): Verification matrix for AC-1 through AC-8, planned test cases in `TestimonialsCarouselTest`, 5-point manual verification checklist, and merge readiness checklist.
+- **Files Modified**:
+  - `specs/roadmap.md`: Inserted Phase 3 row and section with link to spec, AC-1 to AC-8, and `Specification Status: Ready`, `Implementation Status: Not Started`, `Validation Status: Pending`; renumbered subsequent audit phase to Phase 4.
+  - `CHANGELOG.md`: Added `[Unreleased]` entry with Phase 3 specification details.
+  - `.agents/walkthrough.md`: Documented Phase 3 specification walkthrough.
+
+## Validation Results
+- **Modularity Cap**: All spec files strictly under 95 lines (strict cap: 300 lines).
+- **Git Hygiene**: `git diff --check` passed cleanly.
+- **Zero Code Modification**: Strictly zero application source code touched during feature specing.
