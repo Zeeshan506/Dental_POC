@@ -178,3 +178,43 @@ Specified Phase 3 (Dual-Variant Testimonials & Patient Reviews Carousel) in acco
 - **Modularity Cap**: All spec files strictly under 95 lines (strict cap: 300 lines).
 - **Git Hygiene**: `git diff --check` passed cleanly.
 - **Zero Code Modification**: Strictly zero application source code touched during feature specing.
+
+---
+
+# Walkthrough: Phase 3 Dual-Variant Testimonials & Patient Reviews Carousel Implementation
+
+## Context & Purpose
+Implemented Phase 3 (Dual-Variant Testimonials & Patient Reviews Carousel) in accordance with [specs/2026-09-21-phase-3-testimonials-carousel/](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-21-phase-3-testimonials-carousel/). Both variants now feature horizontally navigable carousels consuming centralized clinical review data from `config/clinic.php`, with locked card heights (`line-clamp-3`), desktop hover popovers with hover bridge, mobile tap modals with backdrop and Escape dismissal, and external Google Reviews links.
+
+## Branch & Changes
+- **Branch**: `feat/phase-3-testimonials-carousel`
+- **Files Created**:
+  - `app/Support/ClinicReviews.php` (68 lines): Normalized review access (`all()`, `find()`) with null-safe fallbacks.
+  - `resources/views/components/shared/star-rating.blade.php` (27 lines): Reusable accessible SVG star rating component.
+  - `resources/views/components/shared/review-modal.blade.php` (111 lines): Shared accessible desktop popover panel and mobile modal dialog.
+  - `resources/views/components/variant-a/testimonials-carousel.blade.php` (71 lines): Variant A 2D cutout carousel container with stone navigation buttons.
+  - `resources/views/components/variant-a/review-card.blade.php` (86 lines): Warm stone review card with star ratings, clamped excerpt, and attribution.
+  - `resources/views/components/variant-b/testimonials-carousel.blade.php` (70 lines): Variant B editorial carousel container with hairline navigation controls.
+  - `resources/views/components/variant-b/review-card.blade.php` (86 lines): Calm editorial review card with subtle star ratings, clamped excerpt, and attribution.
+  - `resources/js/testimonials.js` (249 lines): Carousel scrolling, desktop popover hover buffer/viewport clamping, and mobile modal open/close handling.
+  - `tests/Feature/TestimonialsCarouselTest.php` (170 lines): 7 feature tests validating AC-1 through AC-8.
+- **Files Modified**:
+  - `config/clinic.php` (187 lines): Added 5 structured placeholder patient reviews across care disciplines.
+  - `resources/js/app.js` (1 line): Imported `./testimonials.js`.
+  - `resources/views/variants/a/index.blade.php` (72 lines): Integrated `<x-variant-a.testimonials-carousel />`.
+  - `resources/views/variants/b/index.blade.php` (29 lines): Integrated `<x-variant-b.testimonials-carousel />`.
+  - `specs/roadmap.md`: Updated Phase 3 to `Implementation: Implemented`.
+  - `specs/2026-09-21-phase-3-testimonials-carousel/plan.md`: Marked all 5 task groups complete.
+  - `specs/2026-09-21-phase-3-testimonials-carousel/validation.md`: Recorded test results, verification matrix pass, and QA pass.
+  - `CHANGELOG.md`: Added feature implementation and testing details.
+
+## Validation Results
+- **Automated Tests**: 33 passed, 0 failed, 531 assertions (`php artisan test`).
+- **Feature Tests**: 7 passed, 0 failed, 216 assertions (`php artisan test --filter=TestimonialsCarouselTest`).
+- **Independent QA Investigator**: `QA VERDICT: PASSED` (all AC-1 through AC-8 verified with explicit evidence).
+- **Code Style**: `vendor/bin/pint --dirty --format agent` passed.
+- **Asset Compilation**: `npm run build` compiled client bundle in 228ms.
+- **Modularity Cap**: All 13 modified and created files strictly <= 249 lines (cap: 300 lines).
+- **Zero Gradients**: Verified zero CSS gradients across all components.
+- **Touch Targets**: All carousel buttons and modal triggers meet >= 44x44px.
+- **Git Hygiene**: `git diff --check` passed cleanly.

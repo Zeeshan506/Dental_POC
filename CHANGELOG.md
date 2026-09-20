@@ -17,6 +17,24 @@ between specification/planning changes and feature implementation.
   - Created acceptance criteria verification matrix and manual verification checklist in `validation.md`.
   - Synchronized [specs/roadmap.md](specs/roadmap.md) to insert Phase 3 (`Specification Status: Ready`, `Implementation Status: Not Started`, `Validation Status: Pending`) and renumbered subsequent audit phase to Phase 4.
 
+### 🚀 Feature Implementations
+- **Phase 3: Dual-Variant Testimonials & Patient Reviews Carousel**:
+  - **Clinical Reviews Data Architecture**: Configured 5 structured placeholder reviews in `config/clinic.php` spanning preventative, cosmetic, restorative, and pediatric care with `id`, `patient_name`, `rating` (1–5), `excerpt`, `full_text`, `source` ("Google Reviews"), `source_url`, `date`, and `treatment`.
+  - **ClinicReviews Support Service**: Created `app/Support/ClinicReviews.php` providing normalized review access (`all()`, `find()`) and robust null-safe defaults.
+  - **Reusable Star Rating Component**: Created `resources/views/components/shared/star-rating.blade.php` rendering accessible SVG star ratings across custom sizes.
+  - **Variant A Expressive 2D Testimonials Carousel**: Created `resources/views/components/variant-a/testimonials-carousel.blade.php` and `review-card.blade.php` featuring 2D cutout warm stone card elevation (`bg-stone-warm-50`, `border-stone-warm-200`), tactile star ratings, line-clamped excerpts (`line-clamp-3`), and restrained 2D stone navigation controls (>= 44px touch targets).
+  - **Variant B Calm Editorial Testimonials Carousel**: Created `resources/views/components/variant-b/testimonials-carousel.blade.php` and `review-card.blade.php` featuring understated editorial framing (`04 / Perspectives`), hairline borders (`border-stone-warm-200`), subtle star ratings, line-clamped excerpts, and circular hairline navigation buttons.
+  - **Interactive Popover & Mobile Modal Engine**: Created `resources/views/components/shared/review-modal.blade.php` and `resources/js/testimonials.js`:
+    - Desktop: Hovering/focusing review card triggers floating popover with hover bridge buffer, viewport edge collision clamping, internal scrolling (`overflow-y-auto`), and zero carousel layout shift.
+    - Mobile: Tapping card opens accessible modal/drawer with explicit close button (`×`), backdrop dismissal, and `Escape` key support.
+    - External Links: Google Reviews source links open destination in new tab (`target="_blank" rel="noopener noreferrer"`).
+  - **View Orchestration**: Integrated carousels into `resources/views/variants/a/index.blade.php` and `resources/views/variants/b/index.blade.php` between Patient Journey and Booking Finale.
+
+### 🧪 Automated Regression & Testing
+- Created `tests/Feature/TestimonialsCarouselTest.php` covering AC-1 through AC-8 (7 tests, 216 assertions passing cleanly).
+- Full test suite passing with 33 tests and 531 assertions.
+- Independent QA investigator audit completed with verdict `QA VERDICT: PASSED`.
+
 ---
 
 ## [0.4.0] - 2026-09-21 - Phase 2: Variant B: Calm / Editorial Prototype

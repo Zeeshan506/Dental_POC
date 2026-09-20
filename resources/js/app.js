@@ -1,1 +1,1 @@
-//
+import './testimonials.js';

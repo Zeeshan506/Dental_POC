@@ -61,6 +61,9 @@
             </div>
         </section>
 
+        <!-- Testimonials & Patient Reviews Carousel (Phase 3) -->
+        <x-variant-a.testimonials-carousel />
+
         <!-- Chapter 5: Location, Hours & Booking Finale (AC-5) -->
         <x-variant-a.booking-finale />
     </main>
