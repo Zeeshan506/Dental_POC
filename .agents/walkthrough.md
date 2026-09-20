@@ -93,3 +93,64 @@ Implemented and refined the full interactive prototype for Variant A (Expressive
 - **Touch Targets**: Minimum 44px touch targets verified on all interactive buttons/links.
 - **Modularity Cap**: All tracked files strictly under 180 lines (cap: 300 lines).
 - **Git Hygiene**: `git diff --check` passed cleanly.
+
+---
+
+# Walkthrough: Phase 2 Variant B: Calm / Editorial Prototype Specification
+
+## Context & Purpose
+Specified Phase 2 (Variant B: Calm / Editorial Prototype) in accordance with [specs/mission.md](file:///home/zeshan6a/Projects/dental_clinic/specs/mission.md) and [specs/roadmap.md](file:///home/zeshan6a/Projects/dental_clinic/specs/roadmap.md).
+
+## Branch & Changes
+- **Branch**: `replanning`
+- **Specification Directory**: `specs/2026-09-20-phase-2-variant-b-calm-editorial/`
+- **Files Created**:
+  - `specs/2026-09-20-phase-2-variant-b-calm-editorial/requirements.md` (94 lines): Context, 5 core chapters in-scope, non-goals, architectural constraints, 8 Acceptance Criteria (AC-1 through AC-8), and edge cases.
+  - `specs/2026-09-20-phase-2-variant-b-calm-editorial/plan.md` (61 lines): 3 task groups across 10 granular tasks covering component architecture, layout composition, animation tokens, and automated feature testing.
+  - `specs/2026-09-20-phase-2-variant-b-calm-editorial/validation.md` (85 lines): Verification matrix for AC-1 through AC-8, planned test cases in `VariantBTest`, 9-point manual checklist, and merge readiness checklist.
+- **Files Modified**:
+  - `specs/roadmap.md`: Updated Phase 2 row and section with link to spec, AC-1 to AC-8, and `Specification Status: Ready`, `Implementation Status: Not Started`, `Validation Status: Pending`.
+  - `CHANGELOG.md`: Added `[Unreleased]` entry with Phase 2 specification details.
+  - `.agents/walkthrough.md`: Documented Phase 2 specification walkthrough.
+
+## Validation Results
+- **Modularity Cap**: All spec files under 95 lines (strict cap: 300 lines).
+- **Git Hygiene**: `git diff --check` passed cleanly.
+- **Zero Code Modification**: Strictly zero application source code touched during feature specing.
+
+---
+
+# Walkthrough: Phase 2 Variant B: Calm / Editorial Prototype Implementation & Merge
+
+## Context & Purpose
+Implemented, refined, and validated the complete, interactive frontend prototype for Variant B (Calm / Editorial) of Dr. Bhatti & Associates Dental Clinic in accordance with [specs/2026-09-20-phase-2-variant-b-calm-editorial/](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-2-variant-b-calm-editorial/).
+
+## Branch & Changes
+- **Feature Branch**: `feat/phase-2-variant-b-calm-editorial`
+- **Target Spec**: `specs/2026-09-20-phase-2-variant-b-calm-editorial/`
+- **Files Created**:
+  - `resources/views/components/variant-b/hero-editorial.blade.php` (41 lines): Full-width, centered editorial hero with generous whitespace, single strong message, restrained supporting copy, and unaggressive CTAs referencing `dentaldesignsd.com`.
+  - `resources/views/components/variant-b/doctor-portrait.blade.php` (66 lines): Asymmetric 12-column editorial grid pairing Dr. Bhatti portraiture with ethos, philosophy quote with hairline divider, and 4 accreditation markers without artificial badges.
+  - `resources/views/components/variant-b/treatment-row.blade.php` (59 lines): Restrained hairline row layout rendering 4 treatment categories with taglines, descriptions, and 16 procedural highlights in an airy typographic list.
+  - `resources/views/components/variant-b/journey-timeline.blade.php` (78 lines): Quiet vertical timeline with hairline connectors, sequence numerals (01-05), and clinical protocol assurance callouts.
+  - `resources/views/components/variant-b/booking-finale.blade.php` (125 lines): Clean, grounded clinic location card with OpenStreetMap cartography, Google Maps directions link, operating schedule, emergency protocol notice, and consultation dialogue CTAs.
+  - `tests/Feature/VariantBTest.php` (157 lines): 8 automated feature tests validating AC-1 through AC-8.
+- **Files Modified**:
+  - `resources/views/variants/b/index.blade.php` (26 lines): Orchestrates all 5 chapters in under 30 lines.
+  - `resources/css/app.css` (82 lines): Added `@keyframes editorial-settle` (subtle 8px reveal, 750ms `cubic-bezier(0.2, 0.8, 0.2, 1)`), `.animate-editorial-settle`, and reduced-motion reset.
+  - `specs/roadmap.md`: Updated Phase 2 to `Validation Status: Validated`.
+  - `specs/2026-09-20-phase-2-variant-b-calm-editorial/plan.md`: Marked all 3 task groups complete.
+  - `specs/2026-09-20-phase-2-variant-b-calm-editorial/validation.md`: Recorded manual user acceptance pass and `Overall Feature Status: Validated & Merged`.
+  - `CHANGELOG.md`: Added release notes for `[0.4.0]`.
+
+## Validation Results
+- **Automated Tests**: 26 tests, 315 assertions passing cleanly (`php artisan test`).
+- **Feature Tests**: 8 tests, 132 assertions passing cleanly (`php artisan test --filter=VariantBTest`).
+- **Independent QA Investigator**: `QA VERDICT: PASSED` (AC-1 through AC-8 verified with evidence).
+- **Manual User Acceptance**: Confirmed via `/finish-spec`.
+- **Code Style**: `vendor/bin/pint --format agent` passed cleanly.
+- **Asset Compilation**: `npm run build` compiled in 266ms.
+- **Modularity Cap**: All tracked files strictly under 160 lines (cap: 300 lines).
+- **Zero Gradients**: Verified zero gradients across CSS and views.
+- **Touch Targets**: Minimum 44px touch targets verified on all interactive buttons/links.
+- **Git Hygiene**: `git diff --check` passed cleanly.

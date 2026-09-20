@@ -12,6 +12,45 @@ between specification/planning changes and feature implementation.
 
 ---
 
+## [0.4.0] - 2026-09-21 - Phase 2: Variant B: Calm / Editorial Prototype
+
+### 🚀 Feature Implementations
+- **Chapter 1: Full-Bleed Architectural Editorial Hero Composition**: Created `resources/views/components/variant-b/hero-editorial.blade.php` featuring eyebrow badge ("Variant B • Calm Editorial Direction"), headline, description from `config('clinic.description')`, primary WhatsApp CTA ("Begin Consultation Dialogue"), secondary Treatments anchor link ("View Clinical Disciplines"), serene architectural imagery framing, and `.animate-editorial-settle` entrance transition.
+- **Chapter 2: Clinical Director & Ethos Section**: Created `resources/views/components/variant-b/doctor-portrait.blade.php` rendering Dr. Tariq Bhatti's credentials (`DDS, FAGD, FICOI`), leadership title, prominent philosophy quote block with delicate hairline border, bio, and 4 accreditation markers (`FAGD`, `FICOI`, `AACD`, `Faculty Clinical Advisor`) in an asymmetric 12-column editorial grid.
+- **Chapter 3: Treatments & Care Landscape Section**: Created `resources/views/components/variant-b/treatment-row.blade.php` rendering 4 distinct treatment categories (Preventative, Cosmetic, Restorative, Pediatric) as restrained hairline rows with taglines, descriptions, 16 procedural highlights, and quiet hover interactions without heavy drop shadows.
+- **Chapter 4: The Patient Journey & Stories Section**: Created `resources/views/components/variant-b/journey-timeline.blade.php` presenting 5 sequential care steps (01 to 05) along a quiet vertical timeline with hairline connectors, architectural sequence numerals, and reassuring clinical protocol callouts.
+- **Chapter 5: Clinic Location, Hours & Editorial Booking Finale**: Created `resources/views/components/variant-b/booking-finale.blade.php` with Sutter St clinic location card, OpenStreetMap cartography map container, directions link, complete weekly operating schedule, 24/7 emergency care protocol notice, and consultation inquiry dialogue with direct WhatsApp and telephone concierge links.
+- **Variant B Page Orchestration**: Refactored `resources/views/variants/b/index.blade.php` to cleanly orchestrate all 5 components in under 30 lines.
+- **Motion & Reduced Motion Styling**: Added `@keyframes editorial-settle` and `.animate-editorial-settle` to `resources/css/app.css` with `@media (prefers-reduced-motion: reduce)` disabling motion.
+- **Variant B Editorial Refinement (Pacing, Whitespace & Reference Calibration)**: Refined Variant B referencing `dentaldesignsd.com`:
+  - Removed right-side split card and pseudo-technical coordinates in `hero-editorial.blade.php`, adopting a full-width, centered, spacious composition with generous vertical padding and unaggressive CTAs.
+  - Cleaned `doctor-portrait.blade.php` of artificial plate numbers and badges, focusing on authentic portraiture, credentials, philosophy, and accreditations.
+  - Cleaned `treatment-row.blade.php` of boxed highlight cards, integrating procedural highlights into an airy, understated editorial list.
+  - Cleaned `booking-finale.blade.php` of artificial badges, ensuring a serene, grounded location and booking presentation.
+  - Calibrated `.animate-editorial-settle` to a subtle 8px reveal over 750ms with `cubic-bezier(0.2, 0.8, 0.2, 1)` easing.
+
+### 🧪 Automated Regression & Testing
+- Created `tests/Feature/VariantBTest.php` covering AC-1 through AC-8 (8 tests, 132 assertions passing cleanly).
+- Verified full test suite (`php artisan test`): 26 tests, 315 assertions passing with zero regressions.
+- Verified asset compilation (`npm run build`) in 218ms.
+- Verified code formatting (`vendor/bin/pint --dirty --format agent`).
+- Verified zero git diff whitespace issues (`git diff --check`).
+
+### 🔍 Independent QA Audit
+- Independent QA Investigator (`8fe89906-3894-42a9-911c-a2c21a64ffaa`) audited branch diff, requirements, test suites, and line counts.
+- Received **`QA VERDICT: PASSED`** with explicit evidence cited for all 8 Acceptance Criteria.
+
+### 📋 Specification & Planning Changes
+- **Phase 2 Specification (Variant B: Calm / Editorial Prototype)**: Established formal specification contract under [specs/2026-09-20-phase-2-variant-b-calm-editorial/](specs/2026-09-20-phase-2-variant-b-calm-editorial/):
+  - Defined business context, in-scope chapters, constraints, and acceptance criteria (AC-1 through AC-8) in `requirements.md`.
+  - Structured 3 task groups (Component Architecture, View Orchestration & Animation Tokens, Automated Testing & Verification) in `plan.md`.
+  - Created acceptance criteria verification matrix and manual verification checklist in `validation.md`.
+- Confirmed manual stakeholder acceptance via `/finish-spec`.
+- Synchronized [specs/roadmap.md](specs/roadmap.md) to mark Phase 2 `Validation Status: Validated`.
+- Merged `feat/phase-2-variant-b-calm-editorial` into `main`.
+
+---
+
 ## [0.3.0] - 2026-09-20 - Phase 1: Variant A: Expressive / 2D Cutout Prototype
 
 ### 🚀 Feature Implementations
