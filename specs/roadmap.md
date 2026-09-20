@@ -8,7 +8,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a stric
 | Phase | Title | Specification Path | Acceptance Criteria | Specification Status | Implementation Status | Validation Status |
 |---|---|---|---|---|---|---|
 | Phase 0 | Foundation, Shared IA & Switcher Scaffolding | [Phase 0 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-0-foundation-ia-switcher/) | AC-1 to AC-6 | Ready | Implemented | Validated |
-| Phase 1 | Variant A: Expressive / 2D Cutout Prototype | [Phase 1 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-1-variant-a-expressive-cutout/) | AC-1 to AC-8 | Ready | Not Started | Pending |
+| Phase 1 | Variant A: Expressive / 2D Cutout Prototype | [Phase 1 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-1-variant-a-expressive-cutout/) | AC-1 to AC-8 | Ready | Implemented | Validated |
 | Phase 2 | Variant B: Calm / Editorial Prototype | TBD | TBD | Pending | Not Started | Pending |
 | Phase 3 | Cross-Variant Polish, Accessibility & Presentation Audit | TBD | TBD | Pending | Not Started | Pending |
 
@@ -29,12 +29,12 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a stric
 ### Phase 1: Variant A: Expressive / 2D Cutout Prototype
 - **Specification**: [specs/2026-09-20-phase-1-variant-a-expressive-cutout/](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-1-variant-a-expressive-cutout/)
 - **Acceptance Criteria**: AC-1 through AC-8
-- **Status**: Specification: Ready | Implementation: Not Started | Validation: Pending
-- [ ] **Task 1.1**: Build full-width 2D cutout hero composition with clinic value proposition, primary CTAs, and entrance motion that settles cleanly.
-- [ ] **Task 1.2**: Implement Dr. Bhatti philosophy & credentials section utilizing layered warm stone cards and clinical accreditation markers.
-- [ ] **Task 1.3**: Implement Treatments & Care Landscape section featuring expressive 2D treatment cards with calm hover elevations.
-- [ ] **Task 1.4**: Implement The Patient Journey & Stories section with numbered sequence nodes and patient trust indicators.
-- [ ] **Task 1.5**: Implement Clinic Location, Hours, and Booking Finale with architectural map integration and direct WhatsApp/Phone CTAs.
+- **Status**: Specification: Ready | Implementation: Implemented | Validation: Validated
+- [x] **Task 1.1**: Build full-width 2D cutout hero composition with clinic value proposition, primary CTAs, and entrance motion that settles cleanly.
+- [x] **Task 1.2**: Implement Dr. Bhatti philosophy & credentials section utilizing layered warm stone cards and clinical accreditation markers.
+- [x] **Task 1.3**: Implement Treatments & Care Landscape section featuring expressive 2D treatment cards with calm hover elevations.
+- [x] **Task 1.4**: Implement The Patient Journey & Stories section with numbered sequence nodes and patient trust indicators.
+- [x] **Task 1.5**: Implement Clinic Location, Hours, and Booking Finale with architectural map integration and direct WhatsApp/Phone CTAs.
 - **Deliverable / Verification**: Variant A is fully interactive, responsive across all breakpoints, contains zero gradients, and all animations settle without looping.
 
 ---
