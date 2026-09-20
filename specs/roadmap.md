@@ -7,7 +7,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a stric
 
 | Phase | Title | Specification Path | Acceptance Criteria | Specification Status | Implementation Status | Validation Status |
 |---|---|---|---|---|---|---|
-| Phase 0 | Foundation, Shared IA & Switcher Scaffolding | [Phase 0 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-0-foundation-ia-switcher/) | AC-1 to AC-6 | Ready | Not Started | Pending |
+| Phase 0 | Foundation, Shared IA & Switcher Scaffolding | [Phase 0 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-0-foundation-ia-switcher/) | AC-1 to AC-6 | Ready | Implemented | Pending |
 | Phase 1 | Variant A: Expressive / 2D Cutout Prototype | TBD | TBD | Pending | Not Started | Pending |
 | Phase 2 | Variant B: Calm / Editorial Prototype | TBD | TBD | Pending | Not Started | Pending |
 | Phase 3 | Cross-Variant Polish, Accessibility & Presentation Audit | TBD | TBD | Pending | Not Started | Pending |
@@ -17,11 +17,11 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a stric
 ### Phase 0: Foundation, Shared IA & Switcher Scaffolding
 - **Specification**: [specs/2026-09-20-phase-0-foundation-ia-switcher/](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-0-foundation-ia-switcher/)
 - **Acceptance Criteria**: AC-1 through AC-6
-- **Status**: Specification: Ready | Implementation: Not Started | Validation: Pending
-- [ ] **Task 0.1**: Configure typography (Source Serif 4, Work Sans) and core color palette in Tailwind CSS v4 (`resources/css/app.css` & `vite.config.js`).
-- [ ] **Task 0.2**: Create central clinical content repository (`config/clinic.php`) containing all clinic copy, doctor credentials, treatment details, patient journey steps, contact info, and clinic hours.
-- [ ] **Task 0.3**: Create master layout shell (`resources/views/layouts/app.blade.php`) and persistent floating variant switcher (`resources/views/components/shared/variant-switcher.blade.php`) supporting `?variant=a|b` and session persistence.
-- [ ] **Task 0.4**: Implement web route in `routes/web.php` to resolve active variant and route to appropriate view.
+- **Status**: Specification: Ready | Implementation: Implemented | Validation: Pending
+- [x] **Task 0.1**: Configure typography (Source Serif 4, Work Sans) and core color palette in Tailwind CSS v4 (`resources/css/app.css` & `vite.config.js`).
+- [x] **Task 0.2**: Create central clinical content repository (`config/clinic.php`) containing all clinic copy, doctor credentials, treatment details, patient journey steps, contact info, and clinic hours.
+- [x] **Task 0.3**: Create master layout shell (`resources/views/layouts/app.blade.php`) and persistent floating variant switcher (`resources/views/components/shared/variant-switcher.blade.php`) supporting `?variant=a|b` and session persistence.
+- [x] **Task 0.4**: Implement web route in `routes/web.php` to resolve active variant and route to appropriate view.
 - **Deliverable / Verification**: Navigating to `/?variant=a` and `/?variant=b` renders basic scaffolded layout shells with working switcher toolbar and shared header/footer.
 
 ---
