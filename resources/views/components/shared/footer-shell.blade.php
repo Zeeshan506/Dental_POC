@@ -1,7 +1,13 @@
+@props(['variant' => null])
 @php
     $clinic = config('clinic');
+    $isEditorial = $variant === 'b';
 @endphp
-<footer class="w-full bg-stone-warm-100 border-t border-stone-warm-200 mt-auto" data-motion-stagger="80">
+<footer @class([
+    'w-full border-t mt-auto' => true,
+    'bg-charcoal-900 border-charcoal-700' => $isEditorial,
+    'bg-stone-warm-100 border-stone-warm-200' => ! $isEditorial,
+]) @if($isEditorial) data-variant-footer="editorial" @endif data-motion-stagger="80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
             <!-- Brand & Bio -->
