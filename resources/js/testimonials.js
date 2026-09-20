@@ -3,7 +3,7 @@
  * Standard centered modal dialog for full review inspection and smooth carousel navigation.
  */
 
-function initTestimonials() {
+export function initTestimonials() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // --- Carousel Navigation Controls ---
@@ -146,10 +146,4 @@ function initTestimonials() {
             }
         });
     });
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTestimonials);
-} else {
-    initTestimonials();
 }

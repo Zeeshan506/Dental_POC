@@ -20,7 +20,7 @@
     $label = $categoryLabels[$id] ?? 'Clinical Care';
 @endphp
 
-<article class="group relative flex flex-col justify-between rounded-2xl bg-stone-warm-100/90 border border-stone-warm-200 p-7 sm:p-8 hover:border-stone-warm-400 hover:-translate-y-1 hover:bg-stone-warm-100 transition-all duration-200 focus-within:ring-2 focus-within:ring-charcoal-900" data-testid="treatment-tile-{{ $id }}">
+<article class="group relative flex flex-col justify-between rounded-2xl bg-stone-warm-100/90 border border-stone-warm-200 p-7 sm:p-8 hover:border-stone-warm-400 hover:-translate-y-1 hover:bg-stone-warm-100 transition-all duration-200 focus-within:ring-2 focus-within:ring-charcoal-900" data-motion="card" data-motion-interactive data-testid="treatment-tile-{{ $id }}">
     <!-- Card Header -->
     <div>
         <!-- Category & Architectural Index -->

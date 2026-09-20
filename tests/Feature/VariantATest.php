@@ -19,7 +19,7 @@ class VariantATest extends TestCase
         $response->assertSee(config('clinic.contact.whatsapp_url'));
         $response->assertSee('Explore Treatments');
         $response->assertSee('href="#treatments"', false);
-        $response->assertSee('animate-cutout-settle');
+        $response->assertSee('data-motion="headline"', false);
     }
 
     public function test_clinical_leadership_renders_doctor_details_and_accreditations(): void
@@ -122,8 +122,31 @@ class VariantATest extends TestCase
 
         $css = file_get_contents($cssPath);
         $this->assertStringContainsString('prefers-reduced-motion: reduce', $css);
+        $this->assertStringContainsString('.motion-ready [data-motion].motion-pending', $css);
         $this->assertStringContainsString('.animate-cutout-settle', $css);
         $this->assertStringContainsString('animation: none !important', $css);
+    }
+
+    public function test_variant_a_renders_semantic_motion_hooks_for_each_chapter(): void
+    {
+        $response = $this->get('/?variant=a');
+
+        $response->assertSee('data-motion="headline"', false);
+        $response->assertSee('data-motion="mask"', false);
+        $response->assertSee('data-motion="timeline"', false);
+        $response->assertSee('data-motion-stagger="90"', false);
+        $response->assertSee('data-motion-interactive', false);
+    }
+
+    public function test_shared_motion_hooks_render_for_both_variants_without_server_side_hidden_states(): void
+    {
+        foreach (['a', 'b'] as $variant) {
+            $response = $this->get('/?variant='.$variant);
+
+            $response->assertSee('data-motion="fade"', false);
+            $response->assertSee('data-testid="variant-switcher"', false);
+            $response->assertDontSee('motion-pending', false);
+        }
     }
 
     public function test_zero_gradients_in_variant_a_views_and_css(): void

@@ -9,6 +9,8 @@
     role="region"
     aria-label="Design Variant Switcher"
     data-testid="variant-switcher"
+    data-motion="rise"
+    data-motion-delay="180"
 >
     <nav class="flex items-center gap-1 p-1.5 bg-charcoal-900 border border-charcoal-700 rounded-full shadow-2xl" aria-label="Variant Navigation">
         <!-- Variant A Pill -->
@@ -21,6 +23,7 @@
             ])
             aria-current="{{ $currentVariant === 'a' ? 'page' : 'false' }}"
             data-testid="switcher-variant-a"
+            data-motion-interactive
         >
             <span class="inline-block w-2 h-2 rounded-full mr-2 {{ $currentVariant === 'a' ? 'bg-brass-500' : 'bg-charcoal-700' }}" aria-hidden="true"></span>
             <span>Variant A: Expressive 2D</span>
@@ -36,6 +39,7 @@
             ])
             aria-current="{{ $currentVariant === 'b' ? 'page' : 'false' }}"
             data-testid="switcher-variant-b"
+            data-motion-interactive
         >
             <span class="inline-block w-2 h-2 rounded-full mr-2 {{ $currentVariant === 'b' ? 'bg-brass-500' : 'bg-charcoal-700' }}" aria-hidden="true"></span>
             <span>Variant B: Calm Editorial</span>
