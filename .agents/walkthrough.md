@@ -220,3 +220,34 @@ Implemented Phase 3 (Dual-Variant Testimonials & Patient Reviews Carousel) in ac
 - **Zero Gradients**: Verified zero CSS gradients across all components.
 - **Touch Targets**: All carousel buttons and modal triggers meet >= 44x44px.
 - **Git Hygiene**: `git diff --check` passed cleanly.
+
+---
+
+# Walkthrough: Phase 4 Motion Foundation & Variant A Site-Wide Choreography
+
+## Context & Purpose
+Implemented and finalized Phase 4 (Motion Foundation & Variant A Site-Wide Choreography) in accordance with [specs/2026-09-21-phase-4-motion-foundation-variant-a/](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-21-phase-4-motion-foundation-variant-a/). This introduces a centralized observer hook system using Motion Mini, structured semantic data attributes (`data-motion-enter`, `data-motion-group`, `data-motion-delay`), tactile 2D entrance choreography for Variant A, and strict `prefers-reduced-motion` compliance.
+
+## Branch & Changes
+- **Branch**: `fix/phase-4-motion-foundation-variant-a`
+- **Files Created**:
+  - `specs/2026-09-21-phase-4-motion-foundation-variant-a/requirements.md` (95 lines)
+  - `specs/2026-09-21-phase-4-motion-foundation-variant-a/plan.md` (29 lines)
+  - `specs/2026-09-21-phase-4-motion-foundation-variant-a/validation.md` (50 lines)
+- **Files Modified**:
+  - `package.json` & `package-lock.json`: Added `motion` dependency.
+  - `resources/js/app.js` (170 lines): Centralized semantic motion observer hook engine with no-JS fallback.
+  - `resources/css/app.css` (121 lines): Added CSS motion primitives and timing tokens with reduced-motion overrides.
+  - `resources/views/variants/a/index.blade.php`: Choreographed section entrance hooks.
+  - `resources/views/components/variant-a/*` & `shared/*`: Annotated with semantic motion attributes.
+  - `tests/Feature/VariantATest.php` (201 lines): Extended with motion hook and accessibility test assertions.
+  - `specs/roadmap.md`: Updated Phase 4 to `Validation: Validated`.
+  - `CHANGELOG.md`: Added release notes for version `[0.6.0]`.
+
+## Validation Results
+- **Automated Tests**: 35 passed, 0 failed, 549 assertions (`php artisan test`).
+- **Pint Formatting**: Passed (`vendor/bin/pint --dirty --format agent`).
+- **Asset Compilation**: `npm run build` compiled client bundle in 631ms.
+- **Validation Status**: `Validation: Validated` confirmed via `/finish-spec`.
+- **Modularity Cap**: All modified files strictly <= 201 lines (limit: 300 lines).
+- **Git Hygiene**: `git diff --check` passed cleanly.
