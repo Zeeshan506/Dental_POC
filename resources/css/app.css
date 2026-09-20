@@ -32,3 +32,35 @@
     --color-sage-500: #6f8272;
     --color-sage-800: #354337;
 }
+
+@keyframes cutout-settle {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-cutout-settle {
+    animation: cutout-settle 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .animate-cutout-settle {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
