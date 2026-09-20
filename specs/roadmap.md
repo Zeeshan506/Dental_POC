@@ -9,7 +9,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a stric
 |---|---|---|---|---|---|---|
 | Phase 0 | Foundation, Shared IA & Switcher Scaffolding | [Phase 0 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-0-foundation-ia-switcher/) | AC-1 to AC-6 | Ready | Implemented | Validated |
 | Phase 1 | Variant A: Expressive / 2D Cutout Prototype | [Phase 1 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-1-variant-a-expressive-cutout/) | AC-1 to AC-8 | Ready | Implemented | Validated |
-| Phase 2 | Variant B: Calm / Editorial Prototype | [Phase 2 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-2-variant-b-calm-editorial/) | AC-1 to AC-8 | Ready | Implemented | Pending |
+| Phase 2 | Variant B: Calm / Editorial Prototype | [Phase 2 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-2-variant-b-calm-editorial/) | AC-1 to AC-8 | Ready | Implemented | Validated |
 | Phase 3 | Cross-Variant Polish, Accessibility & Presentation Audit | TBD | TBD | Pending | Not Started | Pending |
 
 ---
@@ -42,7 +42,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a stric
 ### Phase 2: Variant B: Calm / Editorial Prototype
 - **Specification**: [specs/2026-09-20-phase-2-variant-b-calm-editorial/](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-2-variant-b-calm-editorial/)
 - **Acceptance Criteria**: AC-1 through AC-8
-- **Status**: Specification: Ready | Implementation: Implemented | Validation: Pending
+- **Status**: Specification: Ready | Implementation: Implemented | Validation: Validated
 - [x] **Task 2.1**: Build full-bleed architectural editorial hero composition inspired by `dentaldesignsd.com`, featuring serene photography and high-contrast typography.
 - [x] **Task 2.2**: Implement Dr. Bhatti editorial profile section pairing portraiture with clinical director ethos in an asymmetric grid.
 - [x] **Task 2.3**: Implement Treatments & Care Landscape using restrained hairline rows, subtle dividers, and minimal typographic emphasis.

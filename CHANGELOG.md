@@ -10,6 +10,10 @@ between specification/planning changes and feature implementation.
 
 ## [Unreleased]
 
+---
+
+## [0.4.0] - 2026-09-21 - Phase 2: Variant B: Calm / Editorial Prototype
+
 ### 🚀 Feature Implementations
 - **Chapter 1: Full-Bleed Architectural Editorial Hero Composition**: Created `resources/views/components/variant-b/hero-editorial.blade.php` featuring eyebrow badge ("Variant B • Calm Editorial Direction"), headline, description from `config('clinic.description')`, primary WhatsApp CTA ("Begin Consultation Dialogue"), secondary Treatments anchor link ("View Clinical Disciplines"), serene architectural imagery framing, and `.animate-editorial-settle` entrance transition.
 - **Chapter 2: Clinical Director & Ethos Section**: Created `resources/views/components/variant-b/doctor-portrait.blade.php` rendering Dr. Tariq Bhatti's credentials (`DDS, FAGD, FICOI`), leadership title, prominent philosophy quote block with delicate hairline border, bio, and 4 accreditation markers (`FAGD`, `FICOI`, `AACD`, `Faculty Clinical Advisor`) in an asymmetric 12-column editorial grid.
@@ -37,11 +41,13 @@ between specification/planning changes and feature implementation.
 - Received **`QA VERDICT: PASSED`** with explicit evidence cited for all 8 Acceptance Criteria.
 
 ### 📋 Specification & Planning Changes
-- **Phase 2 Specification (Variant B: Calm / Editorial Prototype)**: Established formal specification contract under [specs/2026-09-20-phase-2-variant-b-calm-editorial/](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-2-variant-b-calm-editorial/):
+- **Phase 2 Specification (Variant B: Calm / Editorial Prototype)**: Established formal specification contract under [specs/2026-09-20-phase-2-variant-b-calm-editorial/](specs/2026-09-20-phase-2-variant-b-calm-editorial/):
   - Defined business context, in-scope chapters, constraints, and acceptance criteria (AC-1 through AC-8) in `requirements.md`.
   - Structured 3 task groups (Component Architecture, View Orchestration & Animation Tokens, Automated Testing & Verification) in `plan.md`.
   - Created acceptance criteria verification matrix and manual verification checklist in `validation.md`.
-  - Synchronized [specs/roadmap.md](file:///home/zeshan6a/Projects/dental_clinic/specs/roadmap.md) marking Phase 2 `Specification Status: Ready`, `Implementation Status: Implemented`, and `Validation Status: Pending`.
+- Confirmed manual stakeholder acceptance via `/finish-spec`.
+- Synchronized [specs/roadmap.md](specs/roadmap.md) to mark Phase 2 `Validation Status: Validated`.
+- Merged `feat/phase-2-variant-b-calm-editorial` into `main`.
 
 ---
 
