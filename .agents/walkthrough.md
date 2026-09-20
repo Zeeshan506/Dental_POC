@@ -209,12 +209,13 @@ Implemented Phase 3 (Dual-Variant Testimonials & Patient Reviews Carousel) in ac
   - `CHANGELOG.md`: Added feature implementation and testing details.
 
 ## Validation Results
-- **Automated Tests**: 33 passed, 0 failed, 531 assertions (`php artisan test`).
+- **Automated Tests**: 33 passed, 0 failed, 537 assertions (`php artisan test`).
 - **Feature Tests**: 7 passed, 0 failed, 216 assertions (`php artisan test --filter=TestimonialsCarouselTest`).
 - **Independent QA Investigator**: `QA VERDICT: PASSED` (all AC-1 through AC-8 verified with explicit evidence).
 - **Code Style**: `vendor/bin/pint --dirty --format agent` passed.
-- **Asset Compilation**: `npm run build` compiled client bundle in 228ms.
-- **Modularity Cap**: All 13 modified and created files strictly <= 249 lines (cap: 300 lines).
+- **Asset Compilation**: `npm run build` compiled client bundle in 287ms.
+- **Modularity Cap**: All 13 modified and created files strictly <= 187 lines (cap: 300 lines).
+- **Popup Standardization**: Replaced unanchored desktop hover popover that drifted across sections on scroll with a standard centered modal dialog (`#review-modal`) triggered reliably on card/"Read →" click and keyboard activation, with backdrop scroll lock and explicit close button.
 - **Zero Gradients**: Verified zero CSS gradients across all components.
 - **Touch Targets**: All carousel buttons and modal triggers meet >= 44x44px.
 - **Git Hygiene**: `git diff --check` passed cleanly.
