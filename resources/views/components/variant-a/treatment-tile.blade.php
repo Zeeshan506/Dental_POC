@@ -8,18 +8,48 @@
     $description = $treatment['description'] ?? '';
     $highlights = $treatment['highlights'] ?? [];
     $id = $treatment['id'] ?? '';
+
+    // Map treatment family to photographic cutout object
+    $cutoutMap = [
+        'preventative' => [
+            'src' => asset('images/variant-a/dental-tools.webp'),
+            'alt' => 'Dental examination mirror and diagnostic tools',
+            'label' => 'Diagnostic',
+        ],
+        'cosmetic' => [
+            'src' => asset('images/variant-a/smile.webp'),
+            'alt' => 'Natural smile showing translucent enamel',
+            'label' => 'Aesthetic',
+        ],
+        'restorative' => [
+            'src' => asset('images/variant-a/implant.webp'),
+            'alt' => 'Precision titanium dental implant and crown model',
+            'label' => 'Biomimetic',
+        ],
+        'pediatric' => [
+            'src' => asset('images/variant-a/child-toothbrush.webp'),
+            'alt' => 'Child gentle silicone toothbrush',
+            'label' => 'Gentle Care',
+        ],
+    ];
+
+    $cutout = $cutoutMap[$id] ?? $cutoutMap['preventative'];
 @endphp
 
-<article class="group relative flex flex-col justify-between rounded-2xl bg-stone-warm-100/90 border border-stone-warm-200 p-6 sm:p-7 hover:border-stone-warm-400 hover:-translate-y-1 hover:bg-stone-warm-100 transition-all duration-200 focus-within:ring-2 focus-within:ring-charcoal-900" data-testid="treatment-tile-{{ $id }}">
+<article class="group relative flex flex-col justify-between rounded-2xl bg-stone-warm-100/90 border border-stone-warm-200 p-6 sm:p-7 hover:border-stone-warm-400 hover:-translate-y-1 hover:bg-stone-warm-100 transition-all duration-200 focus-within:ring-2 focus-within:ring-charcoal-900 pt-10" data-testid="treatment-tile-{{ $id }}">
+    <!-- Small Editorial Cutout partially breaking card boundary (Top Right) -->
+    <div class="absolute -top-7 right-5 z-20 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-stone-warm-50 border border-stone-warm-300 p-1.5 shadow-none group-hover:scale-105 group-hover:border-stone-warm-400 transition-all duration-200 overflow-hidden">
+        <img src="{{ $cutout['src'] }}" alt="{{ $cutout['alt'] }}" class="w-full h-full object-contain filter" />
+    </div>
+
     <!-- Card Header -->
     <div>
         <!-- Category Tag -->
-        <div class="flex items-center justify-between gap-2 mb-4">
+        <div class="flex items-center gap-2 mb-4">
             <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-stone-warm-200/80 border border-stone-warm-300 text-[11px] font-semibold uppercase tracking-wider text-stone-warm-800">
                 <span class="w-1.5 h-1.5 rounded-full bg-brass-500"></span>
-                Discipline
+                {{ $cutout['label'] }}
             </span>
-            <span class="text-xs font-mono text-stone-warm-500">Care Focus</span>
         </div>
 
         <!-- Title & Tagline -->

@@ -56,48 +56,57 @@
                 </div>
             </div>
 
-            <!-- Layered 2D Cutout Composition Graphic -->
+            <!-- Layered 2D Cutout Composition with Real Photographic Cutouts -->
             <div class="lg:col-span-5 flex justify-center lg:justify-end animate-cutout-settle">
                 <div class="relative w-full max-w-md">
-                    <!-- Cutout Backplate -->
-                    <div class="absolute -top-3 -left-3 w-full h-full rounded-3xl bg-stone-warm-200 border border-stone-warm-300"></div>
+                    <!-- Layer 1: Warm Stone Cutout Backplate -->
+                    <div class="absolute -top-4 -left-4 w-full h-[95%] rounded-3xl bg-stone-warm-200 border border-stone-warm-300 rotate-1"></div>
 
-                    <!-- Cutout Main Surface -->
-                    <div class="relative rounded-3xl bg-stone-warm-100 border border-stone-warm-300 p-8 sm:p-10">
+                    <!-- Layer 2: Supporting Secondary Cutout (Tooth Model, partially off-canvas top right) -->
+                    <div class="absolute -top-10 -right-6 z-10 w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-stone-warm-100/90 border border-stone-warm-300 p-2 rotate-6">
+                        <img src="{{ asset('images/variant-a/tooth-model.webp') }}" alt="Biomimetic Tooth Model" class="w-full h-full object-contain filter" />
+                        <span class="absolute -bottom-2 -left-2 text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-stone-warm-200 border border-stone-warm-400 text-charcoal-900">
+                            Biomimetic
+                        </span>
+                    </div>
+
+                    <!-- Layer 3: Supporting Secondary Cutout (Dental Tools, bottom left) -->
+                    <div class="absolute -bottom-6 -left-8 z-10 w-32 h-32 sm:w-36 sm:h-36 rounded-2xl bg-stone-warm-100/90 border border-stone-warm-300 p-2 -rotate-6">
+                        <img src="{{ asset('images/variant-a/dental-tools.webp') }}" alt="Precision Dental Mirror & Instruments" class="w-full h-full object-contain filter" />
+                        <span class="absolute -top-2 -right-2 text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-stone-warm-200 border border-stone-warm-400 text-charcoal-900">
+                            Precision
+                        </span>
+                    </div>
+
+                    <!-- Layer 4: Main Cutout Container (Cream Architectural Surface) -->
+                    <div class="relative rounded-3xl bg-stone-warm-100 border border-stone-warm-300 pt-6 px-6 sm:px-8 pb-0 overflow-hidden flex flex-col items-center">
                         <!-- Top Accent Tag -->
-                        <div class="flex items-center justify-between pb-6 border-b border-stone-warm-200">
+                        <div class="w-full flex items-center justify-between pb-4 border-b border-stone-warm-200 z-10">
                             <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-sm bg-brass-500"></span>
-                                <span class="text-xs uppercase tracking-widest text-stone-warm-700 font-semibold">Architectural Care</span>
+                                <span class="w-2.5 h-2.5 rounded-sm bg-brass-500"></span>
+                                <span class="text-xs uppercase tracking-widest text-stone-warm-800 font-semibold">Clinical Director</span>
                             </div>
                             <span class="text-xs font-mono text-stone-warm-600">{{ $clinic['contact']['address']['city'] }}, {{ $clinic['contact']['address']['state'] }}</span>
                         </div>
 
-                        <!-- Stylized Geometric Motif (Zero Gradients) -->
-                        <div class="my-8 flex items-center justify-center">
-                            <div class="relative w-40 h-40 rounded-2xl bg-stone-warm-50 border-2 border-stone-warm-300 flex items-center justify-center">
-                                <svg class="w-24 h-24 text-charcoal-800" viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <!-- Stylized Molar / Tooth Contour Cutout -->
-                                    <path d="M48 16 C34 16 26 26 26 40 C26 56 34 80 40 80 C44 80 46 72 48 72 C50 72 52 80 56 80 C62 80 70 56 70 40 C70 26 62 16 48 16 Z" fill="#f5f2eb" />
-                                    <!-- Inner Biomimetic Contour Line -->
-                                    <path d="M40 32 C44 38 52 38 56 32" stroke="#aa821c" stroke-width="2" />
-                                    <circle cx="48" cy="52" r="3" fill="#1a1c1e" />
-                                </svg>
-                                <!-- Offset Cutout Badge -->
-                                <div class="absolute -bottom-3 -right-3 px-3 py-1 rounded-lg bg-stone-warm-200 border border-stone-warm-400 text-[11px] font-semibold text-charcoal-900">
-                                    Biomimetic
-                                </div>
-                            </div>
+                        <!-- Full-Height Cutout of Confident Dentist with Arms Crossed (Paper Cutout Effect) -->
+                        <div class="relative z-20 w-full flex justify-center mt-2">
+                            <img src="{{ asset('images/variant-a/dentist-cutout.webp') }}" alt="Dr. Tariq Bhatti standing with arms crossed" class="w-auto h-80 sm:h-96 object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.06)]" />
                         </div>
 
-                        <!-- Quote Card Inset -->
-                        <div class="rounded-xl bg-stone-warm-50 p-4 border border-stone-warm-200">
-                            <p class="font-serif text-sm italic text-charcoal-800 leading-snug">
-                                &ldquo;Proactive prevention, patient-led dialogue, and lifelong wellness.&rdquo;
-                            </p>
-                            <p class="text-[11px] uppercase tracking-wider text-stone-warm-600 font-medium mt-2">
-                                &mdash; {{ $clinic['doctor']['name'] }}, {{ $clinic['doctor']['credentials'] }}
-                            </p>
+                        <!-- Overlapping Floating Identity Badge -->
+                        <div class="absolute bottom-4 left-4 right-4 z-30 rounded-xl bg-stone-warm-50/95 border border-stone-warm-300 p-3 shadow-none">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="font-serif text-sm font-bold text-charcoal-900">
+                                        {{ $clinic['doctor']['name'] }}
+                                    </p>
+                                    <p class="text-[11px] font-medium text-stone-warm-700">
+                                        {{ $clinic['doctor']['title'] }} &bull; {{ $clinic['doctor']['credentials'] }}
+                                    </p>
+                                </div>
+                                <span class="w-2 h-2 rounded-full bg-brass-500"></span>
+                            </div>
                         </div>
                     </div>
                 </div>

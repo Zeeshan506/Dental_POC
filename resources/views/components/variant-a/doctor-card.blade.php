@@ -21,21 +21,22 @@
             <!-- Foreground Main Card -->
             <div class="relative rounded-3xl bg-stone-warm-50 border border-stone-warm-300 p-8 sm:p-12 lg:p-14">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-                    <!-- Doctor Identity Column -->
+                    <!-- Doctor Identity Column with Technical Anatomy Layer -->
                     <div class="lg:col-span-5 space-y-6">
-                        <!-- Portrait / Silhouette Cutout Placeholder -->
-                        <div class="relative w-full max-w-sm mx-auto lg:mx-0 aspect-[4/5] rounded-2xl bg-stone-warm-200 border-2 border-stone-warm-300 overflow-hidden flex flex-col justify-end p-6">
-                            <!-- Geometric Cutout Pattern in Background -->
-                            <div class="absolute inset-0 flex items-center justify-center opacity-25 pointer-events-none">
-                                <svg class="w-48 h-48 text-stone-warm-600" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <circle cx="50" cy="50" r="40" stroke-dasharray="4 4" />
-                                    <rect x="25" y="25" width="50" height="50" />
-                                    <line x1="50" y1="10" x2="50" y2="90" />
-                                </svg>
+                        <!-- Portrait Composition with Desaturated Technical Anatomy Layer -->
+                        <div class="relative w-full max-w-sm mx-auto lg:mx-0 rounded-2xl bg-stone-warm-200 border-2 border-stone-warm-300 overflow-hidden flex flex-col justify-end">
+                            <!-- Technical Layer: Desaturated Tooth Anatomy Diagram -->
+                            <div class="absolute inset-0 z-0 opacity-20 filter grayscale contrast-125 pointer-events-none">
+                                <img src="{{ asset('images/variant-a/tooth-anatomy.webp') }}" alt="Tooth Anatomy Technical Diagram" class="w-full h-full object-cover object-center" />
+                            </div>
+
+                            <!-- Photographic Cutout: Doctor with Arms Crossed -->
+                            <div class="relative z-10 w-full flex justify-center pt-8 px-4">
+                                <img src="{{ asset('images/variant-a/dentist-cutout.webp') }}" alt="{{ $doctor['name'] }}" class="w-auto h-72 sm:h-80 object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.08)] filter" />
                             </div>
 
                             <!-- Doctor Tag Badge -->
-                            <div class="relative z-10 rounded-xl bg-stone-warm-50/95 border border-stone-warm-300 p-4">
+                            <div class="relative z-20 m-4 rounded-xl bg-stone-warm-50/95 border border-stone-warm-300 p-4">
                                 <span class="text-[11px] font-semibold uppercase tracking-wider text-brass-600 block">
                                     {{ $doctor['title'] }}
                                 </span>
@@ -48,14 +49,19 @@
                             </div>
                         </div>
 
-                        <!-- Doctor Micro Bio Details -->
-                        <div class="rounded-xl bg-stone-warm-100 p-4 border border-stone-warm-200">
-                            <span class="text-xs font-semibold uppercase tracking-wider text-stone-warm-800 block mb-1">
-                                Clinical Distinction
-                            </span>
-                            <p class="text-xs text-stone-warm-700 leading-relaxed">
-                                20+ years of conservative, tooth-preserving restorative dentistry with advanced fellowships in general dentistry and oral implantology.
-                            </p>
+                        <!-- Technical Diagram Detail Card -->
+                        <div class="rounded-xl bg-stone-warm-100 p-4 border border-stone-warm-200 flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-lg bg-stone-warm-200 border border-stone-warm-300 overflow-hidden shrink-0">
+                                <img src="{{ asset('images/variant-a/tooth-anatomy.webp') }}" alt="Enamel & Dentin Anatomy" class="w-full h-full object-cover filter grayscale" />
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold uppercase tracking-wider text-stone-warm-900 block">
+                                    Biomimetic Anatomy
+                                </span>
+                                <p class="text-xs text-stone-warm-700 leading-tight mt-0.5">
+                                    Preserving natural enamel, dentin, and biological tooth structure.
+                                </p>
+                            </div>
                         </div>
                     </div>
 

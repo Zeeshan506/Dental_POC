@@ -22,7 +22,7 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-            <!-- Location & Map Card (2D Cutout Layered Surface) -->
+            <!-- Location & Real Map Card (2D Cutout Layered Surface) -->
             <div class="lg:col-span-6 flex flex-col justify-between rounded-3xl bg-stone-warm-50 border border-stone-warm-300 p-8 sm:p-10">
                 <div>
                     <!-- Address Header -->
@@ -50,30 +50,21 @@
                         </p>
                     </address>
 
-                    <!-- Stylized Architectural Map Container (Zero Gradients) -->
-                    <div class="mt-6 rounded-2xl bg-stone-warm-200/70 border border-stone-warm-300 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden">
-                        <!-- Architectural Grid Motif -->
-                        <div class="absolute inset-0 opacity-15 pointer-events-none" aria-hidden="true">
-                            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <pattern id="grid-pattern" width="24" height="24" patternUnits="userSpaceOnUse">
-                                        <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#2a2d30" stroke-width="1" />
-                                    </pattern>
-                                </defs>
-                                <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-                            </svg>
-                        </div>
+                    <!-- Real Cartography Map Container with OpenStreetMap Attribution -->
+                    <div class="mt-6 rounded-2xl bg-stone-warm-200/70 border border-stone-warm-300 overflow-hidden relative shadow-none">
+                        <div class="relative aspect-[16/10] w-full">
+                            <img src="{{ asset('images/variant-a/clinic-map.webp') }}" alt="Map of 450 Sutter St, San Francisco - Demo Location" class="w-full h-full object-cover" />
 
-                        <div class="relative z-10 space-y-3">
-                            <div class="w-12 h-12 rounded-xl bg-stone-warm-100 border border-stone-warm-300 mx-auto flex items-center justify-center shadow-none">
-                                <svg class="w-6 h-6 text-charcoal-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                                </svg>
+                            <!-- Demo Location Badge Overlay -->
+                            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-stone-warm-50/95 border border-stone-warm-300 text-[11px] font-semibold text-charcoal-900 flex items-center gap-1.5 shadow-none">
+                                <span class="w-2 h-2 rounded-full bg-brass-500"></span>
+                                Demo Location &bull; 450 Sutter St
                             </div>
-                            <div>
-                                <p class="text-sm font-semibold text-charcoal-900">450 Sutter Medical Building</p>
-                                <p class="text-xs text-stone-warm-600">Suite 1800 &bull; Private Valet &amp; Transit Accessible</p>
+
+                            <!-- OpenStreetMap Attribution Footer -->
+                            <div class="absolute bottom-0 inset-x-0 bg-stone-warm-50/95 border-t border-stone-warm-200 px-3 py-1 text-[10px] text-stone-warm-700 flex items-center justify-between">
+                                <span>Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" class="underline hover:text-charcoal-900">OpenStreetMap</a> contributors</span>
+                                <span class="font-mono text-[9px] uppercase">POC Demo</span>
                             </div>
                         </div>
                     </div>

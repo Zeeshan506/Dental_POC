@@ -153,4 +153,20 @@ class VariantATest extends TestCase
             }
         }
     }
+
+    public function test_photographic_cutouts_and_real_map_rendered(): void
+    {
+        $response = $this->get('/?variant=a');
+
+        $response->assertStatus(200);
+        $response->assertSee('images/variant-a/dentist-cutout.webp');
+        $response->assertSee('images/variant-a/tooth-anatomy.webp');
+        $response->assertSee('images/variant-a/dental-tools.webp');
+        $response->assertSee('images/variant-a/smile.webp');
+        $response->assertSee('images/variant-a/implant.webp');
+        $response->assertSee('images/variant-a/child-toothbrush.webp');
+        $response->assertSee('images/variant-a/clinic-map.webp');
+        $response->assertSee('OpenStreetMap');
+        $response->assertSee('Demo Location');
+    }
 }
