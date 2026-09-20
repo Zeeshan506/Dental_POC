@@ -93,3 +93,27 @@ Implemented and refined the full interactive prototype for Variant A (Expressive
 - **Touch Targets**: Minimum 44px touch targets verified on all interactive buttons/links.
 - **Modularity Cap**: All tracked files strictly under 180 lines (cap: 300 lines).
 - **Git Hygiene**: `git diff --check` passed cleanly.
+
+---
+
+# Walkthrough: Phase 2 Variant B: Calm / Editorial Prototype Specification
+
+## Context & Purpose
+Specified Phase 2 (Variant B: Calm / Editorial Prototype) in accordance with [specs/mission.md](file:///home/zeshan6a/Projects/dental_clinic/specs/mission.md) and [specs/roadmap.md](file:///home/zeshan6a/Projects/dental_clinic/specs/roadmap.md).
+
+## Branch & Changes
+- **Branch**: `replanning`
+- **Specification Directory**: `specs/2026-09-20-phase-2-variant-b-calm-editorial/`
+- **Files Created**:
+  - `specs/2026-09-20-phase-2-variant-b-calm-editorial/requirements.md` (94 lines): Context, 5 core chapters in-scope, non-goals, architectural constraints, 8 Acceptance Criteria (AC-1 through AC-8), and edge cases.
+  - `specs/2026-09-20-phase-2-variant-b-calm-editorial/plan.md` (61 lines): 3 task groups across 10 granular tasks covering component architecture, layout composition, animation tokens, and automated feature testing.
+  - `specs/2026-09-20-phase-2-variant-b-calm-editorial/validation.md` (85 lines): Verification matrix for AC-1 through AC-8, planned test cases in `VariantBTest`, 9-point manual checklist, and merge readiness checklist.
+- **Files Modified**:
+  - `specs/roadmap.md`: Updated Phase 2 row and section with link to spec, AC-1 to AC-8, and `Specification Status: Ready`, `Implementation Status: Not Started`, `Validation Status: Pending`.
+  - `CHANGELOG.md`: Added `[Unreleased]` entry with Phase 2 specification details.
+  - `.agents/walkthrough.md`: Documented Phase 2 specification walkthrough.
+
+## Validation Results
+- **Modularity Cap**: All spec files under 95 lines (strict cap: 300 lines).
+- **Git Hygiene**: `git diff --check` passed cleanly.
+- **Zero Code Modification**: Strictly zero application source code touched during feature specing.

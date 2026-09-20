@@ -10,6 +10,13 @@ between specification/planning changes and feature implementation.
 
 ## [Unreleased]
 
+### 📋 Specification & Planning Changes
+- **Phase 2 Specification (Variant B: Calm / Editorial Prototype)**: Established formal specification contract under [specs/2026-09-20-phase-2-variant-b-calm-editorial/](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-2-variant-b-calm-editorial/):
+  - Defined business context, in-scope chapters, constraints, and acceptance criteria (AC-1 through AC-8) in `requirements.md`.
+  - Structured 3 task groups (Component Architecture, View Orchestration & Animation Tokens, Automated Testing & Verification) in `plan.md`.
+  - Created acceptance criteria verification matrix and manual verification checklist in `validation.md`.
+  - Synchronized [specs/roadmap.md](file:///home/zeshan6a/Projects/dental_clinic/specs/roadmap.md) marking Phase 2 `Specification Status: Ready`, `Implementation Status: Not Started`, and `Validation Status: Pending`.
+
 ---
 
 ## [0.3.0] - 2026-09-20 - Phase 1: Variant A: Expressive / 2D Cutout Prototype
