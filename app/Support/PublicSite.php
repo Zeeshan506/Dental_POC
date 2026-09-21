@@ -2,6 +2,7 @@
 
 namespace App\Support;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class PublicSite
@@ -64,6 +65,22 @@ class PublicSite
             ],
             'page' => array_merge($page, ['key' => $pageKey, 'resource' => $resource, 'resources' => $resources]),
         ];
+    }
+
+    /**
+     * Resolve the appropriate view for a public page contract.
+     */
+    public static function view(Request $request, string $pageKey, ?string $slug = null): View
+    {
+        $contract = self::page($request, $pageKey, $slug);
+        $viewKey = str_replace('.', '-', $pageKey);
+        $variantView = "variants.{$contract['variant']}.{$viewKey}";
+
+        if (view()->exists($variantView)) {
+            return view($variantView, $contract);
+        }
+
+        return view('public.page', $contract);
     }
 
     /**

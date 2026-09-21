@@ -34,6 +34,30 @@ between specification/planning changes and feature implementation.
 
 ---
 
+## [0.8.0] - 2026-09-21 - Phase 10: Variant B Multi-Page Experience
+
+### 📋 Specification & Planning Changes
+- **Phase 10 Specification (Variant B Multi-Page Experience)**: Established formal specification contract under [specs/2026-09-21-phase-10-variant-b-multi-page-experience/](specs/2026-09-21-phase-10-variant-b-multi-page-experience/):
+  - Defined business intent, calm editorial presentational layer, reusable detail templates, content honesty rules, and acceptance criteria (AC-1 through AC-7) in `requirements.md`.
+  - Structured 4 task groups (Editorial & Utility Pages, Resource Experiences, Editorial Motion & Refinement, Verification) in `plan.md`.
+  - Validated AC-1 through AC-7 in `validation.md` and synchronized [specs/roadmap.md](specs/roadmap.md) marking Phase 10 `Specification Status: Ready`, `Implementation Status: Implemented`, `Validation Status: Validated`.
+
+### 🚀 Feature Implementations
+- **Variant B Multi-Page Experience**:
+  - Reusable Primitives: Created `<x-variant-b.page-header>` and `<x-variant-b.cta-section>` enforcing calm editorial typography, chapter indicators, eyebrow badges, and hairline rules.
+  - Long-Form & Utility Views: Composed `about.blade.php`, `patient-journey.blade.php`, `faq.blade.php`, `contact.blade.php`, `privacy.blade.php`, and `terms.blade.php` under `resources/views/variants/b/`.
+  - Resource Experiences: Built `services.blade.php` (restrained rows), `services-show.blade.php` (reusable detail template), `team.blade.php` (prominent Clinical Director feature & honest placeholders), `team-show.blade.php`, and `reviews.blade.php` (testimonials carousel & modal).
+  - Public Routing & View Resolution: Added `PublicSite::view()` helper in `app/Support/PublicSite.php` resolving `variants.{$variant}.{$pageKey}` with fallback to `public.page`.
+  - Content Honesty & Placeholders: Enforced Dr. Bhatti prominent credentials, unverified supporting team members as explicit approval-required placeholders, and transparent review placeholders without unapproved Google links.
+
+### 🧪 Automated Verification & Quality Assurance
+- **Feature Tests**: Added `tests/Feature/VariantBMultiPageTest.php` covering AC-1 through AC-7 (8 tests, 262 assertions). Full suite: 65 tests, 1129 assertions passing cleanly.
+- **Modularity Audit**: `pnpm check:line-counts` verified 100% adherence to `<= 300` lines across 251 tracked files.
+- **Independent QA Audit**: Completed by independent QA investigator (`QA VERDICT: PASSED` across AC-1 to AC-7).
+- **Merge & Acceptance**: Explicit user confirmation received; merged `feat/phase-10-variant-b-multi-page-experience` into `main`.
+
+---
+
 ## [0.7.0] - 2026-09-21 - Phase 7: Global Animation Guidance Skill
 
 ### 📋 Specification & Planning Changes
