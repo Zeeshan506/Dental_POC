@@ -6,7 +6,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="border-b border-stone-warm-200 pb-8 mb-4">
-            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block mb-3" data-motion="rise">02 / Disciplines</span>
+            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block mb-3" data-motion="rise">02 / Disciplines</span>
             <div class="h-px w-16 bg-stone-warm-300 mb-4" data-motion="timeline" aria-hidden="true"></div>
             <h2 class="font-serif text-3xl sm:text-5xl font-light text-charcoal-900 tracking-tight" data-motion="headline" data-motion-delay="80">
                 Treatments &amp; Care Landscape
@@ -21,12 +21,12 @@
                         <!-- Column 1: Index, Title & Tagline (4 cols) -->
                         <div class="lg:col-span-4">
                             <div class="flex items-baseline gap-4 mb-2">
-                                <span class="text-xs font-mono text-stone-warm-400">0{{ $index + 1 }}</span>
+                                <span class="text-xs font-mono text-stone-warm-600">0{{ $index + 1 }}</span>
                                 <h3 class="font-serif text-2xl sm:text-3xl font-light text-charcoal-900 group-hover:text-charcoal-950 transition-colors">
                                     {{ $treatment['title'] }}
                                 </h3>
                             </div>
-                            <p class="text-xs font-mono uppercase tracking-wider text-stone-warm-500 pl-8">
+                            <p class="text-xs font-mono uppercase tracking-wider text-stone-warm-600 pl-8">
                                 {{ $treatment['tagline'] }}
                             </p>
                         </div>
@@ -40,7 +40,7 @@
 
                         <!-- Column 3: 4 Procedural Highlights (4 cols) -->
                         <div class="lg:col-span-4 space-y-3">
-                            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block">
+                            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block">
                                 Clinical Procedures
                             </span>
                             <ul class="space-y-2 text-xs text-stone-warm-800 font-light" role="list">

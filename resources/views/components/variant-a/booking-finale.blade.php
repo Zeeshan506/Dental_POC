@@ -63,7 +63,7 @@
 
                             <!-- OpenStreetMap Attribution Footer -->
                             <div class="absolute bottom-0 inset-x-0 bg-stone-warm-50/95 border-t border-stone-warm-200 px-3 py-1 text-[10px] text-stone-warm-700 flex items-center justify-between">
-                                <span>Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" class="underline hover:text-charcoal-900">OpenStreetMap</a> contributors</span>
+                                <span>Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" class="underline hover:text-charcoal-900 inline-block py-2.5 -my-2.5">OpenStreetMap</a> contributors</span>
                                 <span class="font-mono text-[9px] uppercase">POC Demo</span>
                             </div>
                         </div>

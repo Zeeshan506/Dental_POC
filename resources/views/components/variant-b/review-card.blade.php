@@ -70,7 +70,7 @@
             <button
                 type="button"
                 data-review-trigger
-                class="min-h-[44px] min-w-[44px] p-2 text-xs font-mono text-stone-warm-600 hover:text-charcoal-900 transition-colors focus:outline-none"
+                class="min-h-[44px] min-w-[44px] p-2 text-xs font-mono text-stone-warm-600 hover:text-charcoal-900 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 rounded"
                 aria-label="Read complete review by {{ $name }}"
                 data-motion-interactive
             >

@@ -96,12 +96,13 @@ export function initTestimonials() {
         modal.classList.remove('opacity-100');
         modal.classList.add('opacity-0');
         document.body.style.overflow = '';
+        const closeDelay = prefersReducedMotion ? 0 : 200;
         setTimeout(() => {
             modal.classList.add('hidden');
             if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
                 previousActiveElement.focus();
             }
-        }, 200);
+        }, closeDelay);
     };
 
     if (modalCloseBtn) {
@@ -111,7 +112,35 @@ export function initTestimonials() {
         modalBackdrop.addEventListener('click', closeModal);
     }
 
-    // Global escape key handler
+    // Modal keyboard trap for Tab / Shift+Tab and Escape key dismissal
+    if (modal) {
+        modal.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                return;
+            }
+
+            if (e.key !== 'Tab') return;
+
+            const focusable = modal.querySelectorAll(
+                'button:not([disabled]), [href]:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+            );
+            if (focusable.length === 0) return;
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        });
+    }
+
+    // Global escape key handler as fallback
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeModal();

@@ -10,7 +10,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="border-b border-stone-warm-200 pb-8 mb-12 sm:mb-16">
-            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block mb-3" data-motion="rise">04 / Inquiries &amp; Location</span>
+            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block mb-3" data-motion="rise">04 / Inquiries &amp; Location</span>
             <div class="h-px w-16 bg-stone-warm-300 mb-4" data-motion="timeline" aria-hidden="true"></div>
             <h2 class="font-serif text-3xl sm:text-5xl font-light text-charcoal-900 tracking-tight" data-motion="headline" data-motion-delay="80">
                 Consultations &amp; Location
@@ -22,7 +22,7 @@
             <div class="lg:col-span-6 border border-stone-warm-200 rounded-2xl bg-stone-warm-100/30 p-6 sm:p-8" data-motion="group" data-motion-delay="160">
                 <!-- Address Header -->
                 <div class="pb-6 border-b border-stone-warm-200">
-                    <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block">San Francisco</span>
+                    <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block">San Francisco</span>
                     <h3 class="font-serif text-2xl font-light text-charcoal-900 mt-1">
                         Clinic Location
                     </h3>
@@ -49,7 +49,7 @@
 
                         <!-- Map Attribution -->
                         <div class="absolute bottom-0 inset-x-0 bg-stone-warm-50/95 border-t border-stone-warm-200 px-3 py-1 text-[10px] text-stone-warm-600 flex items-center justify-between font-mono">
-                            <span>Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" class="underline hover:text-charcoal-900">OpenStreetMap</a></span>
+                            <span>Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" class="underline hover:text-charcoal-900 inline-block py-2.5 -my-2.5">OpenStreetMap</a></span>
                             <span>450 Sutter St</span>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
             <div class="lg:col-span-6 border border-stone-warm-200 rounded-2xl bg-stone-warm-100/30 p-6 sm:p-8" data-motion="group" data-motion-delay="240">
                 <!-- Hours Header -->
                 <div class="pb-6 border-b border-stone-warm-200">
-                    <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block">Weekly Schedule</span>
+                    <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block">Weekly Schedule</span>
                     <h3 class="font-serif text-2xl font-light text-charcoal-900 mt-1">
                         Operating Hours &amp; Concierge
                     </h3>

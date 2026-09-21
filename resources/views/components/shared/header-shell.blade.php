@@ -13,7 +13,7 @@
             <!-- Brand -->
             <div class="flex flex-col">
                 <a href="{{ url('/') }}" @class([
-                    'group flex flex-col rounded-sm focus:outline-none focus-visible:ring-2' => true,
+                    'group flex flex-col justify-center min-h-[44px] rounded-sm focus:outline-none focus-visible:ring-2' => true,
                     'focus-visible:ring-stone-warm-50' => $isEditorial,
                     'focus-visible:ring-charcoal-900' => ! $isEditorial,
                 ]) data-motion-interactive>
@@ -38,7 +38,7 @@
             <div class="flex items-center gap-4 sm:gap-6">
                 <!-- Phone Direct Link -->
                 <a href="tel:{{ $clinic['contact']['phone_raw'] }}" @class([
-                    'hidden md:inline-flex items-center gap-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 rounded px-2 py-1' => true,
+                    'hidden md:inline-flex items-center gap-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 rounded px-2 py-1 min-h-[44px]' => true,
                     'text-stone-warm-100 hover:text-stone-warm-50 focus-visible:ring-stone-warm-50' => $isEditorial,
                     'text-charcoal-800 hover:text-charcoal-900 focus-visible:ring-charcoal-900' => ! $isEditorial,
                 ]) data-motion-interactive>

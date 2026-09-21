@@ -25,7 +25,7 @@
             <!-- Right Ethos & Accreditation Column (Asymmetric 7-column) -->
             <div class="lg:col-span-7 space-y-8">
                 <div>
-                    <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block mb-3" data-motion="rise">01 / Ethos</span>
+                    <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block mb-3" data-motion="rise">01 / Ethos</span>
                     <div class="h-px w-16 bg-stone-warm-300 mb-4" data-motion="timeline" aria-hidden="true"></div>
                     <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-charcoal-900 tracking-tight leading-tight" data-motion="headline" data-motion-delay="80">
                         {{ $doctor['name'] }}
@@ -49,7 +49,7 @@
 
                 <!-- Clinical Accreditation Markers (AC-2) -->
                 <div class="pt-8 border-t border-stone-warm-200" data-motion="group" data-motion-delay="320">
-                    <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block mb-4">
+                    <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block mb-4">
                         Clinical Accreditations &amp; Honors
                     </span>
 

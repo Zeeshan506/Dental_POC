@@ -11,17 +11,26 @@ between specification/planning changes and feature implementation.
 ## [Unreleased]
 
 ### 📋 Specification & Planning Changes
+- **Phase 6 — Cross-Variant Polish, Accessibility & Presentation Audit**: Established formal audit specification under `specs/2026-09-21-phase-6-cross-variant-polish-audit/` (AC-1 through AC-7) covering WCAG 2.1 AA contrast, reduced motion, touch targets, keyboard focus, viewport overflow, modularity, and client presentation documentation.
 - **Phase 5 — Variant B Calm Editorial Motion**: Expanded the existing Phase 5 contract through AC-12 for the user-directed, original reference-informed composition; recorded the pre-code Playwright motion audit in [motion-audit.md](specs/2026-09-21-phase-5-variant-b-editorial-motion/motion-audit.md).
 
 ### 🚀 Feature Implementation & Code Changes
-- Added Variant B’s full-bleed, manually controlled three-image hero using project-owned clinical imagery, plus an editorial shared shell, darker finale, slower profile-specific motion, preserved review controls, and responsive no-JavaScript/reduced-motion behavior.
+- **Phase 6: Cross-Variant Polish & Accessibility**:
+  - Calibrated stone and brass color tokens in `resources/css/app.css` to achieve WCAG 2.1 AA compliance (>= 4.5:1 for normal text).
+  - Suppressed hover/active transforms under `prefers-reduced-motion: reduce` in `resources/css/app.css`.
+  - Implemented keyboard focus trap (`Tab`/`Shift+Tab`), instantaneous close under reduced motion, and `Escape` key dismissal in `resources/js/testimonials.js`.
+  - Expanded interactive touch targets to >= 44x44px across header brand/phone links, footer links, review cards, and map links.
+  - Remediated horizontal viewport overflow at 768px/1024px by refactoring footer grid to `md:grid-cols-2 lg:grid-cols-4` with `min-w-0` and truncation.
+  - Authored comprehensive client presentation walkthrough in `docs/client-presentation-walkthrough.md`.
+- **Phase 5: Variant B Motion**: Added Variant B’s full-bleed, manually controlled three-image hero using project-owned clinical imagery, plus an editorial shared shell, darker finale, slower profile-specific motion, preserved review controls, and responsive no-JavaScript/reduced-motion behavior.
 
 ### 🧪 Testing & Quality Assurance
-- Focused Variant A/B, testimonials, and variant-resolution tests passed: 37 tests and 576 assertions. Build, Pint, whitespace checks, and local desktop/mobile Playwright flows passed.
-- Remediated the independent QA findings in commit `8c7cb83`: Variant B reviews now retain a no-JavaScript full-text fallback, mobile motion delays stop through 767px, and the audit records the post-implementation reference comparison. The two directly affected regression checks passed (14 assertions), and a fresh limited QA audit passed.
+- Added automated feature tests in `tests/Feature/CrossVariantPolishAuditTest.php` covering AC-1 through AC-6 (6 tests, 44 assertions). Full test suite passes: 46 tests, 629 assertions.
+- Added `scripts/check-line-counts.mjs` (`pnpm check:line-counts`); 100% of tracked text and code files (219 files) strictly adhere to `<= 300` lines.
+- Independent QA investigator re-audit passed with `QA VERDICT: PASSED` across AC-1 through AC-7 with zero failures.
 
-### ✅ Phase Completion
-- Manual user acceptance and independent QA are complete. Phase 5 is validated and merged into `main`; its roadmap and feature validation lifecycle are synchronized.
+### ⏳ Phase Status
+- Phase 6 current work verified and checked off; kept pending in `In Progress (Partially Finished)` on branch `feat/phase-6-cross-variant-polish-audit` for subsequent feature additions before closing.
 
 ---
 

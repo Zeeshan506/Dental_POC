@@ -55,7 +55,7 @@
         <!-- Horizontal Scrollable Carousel Container -->
         <div
             data-testimonials-track
-            class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 pt-2 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 focus:outline-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 pt-2 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-charcoal-900 rounded-xl [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
             data-motion="group"
             data-motion-stagger="80"
             data-motion-delay="260"
