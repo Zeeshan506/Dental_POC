@@ -118,10 +118,10 @@ export function initTestimonials() {
         }
     });
 
-    // --- Card Interaction Listeners ---
     const reviewCards = document.querySelectorAll('[data-review-card]');
     reviewCards.forEach((card) => {
-        // Explicit "Read ->" trigger button
+        card.querySelector('[data-review-fallback]')?.classList.add('hidden');
+
         const triggerBtn = card.querySelector('[data-review-trigger]');
         if (triggerBtn) {
             triggerBtn.addEventListener('click', (e) => {
@@ -131,13 +131,11 @@ export function initTestimonials() {
             });
         }
 
-        // Clicking anywhere on card opens standard modal dialog
         card.addEventListener('click', (e) => {
             if (e.target.closest('a[target="_blank"]')) return;
             openModal(card);
         });
 
-        // Keyboard activation via Enter or Space
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 if (e.target.closest('a[target="_blank"]')) return;

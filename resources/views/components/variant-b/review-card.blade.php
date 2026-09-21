@@ -15,7 +15,7 @@
 @endphp
 
 <article
-    class="group relative flex flex-col justify-between rounded-2xl bg-stone-warm-100/40 border border-stone-warm-200 p-6 sm:p-8 transition-colors duration-200 hover:bg-stone-warm-100/80 hover:border-stone-warm-300 focus-within:ring-2 focus-within:ring-charcoal-900 cursor-pointer h-full select-none"
+    class="group relative flex flex-col justify-between rounded-2xl bg-stone-warm-100/40 border border-stone-warm-200 p-6 sm:p-8 transition-colors duration-200 hover:bg-stone-warm-100/80 hover:border-stone-warm-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 focus-within:ring-2 focus-within:ring-charcoal-900 cursor-pointer h-full select-none"
     data-review-card
     data-review-id="{{ $id }}"
     data-patient-name="{{ $name }}"
@@ -25,12 +25,18 @@
     data-source-url="{{ $sourceUrl }}"
     data-source-label="{{ $source }}"
     data-testid="variant-b-review-card-{{ $id }}"
+    data-motion="review"
+    data-motion-interactive
     tabindex="0"
     role="article"
     aria-label="Patient review by {{ $name }}"
 >
-    <!-- Hidden full narrative container for client inspection -->
-    <div class="hidden" data-full-text-content>{!! nl2br(e($fullText)) !!}</div>
+    <details class="mt-4 text-sm text-stone-warm-700 leading-relaxed" data-review-fallback>
+        <summary class="cursor-pointer text-xs font-mono text-stone-warm-600 hover:text-charcoal-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 rounded-sm">
+            Read complete review
+        </summary>
+        <div class="mt-3" data-full-text-content>{!! nl2br(e($fullText)) !!}</div>
+    </details>
 
     <div>
         <!-- Editorial Header: Minimal Stars & Discipline -->
@@ -66,6 +72,7 @@
                 data-review-trigger
                 class="min-h-[44px] min-w-[44px] p-2 text-xs font-mono text-stone-warm-600 hover:text-charcoal-900 transition-colors focus:outline-none"
                 aria-label="Read complete review by {{ $name }}"
+                data-motion-interactive
             >
                 Read &rarr;
             </button>
@@ -76,6 +83,7 @@
                 class="min-h-[44px] min-w-[44px] p-2 inline-flex items-center justify-center text-stone-warm-400 hover:text-charcoal-900 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 rounded-lg"
                 title="Verified Google Review"
                 aria-label="Open review on {{ $source }}"
+                data-motion-interactive
             >
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

@@ -1,7 +1,11 @@
 import { animate } from 'motion/mini';
 import { initTestimonials } from './testimonials.js';
 
+const expressiveEase = [0.16, 1, 0.3, 1];
+const editorialEase = [0.22, 1, 0.36, 1];
+
 const motionProfiles = {
+    ease: expressiveEase,
     action: { distance: 12, duration: 0.42 },
     card: { distance: 20, duration: 0.52 },
     copy: { distance: 14, duration: 0.46 },
@@ -15,6 +19,21 @@ const motionProfiles = {
     timeline: { duration: 0.6 },
 };
 
+const editorialMotionProfiles = {
+    ease: editorialEase,
+    action: { distance: 8, duration: 0.56 },
+    card: { distance: 12, duration: 0.7 },
+    copy: { distance: 10, duration: 0.62 },
+    fade: { distance: 0, duration: 0.5 },
+    group: { distance: 12, duration: 0.64 },
+    headline: { distance: 12, duration: 0.72 },
+    image: { distance: 10, duration: 0.76, scale: 1.02 },
+    mask: { duration: 0.82 },
+    review: { distance: 12, duration: 0.68 },
+    rise: { distance: 10, duration: 0.6 },
+    timeline: { duration: 0.8 },
+};
+
 const parseMilliseconds = (value) => {
     const parsedValue = Number.parseFloat(value ?? '0');
 
@@ -22,6 +41,10 @@ const parseMilliseconds = (value) => {
 };
 
 const getStaggerDelay = (element) => {
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        return 0;
+    }
+
     const group = element.parentElement?.closest('[data-motion-stagger]');
 
     if (!group || group === element) {
@@ -33,7 +56,16 @@ const getStaggerDelay = (element) => {
     return Math.max(0, siblings.indexOf(element)) * parseMilliseconds(group.dataset.motionStagger);
 };
 
-const getProfile = (element) => motionProfiles[element.dataset.motion] ?? motionProfiles.rise;
+const getProfile = (element) => {
+    const profiles = document.documentElement.dataset.motionProfile === 'editorial'
+        ? editorialMotionProfiles
+        : motionProfiles;
+
+    return {
+        ...(profiles[element.dataset.motion] ?? profiles.rise),
+        ease: profiles.ease,
+    };
+};
 
 const getObserverTarget = (element) => {
     let ancestor = element.parentElement?.closest('[data-motion]');
@@ -50,6 +82,10 @@ const getObserverTarget = (element) => {
 };
 
 const getDelay = (element) => {
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        return 0;
+    }
+
     const group = element.parentElement?.closest('[data-motion-stagger]');
 
     return parseMilliseconds(element.dataset.motionDelay)
@@ -72,6 +108,7 @@ function initializeMotion() {
         const profile = getProfile(element);
 
         element.style.setProperty('--motion-offset', `${profile.distance ?? 0}px`);
+        element.style.setProperty('--motion-scale', `${profile.scale ?? 1}`);
         element.classList.add('motion-pending');
     });
 
@@ -88,6 +125,7 @@ function initializeMotion() {
         const delay = getDelay(element);
         const isMask = element.dataset.motion === 'mask' || element.dataset.motion === 'timeline';
         const isFade = element.dataset.motion === 'fade';
+        const transformFrom = `translate3d(0, ${profile.distance ?? 0}px, 0) scale(${profile.scale ?? 1})`;
         const animation = isMask
             ? animate(element, {
                 clipPath: ['inset(0 100% 0 0)', 'inset(0 0 0 0)'],
@@ -95,7 +133,7 @@ function initializeMotion() {
             }, {
                 delay,
                 duration: profile.duration,
-                ease: [0.16, 1, 0.3, 1],
+                ease: profile.ease,
             })
             : isFade
                 ? animate(element, {
@@ -103,15 +141,15 @@ function initializeMotion() {
                 }, {
                     delay,
                     duration: profile.duration,
-                    ease: [0.16, 1, 0.3, 1],
+                    ease: profile.ease,
                 })
                 : animate(element, {
                 opacity: [0, 1],
-                transform: [`translate3d(0, ${profile.distance ?? 0}px, 0)`, 'translate3d(0, 0, 0)'],
+                transform: [transformFrom, 'translate3d(0, 0, 0) scale(1)'],
             }, {
                 delay,
                 duration: profile.duration,
-                ease: [0.16, 1, 0.3, 1],
+                ease: profile.ease,
             });
 
         animationControls.add(animation);
@@ -158,8 +196,42 @@ function initializeMotion() {
     }, { once: true });
 }
 
+function initializeHeroGalleries() {
+    document.querySelectorAll('[data-hero-gallery]').forEach((gallery) => {
+        const slides = [...gallery.querySelectorAll('[data-hero-slide]')];
+        const previousButton = gallery.querySelector('[data-hero-prev]');
+        const nextButton = gallery.querySelector('[data-hero-next]');
+        const indexLabel = gallery.querySelector('[data-hero-index]');
+        let activeIndex = 0;
+
+        if (slides.length < 2) {
+            return;
+        }
+
+        const showSlide = (nextIndex) => {
+            activeIndex = (nextIndex + slides.length) % slides.length;
+
+            slides.forEach((slide, index) => {
+                const isActive = index === activeIndex;
+
+                slide.classList.toggle('opacity-100', isActive);
+                slide.classList.toggle('opacity-0', ! isActive);
+                slide.setAttribute('aria-hidden', String(! isActive));
+            });
+
+            if (indexLabel) {
+                indexLabel.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+            }
+        };
+
+        previousButton?.addEventListener('click', () => showSlide(activeIndex - 1));
+        nextButton?.addEventListener('click', () => showSlide(activeIndex + 1));
+    });
+}
+
 function initializeApp() {
     initTestimonials();
+    initializeHeroGalleries();
     initializeMotion();
 }
 

@@ -12,7 +12,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 | Phase 2 | Variant B: Calm / Editorial Prototype | [Phase 2 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-20-phase-2-variant-b-calm-editorial/) | AC-1 to AC-8 | Ready | Implemented | Validated |
 | Phase 3 | Dual-Variant Testimonials & Patient Reviews Carousel | [Phase 3 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-21-phase-3-testimonials-carousel/) | AC-1 to AC-8 | Ready | Implemented | Validated |
 | Phase 4 | Motion Foundation & Variant A Site-Wide Choreography | [Phase 4 Spec](2026-09-21-phase-4-motion-foundation-variant-a/) | AC-1 to AC-8 | Ready | Implemented | Validated |
-| Phase 5 | Variant B Calm Editorial Site-Wide Motion | [Phase 5 Spec](2026-09-21-phase-5-variant-b-editorial-motion/) | AC-1 to AC-8 | Ready | Not Started | Pending |
+| Phase 5 | Variant B Calm Editorial Site-Wide Motion | [Phase 5 Spec](2026-09-21-phase-5-variant-b-editorial-motion/) | AC-1 to AC-12 | Ready | Implemented | Validated |
 | Phase 6 | Cross-Variant Polish, Accessibility & Presentation Audit | TBD | TBD | Pending | Not Started | Pending |
 | Phase 7 | Global Animation Guidance Skill | [Phase 7 Spec](2026-09-21-phase-7-global-animation-guidance-skill/) | AC-1 to AC-6 | Ready | Not Started | Pending |
 
@@ -80,11 +80,11 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 
 ### Phase 5: Variant B Calm Editorial Site-Wide Motion
 - **Specification**: [specs/2026-09-21-phase-5-variant-b-editorial-motion/](2026-09-21-phase-5-variant-b-editorial-motion/)
-- **Acceptance Criteria**: AC-1 through AC-8
-- **Status**: Specification: Ready | Implementation: Not Started | Validation: Pending
-- [ ] **Task 5.1**: Perform and record the required Playwright-based Dental Design SD motion audit before source changes.
-- [ ] **Task 5.2**: Apply the central motion system to every Variant B and shared page block using a distinct calm editorial profile.
-- [ ] **Task 5.3**: Verify Variant B and the reference-informed rhythm with focused tests and local/external Playwright flows.
+- **Acceptance Criteria**: AC-1 through AC-12
+- **Status**: Specification: Ready | Implementation: Implemented | Validation: Validated
+- [x] **Task 5.1**: Perform and record the required Playwright-based Dental Design SD motion audit before source changes.
+- [x] **Task 5.2**: Apply the central motion system to every Variant B and shared page block using a distinct calm editorial profile, then recompose Variant B into an original reference-informed full-bleed editorial hierarchy.
+- [x] **Task 5.3**: Complete the fresh targeted independent QA audit and lifecycle evidence before Phase 5 can be marked implemented.
 - **Deliverable / Verification**: Variant B is continuously but quietly animated, reference-informed without copying, and visibly slower/softer than Variant A.
 
 ### Phase 6: Cross-Variant Polish, Accessibility & Presentation Audit

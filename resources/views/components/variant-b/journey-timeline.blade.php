@@ -13,22 +13,24 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="max-w-3xl mb-16 sm:mb-20">
-            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block mb-3">03 / Protocol</span>
-            <h2 class="font-serif text-3xl sm:text-5xl font-light text-charcoal-900 tracking-tight leading-tight">
+            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block mb-3" data-motion="rise">03 / Protocol</span>
+            <div class="h-px w-16 bg-stone-warm-300 mb-4" data-motion="timeline" aria-hidden="true"></div>
+            <h2 class="font-serif text-3xl sm:text-5xl font-light text-charcoal-900 tracking-tight leading-tight" data-motion="headline" data-motion-delay="80">
                 The Patient Journey
             </h2>
-            <p class="mt-4 text-stone-warm-700 font-light text-base sm:text-lg leading-relaxed">
+            <p class="mt-4 text-stone-warm-700 font-light text-base sm:text-lg leading-relaxed" data-motion="copy" data-motion-delay="160">
                 Every appointment is choreographed around unhurried pacing, sensory comfort, and complete diagnostic transparency.
             </p>
         </div>
 
         <!-- Quiet Vertical Timeline with Hairline Connectors -->
-        <div class="max-w-4xl">
-            <div class="relative pl-6 sm:pl-10 border-l border-stone-warm-300 space-y-12 sm:space-y-16">
+        <div class="max-w-4xl relative">
+            <div class="absolute top-0 bottom-0 left-0 w-px bg-stone-warm-300" data-motion="timeline" aria-hidden="true"></div>
+            <div class="relative pl-6 sm:pl-10 space-y-12 sm:space-y-16" data-motion-stagger="100" data-motion-delay="220">
                 @foreach($journey as $step)
-                    <div class="relative group" data-testid="journey-step-{{ $step['step'] }}">
+                    <div class="relative group" data-testid="journey-step-{{ $step['step'] }}" data-motion="group">
                         <!-- Hairline Sequence Marker Node -->
-                        <div class="absolute -left-[31px] sm:-left-[47px] top-1 w-5 h-5 rounded-full bg-stone-warm-50 border border-stone-warm-300 group-hover:border-charcoal-900 flex items-center justify-center transition-colors">
+                        <div class="absolute -left-[31px] sm:-left-[47px] top-1 w-5 h-5 rounded-full bg-stone-warm-50 border border-stone-warm-300 group-hover:border-charcoal-900 flex items-center justify-center transition-colors" data-motion="rise">
                             <span class="w-1.5 h-1.5 rounded-full bg-charcoal-900"></span>
                         </div>
 
@@ -65,7 +67,7 @@
             </div>
 
             <!-- Architectural Assurance Callout Block -->
-            <div class="mt-16 sm:mt-20 p-6 sm:p-8 rounded-2xl border border-stone-warm-200 bg-stone-warm-50">
+            <div class="mt-16 sm:mt-20 p-6 sm:p-8 rounded-2xl border border-stone-warm-200 bg-stone-warm-50" data-motion="group" data-motion-delay="300">
                 <blockquote class="font-serif text-lg sm:text-xl font-light italic text-charcoal-900 leading-relaxed border-l border-stone-warm-300 pl-6">
                     &ldquo;We deliberately pace appointments to ensure you never feel rushed, your questions are fully answered, and every procedure is executed with calm precision.&rdquo;
                 </blockquote>

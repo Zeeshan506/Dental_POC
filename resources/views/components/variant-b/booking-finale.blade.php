@@ -10,15 +10,16 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="border-b border-stone-warm-200 pb-8 mb-12 sm:mb-16">
-            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block mb-3">04 / Inquiries &amp; Location</span>
-            <h2 class="font-serif text-3xl sm:text-5xl font-light text-charcoal-900 tracking-tight">
+            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block mb-3" data-motion="rise">04 / Inquiries &amp; Location</span>
+            <div class="h-px w-16 bg-stone-warm-300 mb-4" data-motion="timeline" aria-hidden="true"></div>
+            <h2 class="font-serif text-3xl sm:text-5xl font-light text-charcoal-900 tracking-tight" data-motion="headline" data-motion-delay="80">
                 Consultations &amp; Location
             </h2>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             <!-- Left Column: Location & Cartography Map (6 cols) -->
-            <div class="lg:col-span-6 border border-stone-warm-200 rounded-2xl bg-stone-warm-100/30 p-6 sm:p-8">
+            <div class="lg:col-span-6 border border-stone-warm-200 rounded-2xl bg-stone-warm-100/30 p-6 sm:p-8" data-motion="group" data-motion-delay="160">
                 <!-- Address Header -->
                 <div class="pb-6 border-b border-stone-warm-200">
                     <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block">San Francisco</span>
@@ -38,7 +39,7 @@
                 </address>
 
                 <!-- Map Container with Directions Link -->
-                <div class="mt-6 rounded-xl border border-stone-warm-200 overflow-hidden relative bg-stone-warm-200/50">
+                <div class="mt-6 rounded-xl border border-stone-warm-200 overflow-hidden relative bg-stone-warm-200/50" data-motion="image">
                     <div class="relative aspect-[16/10] w-full">
                         <img
                             src="{{ asset('images/variant-a/clinic-map.webp') }}"
@@ -61,6 +62,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         class="inline-flex items-center justify-center gap-2 w-full min-h-[44px] px-6 py-3 rounded-full border border-stone-warm-300 bg-stone-warm-50 text-charcoal-900 text-xs font-mono uppercase tracking-wider hover:bg-stone-warm-100 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900"
+                        data-motion-interactive
                     >
                         <svg class="w-3.5 h-3.5 text-stone-warm-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
@@ -71,7 +73,7 @@
             </div>
 
             <!-- Right Column: Operating Hours & Editorial Booking Dialogue (6 cols) -->
-            <div class="lg:col-span-6 border border-stone-warm-200 rounded-2xl bg-stone-warm-100/30 p-6 sm:p-8">
+            <div class="lg:col-span-6 border border-stone-warm-200 rounded-2xl bg-stone-warm-100/30 p-6 sm:p-8" data-motion="group" data-motion-delay="240">
                 <!-- Hours Header -->
                 <div class="pb-6 border-b border-stone-warm-200">
                     <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block">Weekly Schedule</span>
@@ -82,9 +84,9 @@
 
                 <!-- Schedule List -->
                 <div class="mt-6">
-                    <ul class="divide-y divide-stone-warm-200" role="list">
+                    <ul class="divide-y divide-stone-warm-200" role="list" data-motion-stagger="80">
                         @foreach($hours['schedule'] as $item)
-                            <li class="py-3 flex items-center justify-between text-xs sm:text-sm">
+                            <li class="py-3 flex items-center justify-between text-xs sm:text-sm" data-motion="rise">
                                 <span class="font-normal text-charcoal-900">{{ $item['days'] }}</span>
                                 <span class="font-mono text-stone-warm-600">{{ $item['hours'] }}</span>
                             </li>
@@ -93,7 +95,7 @@
                 </div>
 
                 <!-- 24/7 Emergency Protocol Callout -->
-                <div class="mt-6 p-4 rounded-xl border border-stone-warm-200 bg-stone-warm-50">
+                <div class="mt-6 p-4 rounded-xl border border-stone-warm-200 bg-stone-warm-50" data-motion="copy">
                     <span class="text-xs font-mono uppercase tracking-widest text-charcoal-900 block font-medium">
                         24/7 Emergency Care Protocol
                     </span>
@@ -109,12 +111,14 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         class="inline-flex items-center justify-center gap-2 w-full min-h-[44px] px-6 py-3.5 rounded-full bg-charcoal-900 text-stone-warm-50 text-xs font-mono uppercase tracking-wider hover:bg-charcoal-800 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-charcoal-900"
+                        data-motion-interactive
                     >
                         <span>Book Consultation via WhatsApp</span>
                     </a>
                     <a
                         href="tel:{{ $contact['phone_raw'] }}"
                         class="inline-flex items-center justify-center gap-2 w-full min-h-[44px] px-6 py-3.5 rounded-full border border-stone-warm-300 bg-stone-warm-50 text-charcoal-900 text-xs font-mono uppercase tracking-wider hover:bg-stone-warm-100 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900"
+                        data-motion-interactive
                     >
                         <span>Telephone Concierge: {{ $contact['phone'] }}</span>
                     </a>

@@ -10,6 +10,19 @@ between specification/planning changes and feature implementation.
 
 ## [Unreleased]
 
+### 📋 Specification & Planning Changes
+- **Phase 5 — Variant B Calm Editorial Motion**: Expanded the existing Phase 5 contract through AC-12 for the user-directed, original reference-informed composition; recorded the pre-code Playwright motion audit in [motion-audit.md](specs/2026-09-21-phase-5-variant-b-editorial-motion/motion-audit.md).
+
+### 🚀 Feature Implementation & Code Changes
+- Added Variant B’s full-bleed, manually controlled three-image hero using project-owned clinical imagery, plus an editorial shared shell, darker finale, slower profile-specific motion, preserved review controls, and responsive no-JavaScript/reduced-motion behavior.
+
+### 🧪 Testing & Quality Assurance
+- Focused Variant A/B, testimonials, and variant-resolution tests passed: 37 tests and 576 assertions. Build, Pint, whitespace checks, and local desktop/mobile Playwright flows passed.
+- Remediated the independent QA findings in commit `8c7cb83`: Variant B reviews now retain a no-JavaScript full-text fallback, mobile motion delays stop through 767px, and the audit records the post-implementation reference comparison. The two directly affected regression checks passed (14 assertions), and a fresh limited QA audit passed.
+
+### ✅ Phase Completion
+- Manual user acceptance and independent QA are complete. Phase 5 is validated and merged into `main`; its roadmap and feature validation lifecycle are synchronized.
+
 ---
 
 ## [0.6.0] - 2026-09-21 - Phase 4: Motion Foundation & Variant A Site-Wide Choreography
