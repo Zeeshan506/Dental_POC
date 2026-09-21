@@ -18,9 +18,10 @@ between specification/planning changes and feature implementation.
 
 ### 🧪 Testing & Quality Assurance
 - Focused Variant A/B, testimonials, and variant-resolution tests passed: 37 tests and 576 assertions. Build, Pint, whitespace checks, and local desktop/mobile Playwright flows passed.
+- Remediated the independent QA findings in commit `8c7cb83`: Variant B reviews now retain a no-JavaScript full-text fallback, mobile motion delays stop through 767px, and the audit records the post-implementation reference comparison. The two directly affected regression checks passed (14 assertions), and a fresh limited QA audit passed.
 
-### ⏸ Continuation Note
-- The user manually verified Phase 5 and directed work to stop before the fresh independent QA remediation audit returned its final verdict. Phase 5 remains **In Progress (Paused)** and must resume from a fresh targeted QA audit; do not merge yet.
+### ✅ Phase Completion
+- Manual user verification and independent QA are complete. Phase 5 is implemented and validated on `fix/phase-5-variant-b-editorial-motion`; do not merge without explicit approval.
 
 ---
 

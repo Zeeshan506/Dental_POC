@@ -4,18 +4,18 @@
 
 | AC ID | Description | Verification Method | Pass / Fail |
 |---|---|---|---|
-| AC-1 | Reference audit precedes code and informs choices | Review `motion-audit.md` and implementation order | [ ] |
-| AC-2 | Refined Variant B hero sequence | Playwright reload at desktop/mobile | [ ] |
-| AC-3 | Editorial hierarchy in every section | Playwright slow full-scroll | [ ] |
-| AC-4 | Doctor, treatment, and journey motion | Playwright section observation | [ ] |
-| AC-5 | Reviews and booking/footer choreography | Playwright interaction and full-scroll | [ ] |
-| AC-6 | Accessible restrained interaction feedback | Keyboard, pointer, and touch checks | [ ] |
-| AC-7 | Reduced motion and JavaScript failure safety | Emulation and JavaScript-disabled check | [ ] |
-| AC-8 | Reference-informed, non-copying quality and mobile safety | Audit comparison plus Playwright desktop/mobile | [ ] |
-| AC-9 | Original full-bleed, compact Variant B hero hierarchy | Focused rendering test plus desktop/mobile Playwright reload | [ ] |
-| AC-10 | Reference-informed editorial section composition and preserved manual review controls | Focused rendering test plus full-scroll and carousel Playwright flow | [ ] |
-| AC-11 | Original booking/location interlude and dark high-contrast footer | Focused rendering test plus desktop/mobile Playwright full-scroll | [ ] |
-| AC-12 | Responsive, accessible, reduced-motion, and JavaScript-disabled safety after recomposition | Playwright desktop/mobile, keyboard, reduced-motion, JavaScript-disabled, and overflow checks | [ ] |
+| AC-1 | Reference audit precedes code and informs choices | Review `motion-audit.md` and implementation order | [x] Passed |
+| AC-2 | Refined Variant B hero sequence | Playwright reload at desktop/mobile | [x] Passed |
+| AC-3 | Editorial hierarchy in every section | Playwright slow full-scroll | [x] Passed |
+| AC-4 | Doctor, treatment, and journey motion | Playwright section observation | [x] Passed |
+| AC-5 | Reviews and booking/footer choreography | Playwright interaction and full-scroll | [x] Passed |
+| AC-6 | Accessible restrained interaction feedback | Keyboard, pointer, and touch checks | [x] Passed |
+| AC-7 | Reduced motion and JavaScript failure safety | Emulation and JavaScript-disabled check | [x] Passed |
+| AC-8 | Reference-informed, non-copying quality and mobile safety | Audit comparison plus Playwright desktop/mobile | [x] Passed |
+| AC-9 | Original full-bleed, compact Variant B hero hierarchy | Focused rendering test plus desktop/mobile Playwright reload | [x] Passed |
+| AC-10 | Reference-informed editorial section composition and preserved manual review controls | Focused rendering test plus full-scroll and carousel Playwright flow | [x] Passed |
+| AC-11 | Original booking/location interlude and dark high-contrast footer | Focused rendering test plus desktop/mobile Playwright full-scroll | [x] Passed |
+| AC-12 | Responsive, accessible, reduced-motion, and JavaScript-disabled safety after recomposition | Playwright desktop/mobile, keyboard, reduced-motion, JavaScript-disabled, and overflow checks | [x] Passed |
 
 ## 2. Automated Test Suite
 
@@ -34,14 +34,14 @@
 
 ## 4. Merge Readiness
 
-- [ ] All Phase 5 tasks are complete and the audit was authored before code.
-- [ ] AC-1 through AC-8 have passing evidence.
-- [ ] Focused tests, build, format, line-count, and whitespace checks pass.
-- [ ] Desktop and mobile Playwright evidence is recorded for both local Variant B and the reference comparison.
+- [x] All Phase 5 tasks are complete and the audit was authored before code.
+- [x] AC-1 through AC-12 have passing evidence.
+- [x] Focused tests, build, format, line-count, and whitespace checks pass.
+- [x] Desktop and mobile Playwright evidence is recorded for both local Variant B and the reference comparison.
 
 ## Validation Status Breakdown
 
-- **Automated Tests**: PASS — focused Variant A/B, testimonials, and variant-resolution suites passed (37 tests, 576 assertions).
+- **Automated Tests**: PASS — initial focused Variant A/B, testimonials, and variant-resolution suites passed (37 tests, 576 assertions); the focused remediation checks passed (2 tests, 14 assertions).
 - **Manual User Verification**: Passed — user confirmed manual verification on 2026-09-21.
-- **Independent QA Audit**: Interrupted before final verdict at user direction; a fresh targeted audit remains required before lifecycle completion.
-- **Overall Feature Status**: In Progress (Paused for continuation; do not merge).
+- **Independent QA Audit**: PASS — initial audit findings were remediated and a fresh limited audit passed on the three flagged paths.
+- **Overall Feature Status**: Implemented and Validated (do not merge without explicit approval).
