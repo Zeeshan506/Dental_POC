@@ -7,7 +7,7 @@
 | AC-1 | Variant A site-wide expressive choreography | Rendered-hook tests and desktop/mobile full-scroll audit | Automated: PASS; Manual: Pending |
 | AC-2 | Variant B site-wide calm editorial choreography | Rendered-hook tests and desktop/mobile full-scroll audit | Automated: PASS; Manual: Pending |
 | AC-3 | Reduced-motion and no-JS safety | Browser emulation and JavaScript-disabled route checks | Automated: PASS; Manual: Pending |
-| AC-4 | Both named hero labels removed | Focused hero rendering tests | [ ] |
+| AC-4 | Both named hero labels removed | Focused hero rendering tests | Automated: PASS; Manual: Pending |
 | AC-5 | Responsive rendered views and reachable controls | 320px, 375px, tablet, desktop browser audits | [ ] |
 | AC-6 | Mobile navigation disclosure accessibility | Keyboard/touch browser flow and rendered-markup tests | [ ] |
 | AC-7 | Four semantic color palettes | Preference tests, contrast audit, visual browser comparison | [ ] |
@@ -29,6 +29,14 @@
 - `npm run check:line-counts`: PASS — 261 tracked text/code files at or below 300 lines.
 - `vendor/bin/pint --dirty --format agent`: PASS.
 - Browser evidence is intentionally pending manual review before Group 2 begins.
+
+### Group 2 Automated Evidence — 2026-09-22
+
+- `php artisan test --compact tests/Feature/ResponsiveNavigationTest.php tests/Feature/VariantATest.php tests/Feature/VariantBTest.php`: PASS — 26 tests, 335 assertions.
+- `php artisan test --compact`: PASS — 77 tests, 1,494 assertions.
+- `npm run check:line-counts`: PASS — 265 tracked text/code files at or below 300 lines.
+- `vendor/bin/pint --dirty --format agent`: PASS.
+- Manual review remains pending before Group 3 begins.
 
 ## 3. Manual Verification Checklist
 

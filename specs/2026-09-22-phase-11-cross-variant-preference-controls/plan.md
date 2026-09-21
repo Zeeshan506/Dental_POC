@@ -13,10 +13,12 @@ Extend the current Blade, Tailwind token, Motion Mini, and route/session contrac
 - [x] Task 1.3: Verify the single observer, once-only reveal, no-JS visibility, reduced-motion exit, mobile stagger suppression, no loops, and Variant B no-lift rule remain intact.
 - [ ] Task 1.4: Focused rendered-hook tests pass. Desktop/mobile, reduced-motion, JavaScript-disabled, keyboard, and full-scroll browser checks remain pending manual review.
 
+> Deferred: Complete Task 1.4’s browser checks after the remaining Phase 11 groups; do not treat it as done yet.
+
 ### Group 2: Hero Label Removal
 
-- [ ] Task 2.1: Remove only the named decorative identifier badge from each landing hero, without changing the established headline, clinical copy, CTA sequence, or other meaningful labels.
-- [ ] Task 2.2: Add rendering regression assertions that the strings are absent and each hero’s accessible heading and actions remain available in both variants.
+- [x] Task 2.1: Remove only the named decorative identifier badge from each landing hero, without changing the established headline, clinical copy, CTA sequence, or other meaningful labels.
+- [x] Task 2.2: Add rendering regression assertions that the strings are absent and each hero’s accessible heading and actions remain available in both variants.
 
 ### Group 3: Mobile-First Navigation & Rendered-View Refinement
 

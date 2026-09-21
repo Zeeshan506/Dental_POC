@@ -145,7 +145,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 - **Acceptance Criteria**: AC-1 through AC-9
 - **Status**: Specification: Ready | Implementation: Not Started | Validation: Pending
 - [ ] **Task 11.1**: Extend the existing landing-page motion languages across all public views using the one centralized Motion Mini runtime, while retaining no-JS and reduced-motion safety. Automated implementation is complete; browser/manual review is pending.
-- [ ] **Task 11.2**: Remove the two named landing-hero identifier labels without changing meaningful content or controls.
+- [x] **Task 11.2**: Remove the two named landing-hero identifier labels without changing meaningful content or controls.
 - [ ] **Task 11.3**: Make shared navigation and every rendered view deliberately mobile-first, accessible, and free of overflow from 320px through desktop.
 - [ ] **Task 11.4**: Add path-preserving palette and typography preference state plus an accessible shared visual switcher for the current and supplied design systems.
 - **Deliverable / Verification**: Stakeholders can compare both visual directions, four palettes, and two type systems on every responsive route while the site remains accessible, stable, and content-equivalent.

@@ -13,7 +13,7 @@ class VariantBTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('data-testid="variant-b-hero"', false);
         $response->assertSee('data-motion-profile="editorial"', false);
-        $response->assertSee('Calm Editorial Direction');
+        $response->assertDontSee('Variant B &bull; Calm Editorial Direction', false);
         $response->assertSee('Restorative, invisible, and');
         $response->assertSee('utterly calm');
         $response->assertSee(config('clinic.description'));

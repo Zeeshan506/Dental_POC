@@ -13,12 +13,6 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             <!-- Hero Content Column -->
             <div class="lg:col-span-7">
-                <!-- Eyebrow Badge -->
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-warm-200/90 border border-stone-warm-300 text-xs font-semibold uppercase tracking-wider text-stone-warm-900 mb-6" data-motion="rise" data-motion-delay="60">
-                    <span class="w-2 h-2 rounded-full bg-brass-500 ring-2 ring-stone-warm-300"></span>
-                    Variant A &bull; Expressive 2D Cutout
-                </div>
-
                 <!-- Headline -->
                 <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-charcoal-900 leading-[1.12]" data-motion="headline" data-motion-delay="120">
                     Calm, architectural dentistry crafted for lifelong wellness.

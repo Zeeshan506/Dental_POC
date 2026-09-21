@@ -27,12 +27,6 @@
     </div>
 
     <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-16 sm:pt-48 sm:pb-24 text-center sm:text-left">
-        <!-- Eyebrow Badge -->
-        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-stone-warm-100/40 bg-charcoal-900/35 text-xs font-mono uppercase tracking-widest text-stone-warm-100 mb-8" data-motion="rise">
-            <span class="w-1.5 h-1.5 rounded-full bg-stone-warm-50" aria-hidden="true"></span>
-            Variant B &bull; Calm Editorial Direction
-        </div>
-
         <!-- Single Strong Display Headline -->
         <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight text-stone-warm-50 leading-[1.04] max-w-4xl sm:mx-0 mx-auto" data-motion="headline" data-motion-delay="80">
             Restorative, invisible, and <span class="italic font-normal">utterly calm</span>.
