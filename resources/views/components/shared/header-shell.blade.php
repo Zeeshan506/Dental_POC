@@ -34,8 +34,8 @@
                 </a>
             </div>
 
-            <!-- Navigation Actions -->
-            <div class="flex items-center gap-4 sm:gap-6">
+            <div class="flex items-center gap-2 sm:gap-4">
+                <x-shared.primary-navigation :variant="$variant ?? 'a'" />
                 <!-- Phone Direct Link -->
                 <a href="tel:{{ $clinic['contact']['phone_raw'] }}" @class([
                     'hidden md:inline-flex items-center gap-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 rounded px-2 py-1 min-h-[44px]' => true,

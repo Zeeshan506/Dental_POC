@@ -84,7 +84,11 @@
         <!-- Copyright & Legal -->
         <div class="mt-12 pt-6 border-t border-stone-warm-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-warm-600" data-motion="fade">
             <p>&copy; {{ date('Y') }} {{ $clinic['name'] }}. All rights reserved.</p>
-            <p>Prestigious Family Dental POC &bull; Proof of Concept Scaffolding</p>
+            <nav aria-label="Legal navigation" class="flex items-center gap-3">
+                <a href="{{ url('/privacy').'?variant='.($variant ?? 'a') }}" class="min-h-[44px] inline-flex items-center focus:outline-none focus-visible:underline">Privacy</a>
+                <a href="{{ url('/terms').'?variant='.($variant ?? 'a') }}" class="min-h-[44px] inline-flex items-center focus:outline-none focus-visible:underline">Terms</a>
+                <a href="{{ url('/faq').'?variant='.($variant ?? 'a') }}" class="min-h-[44px] inline-flex items-center focus:outline-none focus-visible:underline">FAQ</a>
+            </nav>
         </div>
     </div>
 </footer>
