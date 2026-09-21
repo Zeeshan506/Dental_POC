@@ -68,5 +68,5 @@
         <x-variant-a.booking-finale />
     </main>
 
-    <x-shared.footer-shell />
+    <x-shared.footer-shell :variant="$variant" />
 @endsection

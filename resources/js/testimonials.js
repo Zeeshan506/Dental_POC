@@ -80,6 +80,9 @@ export function initTestimonials() {
             modalSourceLink.href = sourceUrl;
             modalSourceLink.target = '_blank';
             modalSourceLink.rel = 'noopener noreferrer';
+            modalSourceLink.classList.remove('hidden');
+        } else if (modalSourceLink) {
+            modalSourceLink.classList.add('hidden');
         }
 
         modal.classList.remove('hidden');

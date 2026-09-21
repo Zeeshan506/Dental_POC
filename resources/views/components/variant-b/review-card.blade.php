@@ -8,8 +8,8 @@
     $rating = (int) ($review['rating'] ?? 5);
     $excerpt = $review['excerpt'] ?? '';
     $fullText = $review['full_text'] ?? $excerpt;
-    $source = $review['source'] ?? 'Google Reviews';
-    $sourceUrl = $review['source_url'] ?? 'https://maps.google.com';
+    $source = $review['source'] ?? 'Placeholder review — client approval required';
+    $sourceUrl = $review['source_url'] ?? '';
     $date = $review['date'] ?? '';
     $treatment = $review['treatment'] ?? 'Clinical Care';
 @endphp
@@ -76,7 +76,8 @@
             >
                 Read &rarr;
             </button>
-            <a
+            @if($sourceUrl)
+                <a
                 href="{{ $sourceUrl }}"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -88,7 +89,10 @@
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-            </a>
+                </a>
+            @else
+                <span class="text-xs font-medium text-stone-warm-600">Destination pending approval</span>
+            @endif
         </div>
     </div>
 </article>

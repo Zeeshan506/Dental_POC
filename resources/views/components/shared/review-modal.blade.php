@@ -54,17 +54,17 @@
                 <div class="mt-6 pt-4 border-t border-stone-warm-200 flex items-center justify-between">
                     <a
                         id="review-modal-source-link"
-                        href="https://maps.google.com"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="min-h-[44px] inline-flex items-center gap-2 text-xs font-mono font-medium text-charcoal-900 hover:text-charcoal-700 underline focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900"
+                        class="hidden min-h-[44px] items-center gap-2 text-xs font-mono font-medium text-charcoal-900 hover:text-charcoal-700 underline focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900"
                     >
-                        <span id="review-modal-source-label">Open on Google Reviews</span>
+                        <span id="review-modal-source-label">Open approved review source</span>
                         <svg class="w-3.5 h-3.5 text-stone-warm-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                     </a>
-                    <span class="text-xs font-mono text-stone-warm-500">Verified Clinical Review</span>
+                    <span class="text-xs font-mono text-stone-warm-500">Placeholder review — approval required</span>
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import { animate } from 'motion/mini';
 import { initTestimonials } from './testimonials.js';
+import { initializeConsultationForms } from './consultation-form.js';
 
 const expressiveEase = [0.16, 1, 0.3, 1];
 const editorialEase = [0.22, 1, 0.36, 1];
@@ -231,6 +232,7 @@ function initializeHeroGalleries() {
 
 function initializeApp() {
     initTestimonials();
+    initializeConsultationForms();
     initializeHeroGalleries();
     initializeMotion();
 }
