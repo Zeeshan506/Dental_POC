@@ -3,7 +3,7 @@
 @section('content')
     <x-shared.header-shell :variant="$variant" />
 
-    <main class="flex-1 overflow-hidden bg-stone-warm-50 pb-16 sm:pb-24">
+    <main class="flex-1 overflow-x-clip bg-stone-warm-50 pb-12 sm:pb-20">
         <x-variant-a.page-intro :page="$page" />
 
         @if($page['key'] === 'about')
@@ -17,9 +17,9 @@
         @elseif($page['key'] === 'team.show')
             <x-variant-a.team-detail :member="$page['resource']" :variant="$variant" />
         @elseif($page['key'] === 'reviews')
-            <section class="px-4 pb-6 pt-10 sm:px-6 lg:px-8" data-motion="copy">
-                <p class="mx-auto max-w-7xl border-l-4 border-brass-500 bg-stone-warm-100 p-5 text-sm leading-relaxed text-charcoal-900">{{ config('site.reviews.notice') }}</p>
-            </section>
+            <x-variant-a.page-shell class="pb-6 sm:pb-8" data-motion="copy">
+                <p class="max-w-4xl border-l-4 border-brass-500 bg-stone-warm-100 p-5 text-sm leading-relaxed text-charcoal-900">{{ config('site.reviews.notice') }}</p>
+            </x-variant-a.page-shell>
             <x-variant-a.testimonials-carousel />
         @else
             <x-variant-a.information-page :page="$page" :variant="$variant" />

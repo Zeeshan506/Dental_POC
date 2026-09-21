@@ -109,4 +109,44 @@ class VariantAMultiPageTest extends TestCase
         $this->assertSame(1, substr_count((string) file_get_contents(resource_path('js/app.js')), 'new IntersectionObserver'));
         $this->assertStringNotContainsString('<script', (string) file_get_contents(resource_path('views/variants/a/page.blade.php')));
     }
+
+    public function test_non_landing_pages_render_the_shared_responsive_layout_shell(): void
+    {
+        $paths = [
+            '/about',
+            '/services',
+            '/services/dental-implants',
+            '/team',
+            '/team/dr-tariq-bhatti',
+            '/patient-journey',
+            '/reviews',
+            '/contact',
+            '/faq',
+            '/privacy',
+            '/terms',
+        ];
+
+        foreach ($paths as $path) {
+            $this->get($path.'?variant=a')
+                ->assertOk()
+                ->assertSee('data-testid="variant-a-page-shell"', false)
+                ->assertSee('px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20', false);
+        }
+    }
+
+    public function test_layout_remediation_preserves_the_landing_page_and_constrains_non_landing_content(): void
+    {
+        $landing = $this->get('/?variant=a');
+        $serviceDetail = $this->get('/services/dental-implants?variant=a');
+
+        $landing
+            ->assertOk()
+            ->assertSee('data-testid="variant-a-hero"', false)
+            ->assertDontSee('data-testid="variant-a-page-shell"', false);
+        $serviceDetail
+            ->assertOk()
+            ->assertSee('overflow-x-clip', false)
+            ->assertSee('max-w-3xl space-y-10', false)
+            ->assertSee('lg:sticky lg:top-8', false);
+    }
 }

@@ -1,13 +1,13 @@
 @props(['members' => [], 'variant' => 'a'])
 
 @php($doctor = config('clinic.doctor'))
-<section class="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-    <div class="mx-auto max-w-7xl space-y-10">
+<x-variant-a.page-shell>
+    <div class="space-y-10 sm:space-y-14">
         <a href="{{ url('/team/dr-tariq-bhatti').'?variant='.$variant }}" class="group grid overflow-hidden border border-charcoal-900 bg-charcoal-900 text-stone-warm-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 focus-visible:ring-offset-4 lg:grid-cols-12" data-motion="group" data-motion-interactive>
             <div class="relative min-h-72 overflow-hidden bg-stone-warm-200 lg:col-span-5" data-motion="image">
                 <img src="{{ asset('images/variant-a/dentist-cutout.webp') }}" alt="{{ $doctor['name'] }}" class="absolute inset-0 h-full w-full object-contain object-bottom" />
             </div>
-            <div class="flex flex-col justify-center p-7 sm:p-10 lg:col-span-7">
+            <div class="flex flex-col justify-center p-7 sm:p-10 lg:col-span-7 lg:p-14">
                 <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brass-400" data-motion="rise">Clinical director</p>
                 <h2 class="mt-3 font-serif text-4xl font-semibold" data-motion="headline" data-motion-delay="80">{{ $doctor['name'] }}</h2>
                 <p class="mt-2 text-sm font-semibold uppercase tracking-wider text-stone-warm-200" data-motion="copy" data-motion-delay="140">{{ $doctor['title'] }} · {{ $doctor['credentials'] }}</p>
@@ -28,4 +28,4 @@
             @endforeach
         </div>
     </div>
-</section>
+</x-variant-a.page-shell>
