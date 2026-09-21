@@ -13,6 +13,31 @@ This audit ensures:
 
 **Lifecycle:** Specification: Ready | Implementation: In Progress (Partially Finished) | Validation: Pending.
 
+## Multi-Page Remediation Addition: Variant A Layout Polish
+
+### Context & Defect Analysis
+
+Phase 9 introduced Variant A public pages beyond the landing page. Manual review found those pages visually inconsistent with the settled landing-page composition: sections can feel crowded or disconnected, and their responsive rhythm does not consistently preserve the intended premium 2D-cutout hierarchy. This addition closes Phase 6 only after the non-landing Variant A layouts have a coherent container, spacing, typography, image, and responsive treatment.
+
+### In-Scope Remediation
+
+- [ ] Audit and repair the layout of every non-landing Variant A public route: about, services and service details, team and team details, reviews, contact, FAQ, patient journey, and legal/information pages.
+- [ ] Establish a consistent expressive page rhythm using reusable layout primitives or components: page-intro-to-content transition, maximum readable line lengths, intentional section gaps, card padding, and responsive image framing.
+- [ ] Preserve the existing landing page, shared route/content contracts, approved copy, Variant A motion system, and accessible interaction behavior.
+- [ ] Verify the remediated routes at 320px, 375px, 768px, 1024px, and desktop widths, including no horizontal overflow, readable hierarchy, and touch/focus behavior.
+
+### Out-of-Scope Remediation
+
+- Redesigning the Variant A landing page.
+- Adding routes, changing clinic facts/copy, or using unprovided client imagery.
+- Changing Variant B page composition except where a shared primitive requires a non-visual regression check.
+
+### New Acceptance Criteria
+
+- [ ] **AC-8**: Given a visitor opens any non-landing Variant A public route, when the page renders at mobile through desktop widths, then its content uses a consistent expressive layout rhythm with deliberate page-intro spacing, readable measure, section separation, card padding, and balanced image/content compositions.
+- [ ] **AC-9**: Given the full Variant A non-landing route map is reviewed at 320px, 375px, 768px, 1024px, and desktop widths, when each route is scrolled from header to footer, then no viewport has horizontal overflow, cramped or overlapping content, clipped imagery, or inaccessible controls.
+- [ ] **AC-10**: Given the Variant A multi-page layout correction is applied, when the landing page and shared contracts are verified, then the landing page remains visually and behaviorally unchanged and the existing reduced-motion, keyboard-focus, and touch-target guarantees continue to hold.
+
 ## 2. Scope
 
 ### In-Scope

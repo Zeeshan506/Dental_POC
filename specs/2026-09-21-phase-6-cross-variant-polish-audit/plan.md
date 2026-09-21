@@ -30,3 +30,10 @@ This phase executes a rigorous cross-variant audit across accessibility, reduced
 - [x] Task 4.1: Run `pnpm check:line-counts` across 100% of tracked text and code files in the repository; decompose any files approaching or exceeding 300 lines.
 - [x] Task 4.2: Author comprehensive client presentation walkthrough documentation (`docs/client-presentation-walkthrough.md`) comparing Variant A vs Variant B design philosophies, visual hierarchies, motion profiles, and audience positioning.
 - [x] Task 4.3: Implement automated feature tests (`tests/Feature/CrossVariantPolishAuditTest.php`) covering accessibility markup, contrast contracts, touch target classes, and reduced-motion styling.
+
+### Group 5: Variant A Multi-Page Layout Remediation (AC-8, AC-9, AC-10)
+
+- [ ] Task 5.1: Inspect every non-landing Variant A page renderer and component against the settled landing-page visual language; identify the spacing, readable-measure, and image-framing gaps without redesigning the landing page.
+- [ ] Task 5.2: Implement reusable expressive layout primitives and apply them to Variant A information, service, team, review, contact, journey, FAQ, and legal pages; preserve the current shared content and motion contracts.
+- [ ] Task 5.3: Add focused feature coverage for the new layout contract and run browser checks across the specified widths, reduced-motion, keyboard, and no-JavaScript fallbacks.
+- [ ] Task 5.4: Run a comprehensive initial independent QA audit; remediate every finding, then request a fresh independent QA audit limited strictly to the finding IDs and their regression coverage.
