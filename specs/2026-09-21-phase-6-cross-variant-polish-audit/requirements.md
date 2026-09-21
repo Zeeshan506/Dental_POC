@@ -11,19 +11,19 @@ This audit ensures:
 - 100% adherence to the repository's 300-line modularity cap.
 - High-quality client presentation and walkthrough documentation demonstrating the contrasting design languages and clinical positioning.
 
-**Lifecycle:** Specification: Ready | Implementation: Not Started | Validation: Pending.
+**Lifecycle:** Specification: Ready | Implementation: In Progress (Partially Finished) | Validation: Pending.
 
 ## 2. Scope
 
 ### In-Scope
 
-- [ ] Audit and enforce strict `prefers-reduced-motion: reduce` behavior across both `/?variant=a` and `/?variant=b`: verify immediate content visibility, 0s transitions, disabled transforms, and disabled stagger delays.
-- [ ] Audit color contrast ratios across all text, links, buttons, badges, stone cards, and dark contrast bands against WCAG 2.1 AA standards (>= 4.5:1 for normal text, >= 3:1 for large text and interactive UI components).
-- [ ] Audit and verify interactive touch targets (>= 44x44px) and tap clearance for all CTAs, navigation links, phone/WhatsApp links, carousel arrows, modal close buttons, and switcher buttons on mobile viewports.
-- [ ] Verify keyboard navigation and visible focus rings (`:focus-visible`) across all interactive elements with no focus traps.
-- [ ] Audit responsive viewport layouts across 320px, 375px, 768px, 1024px, 1280px, and 1440px viewports ensuring zero horizontal overflow (`scrollWidth <= clientWidth`).
-- [ ] Audit 100% of tracked text and code files in the repository to guarantee strict adherence to the <= 300-line modularity constraint (`pnpm check:line-counts`).
-- [ ] Prepare comprehensive client presentation walkthrough documentation (`docs/client-presentation-walkthrough.md`) detailing the design philosophy, component comparison (Variant A vs Variant B), interaction principles, accessibility proof, and clinical brand positioning.
+- [x] Audit and enforce strict `prefers-reduced-motion: reduce` behavior across both `/?variant=a` and `/?variant=b`: verify immediate content visibility, 0s transitions, disabled transforms, and disabled stagger delays.
+- [x] Audit color contrast ratios across all text, links, buttons, badges, stone cards, and dark contrast bands against WCAG 2.1 AA standards (>= 4.5:1 for normal text, >= 3:1 for large text and interactive UI components).
+- [x] Audit and verify interactive touch targets (>= 44x44px) and tap clearance for all CTAs, navigation links, phone/WhatsApp links, carousel arrows, modal close buttons, and switcher buttons on mobile viewports.
+- [x] Verify keyboard navigation and visible focus rings (`:focus-visible`) across all interactive elements with no focus traps.
+- [x] Audit responsive viewport layouts across 320px, 375px, 768px, 1024px, 1280px, and 1440px viewports ensuring zero horizontal overflow (`scrollWidth <= clientWidth`).
+- [x] Audit 100% of tracked text and code files in the repository to guarantee strict adherence to the <= 300-line modularity constraint (`pnpm check:line-counts`).
+- [x] Prepare comprehensive client presentation walkthrough documentation (`docs/client-presentation-walkthrough.md`) detailing the design philosophy, component comparison (Variant A vs Variant B), interaction principles, accessibility proof, and clinical brand positioning.
 
 ### Out-of-Scope (Non-Goals)
 
@@ -41,13 +41,13 @@ This audit ensures:
 
 ## 4. Acceptance Criteria
 
-- [ ] **AC-1**: Given a visitor with `prefers-reduced-motion: reduce` visits `/?variant=a` or `/?variant=b`, when the page loads and is scrolled, then all CSS transitions, animations, transforms, and stagger delays are disabled, content reveals immediately, and all interactive controls remain fully usable.
-- [ ] **AC-2**: Given any text, badge, or interactive control across both variants (including light backgrounds, dark contrast bands, and stone cards), when audited for color contrast, then all text meets WCAG 2.1 AA (>= 4.5:1 for normal text, >= 3:1 for large text and interactive UI controls).
-- [ ] **AC-3**: Given mobile or touch device viewports (320px to 414px), when interactive elements (CTAs, phone/WhatsApp links, carousel arrows, modal close buttons, switcher tabs) are inspected, then all touch targets measure at least 44x44px with adequate tap spacing.
-- [ ] **AC-4**: Given keyboard navigation across both variants, when navigating via `Tab` and `Shift+Tab`, then every focusable element displays an unambiguous, high-contrast `:focus-visible` focus ring without focus traps.
-- [ ] **AC-5**: Given viewports from 320px up to 1440px+, when either variant is rendered and scrolled, then the layout maintains visual integrity with zero horizontal page overflow (`scrollWidth <= clientWidth`).
-- [ ] **AC-6**: Given the complete repository codebase, when audited with `pnpm check:line-counts`, then 100% of tracked text and code files strictly adhere to the <= 300-line modularity constraint.
-- [ ] **AC-7**: Given the dual-variant POC is prepared for stakeholder review, when the presentation walkthrough guide is reviewed, then it clearly documents the design systems, interaction principles, audience positioning, and feature parity between Variant A and Variant B.
+- [x] **AC-1**: Given a visitor with `prefers-reduced-motion: reduce` visits `/?variant=a` or `/?variant=b`, when the page loads and is scrolled, then all CSS transitions, animations, transforms, and stagger delays are disabled, content reveals immediately, and all interactive controls remain fully usable.
+- [x] **AC-2**: Given any text, badge, or interactive control across both variants (including light backgrounds, dark contrast bands, and stone cards), when audited for color contrast, then all text meets WCAG 2.1 AA (>= 4.5:1 for normal text, >= 3:1 for large text and interactive UI controls).
+- [x] **AC-3**: Given mobile or touch device viewports (320px to 414px), when interactive elements (CTAs, phone/WhatsApp links, carousel arrows, modal close buttons, switcher tabs) are inspected, then all touch targets measure at least 44x44px with adequate tap spacing.
+- [x] **AC-4**: Given keyboard navigation across both variants, when navigating via `Tab` and `Shift+Tab`, then every focusable element displays an unambiguous, high-contrast `:focus-visible` focus ring without focus traps.
+- [x] **AC-5**: Given viewports from 320px up to 1440px+, when either variant is rendered and scrolled, then the layout maintains visual integrity with zero horizontal page overflow (`scrollWidth <= clientWidth`).
+- [x] **AC-6**: Given the complete repository codebase, when audited with `pnpm check:line-counts`, then 100% of tracked text and code files strictly adhere to the <= 300-line modularity constraint.
+- [x] **AC-7**: Given the dual-variant POC is prepared for stakeholder review, when the presentation walkthrough guide is reviewed, then it clearly documents the design systems, interaction principles, audience positioning, and feature parity between Variant A and Variant B.
 
 ## 5. Edge Cases & Error Handling
 

@@ -34,3 +34,7 @@ Prior phase walkthroughs are archived in [.agents/walkthroughs/phase-0-to-5.md](
 - **Code Style**: `vendor/bin/pint --dirty --format agent` passed cleanly.
 - **Production Asset Build**: `pnpm build` compiled cleanly in 808ms.
 - **Git Hygiene**: `git diff --check` passed cleanly; zero changes made to `.tree/`.
+
+## Lifecycle Status
+- **Phase 6 Status**: `Specification: Ready | Implementation: In Progress (Partially Finished) | Validation: Pending`.
+- **Note**: Current audit and accessibility tasks (Tasks 1.1-4.3, AC-1-AC-7) verified and checked off. Per user direction, Phase 6 remains pending on `feat/phase-6-cross-variant-polish-audit` for subsequent feature additions before final closure.

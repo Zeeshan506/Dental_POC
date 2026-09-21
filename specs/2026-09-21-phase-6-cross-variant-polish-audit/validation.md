@@ -4,13 +4,13 @@
 
 | AC ID | Description | Verification Method | Pass / Fail |
 |---|---|---|---|
-| AC-1 | Strict `prefers-reduced-motion: reduce` compliance across both variants | Playwright emulation test at desktop & mobile | [ ] Pending |
-| AC-2 | WCAG 2.1 AA color contrast compliance (>= 4.5:1 text, >= 3:1 UI) | Automated contrast audit / axe-core check | [ ] Pending |
-| AC-3 | Mobile touch targets >= 44x44px for all interactive elements | Playwright bounding box check at 375px & 320px | [ ] Pending |
-| AC-4 | Keyboard navigation and visible `:focus-visible` focus rings | Playwright tab-through navigation & screenshot check | [ ] Pending |
-| AC-5 | Zero horizontal overflow across 320px to 1440px viewports | Playwright `scrollWidth <= clientWidth` assertion | [ ] Pending |
-| AC-6 | 100% adherence to <= 300-line modularity constraint | `pnpm check:line-counts` script execution | [ ] Pending |
-| AC-7 | Client presentation walkthrough guide authored | Review `docs/client-presentation-walkthrough.md` | [ ] Pending |
+| AC-1 | Strict `prefers-reduced-motion: reduce` compliance across both variants | Playwright emulation test at desktop & mobile | [x] Passed |
+| AC-2 | WCAG 2.1 AA color contrast compliance (>= 4.5:1 text, >= 3:1 UI) | Automated contrast audit / axe-core check | [x] Passed |
+| AC-3 | Mobile touch targets >= 44x44px for all interactive elements | Playwright bounding box check at 375px & 320px | [x] Passed |
+| AC-4 | Keyboard navigation and visible `:focus-visible` focus rings | Playwright tab-through navigation & screenshot check | [x] Passed |
+| AC-5 | Zero horizontal overflow across 320px to 1440px viewports | Playwright `scrollWidth <= clientWidth` assertion | [x] Passed |
+| AC-6 | 100% adherence to <= 300-line modularity constraint | `pnpm check:line-counts` script execution | [x] Passed |
+| AC-7 | Client presentation walkthrough guide authored | Review `docs/client-presentation-walkthrough.md` | [x] Passed |
 
 ## 2. Automated Test Suite
 
@@ -29,16 +29,17 @@
 
 ## 4. Merge Readiness (Definition of Done)
 
-- [ ] All task groups in `plan.md` marked complete.
-- [ ] All ACs in `requirements.md` verified in matrix above.
-- [ ] Automated tests in `tests/Feature/CrossVariantPolishAuditTest.php` pass without errors.
-- [ ] Playwright accessibility, overflow, and touch-target checks pass.
-- [ ] `pnpm check:line-counts` passes with zero violations.
-- [ ] Client walkthrough documentation is complete and reviewed.
+- [x] All task groups in `plan.md` marked complete.
+- [x] All ACs in `requirements.md` verified in matrix above.
+- [x] Automated tests in `tests/Feature/CrossVariantPolishAuditTest.php` pass without errors (46 tests, 629 assertions).
+- [x] Playwright accessibility, overflow, and touch-target checks pass.
+- [x] `pnpm check:line-counts` passes with zero violations (219 files audited).
+- [x] Client walkthrough documentation is complete and reviewed (`docs/client-presentation-walkthrough.md`).
+- [ ] Manual User Acceptance / Merge Approval: Pending (Phase 6 remains open on feature branch for upcoming additions per user instruction).
 
 ## 5. Validation Status Breakdown
 
-- **Automated Tests**: Pending
-- **Independent QA Audit**: Pending
-- **Manual User Acceptance**: Pending
-- **Overall Feature Status**: Pending
+- **Automated Tests**: Passed (46/46 tests, 629 assertions)
+- **Independent QA Audit**: Passed (`QA VERDICT: PASSED` across AC-1 to AC-7)
+- **Manual User Acceptance**: Pending (User directed to keep Phase 6 pending for further additions)
+- **Overall Feature Status**: Pending (Partially Finished — Open for Additions)
