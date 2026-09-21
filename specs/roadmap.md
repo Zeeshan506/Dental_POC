@@ -113,10 +113,10 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 ### Phase 8: Multi-Page Shared Foundation
 - **Specification**: [specs/2026-09-21-phase-8-multi-page-shared-foundation/](2026-09-21-phase-8-multi-page-shared-foundation/)
 - **Acceptance Criteria**: AC-1 through AC-8
-- **Status**: Specification: Ready | Implementation: Not Started | Validation: Pending
-- [ ] **Task 8.1**: Establish the shared public route map, resource-slug lookup, route-preserving `?variant=a|b` switching, and per-page metadata contract.
-- [ ] **Task 8.2**: Centralize editable content and placeholder/approval flags; implement reusable shared navigation, footer, metadata, detail, FAQ, review, contact, and client-only form contracts.
-- [ ] **Task 8.3**: Add route, metadata, content, navigation, form, no-JS, reduced-motion, and accessibility verification for both variants.
+- **Status**: Specification: Ready | Implementation: Implemented | Validation: Pending
+- [x] **Task 8.1**: Establish the shared public route map, resource-slug lookup, route-preserving `?variant=a|b` switching, and per-page metadata contract.
+- [x] **Task 8.2**: Centralize editable content and placeholder/approval flags; implement reusable shared navigation, footer, metadata, detail, FAQ, review, contact, and client-only form contracts.
+- [x] **Task 8.3**: Add route, metadata, content, navigation, form, no-JS, reduced-motion, and accessibility verification for both variants.
 - **Deliverable / Verification**: Every required pathname is routeable in both variants with shared content, honest placeholders, accessible IA, and frontend-only consultation behavior.
 
 ### Phase 9: Variant A Multi-Page Experience

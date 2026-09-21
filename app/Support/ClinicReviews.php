@@ -59,8 +59,8 @@ class ClinicReviews
             'rating' => max(1, min(5, (int) ($item['rating'] ?? 5))),
             'excerpt' => (string) ($item['excerpt'] ?? ''),
             'full_text' => (string) ($item['full_text'] ?? ($item['excerpt'] ?? '')),
-            'source' => (string) ($item['source'] ?? 'Google Reviews'),
-            'source_url' => (string) ($item['source_url'] ?? 'https://maps.google.com'),
+            'source' => (string) ($item['source'] ?? 'Placeholder review — client approval required'),
+            'source_url' => (string) ($item['source_url'] ?? ''),
             'date' => (string) ($item['date'] ?? ''),
             'treatment' => (string) ($item['treatment'] ?? 'Clinical Care'),
         ];
