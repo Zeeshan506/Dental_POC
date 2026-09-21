@@ -78,7 +78,7 @@ Implementation & Tests Passed ──► Spawn Independent QA ──► Findings?
                                          └── Fix & Re-test ────┘
 ```
 
-- **Independent Inspection**: The investigator does not trust the implementation summary. It independently inspects diffs, source requirements, tenant boundaries, and runs test suites.
+- **Independent Inspection**: The initial investigator does not trust the implementation summary. It independently inspects the full diff, source requirements, tenant boundaries, and relevant test suites.
 - **QA Verdicts**:
   - `QA VERDICT: PASSED`: Explicit evidence cited for every Acceptance Criterion.
   - `QA VERDICT: FAILED`: Concrete findings list with severity, affected AC, file/path, expected vs observed behavior, and required correction.
@@ -86,8 +86,8 @@ Implementation & Tests Passed ──► Spawn Independent QA ──► Findings?
   - Independent QA is **not advisory**. All confirmed defects must be fixed on the feature branch.
   - Add/strengthen regression tests for each defect.
   - Re-run test suites and commit fixes.
-  - Spawn a fresh independent QA investigator with remediation history.
-  - **Success Condition**: A feature is not complete until a fresh independent QA investigator returns `QA VERDICT: PASSED`.
+  - Spawn a fresh independent QA investigator with remediation history. After an initial failure, its audit is intentionally limited to the previously flagged finding IDs, their corrections, and their regression tests; it must not repeat a full-system scan or full-suite run unless a flagged correction directly requires it.
+  - **Success Condition**: A feature is not complete until a fresh independent QA investigator returns `QA VERDICT: PASSED` for every previously flagged finding.
 - *Full QA protocol and handoff schemas: [references/qa-investigator-protocol.md](./references/qa-investigator-protocol.md)*
 
 ---
