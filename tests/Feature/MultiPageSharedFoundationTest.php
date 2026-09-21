@@ -160,21 +160,31 @@ class MultiPageSharedFoundationTest extends TestCase
 
     public function test_incomplete_configured_resources_have_safe_metadata_and_detail_defaults(): void
     {
-        config(['site.services' => [['slug' => 'incomplete-service', 'cta' => ['label' => '', 'path' => '']]]]);
+        config(['site.services' => [[
+            'slug' => 'incomplete-service',
+            'name' => '',
+            'introduction' => '',
+            'suitability' => '',
+            'process' => '',
+            'technology' => '',
+            'cta' => ['label' => '', 'path' => ''],
+        ]]]);
 
         $this->get('/services?variant=a')
             ->assertOk()
             ->assertSee('Service information pending approval')
             ->assertSee('Service information is pending client approval.');
-        $this->get('/services/incomplete-service?variant=a')
+        $incompleteService = $this->get('/services/incomplete-service?variant=a');
+        $incompleteService
             ->assertOk()
             ->assertSee('Service information pending approval')
             ->assertSee('Suitability requires an individual clinical assessment.')
             ->assertSee('Technology and materials require clinician confirmation.')
             ->assertSee('Discuss this service')
             ->assertSee('/contact?variant=a', false);
+        $incompleteService->assertSee('<title>Service information pending approval | Dr. Bhatti &amp; Associates</title>', false);
 
-        config(['site.team' => [['slug' => 'incomplete-member']]]);
+        config(['site.team' => [['slug' => 'incomplete-member', 'name' => '', 'role' => '', 'details' => '']]]);
 
         $this->get('/team?variant=b')
             ->assertOk()
@@ -182,6 +192,7 @@ class MultiPageSharedFoundationTest extends TestCase
             ->assertSee('Profile pending client approval');
         $this->get('/team/incomplete-member?variant=b')
             ->assertOk()
-            ->assertSee('This profile is pending client approval.');
+            ->assertSee('This profile is pending client approval.')
+            ->assertSee('Team profile pending approval');
     }
 }

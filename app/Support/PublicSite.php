@@ -117,7 +117,12 @@ class PublicSite
                 'technology' => 'Technology and materials require clinician confirmation.',
                 'cta' => ['label' => 'Discuss this service', 'path' => '/contact'],
             ], $record, [
+                'name' => self::textOrDefault($record['name'] ?? null, 'Service information pending approval'),
+                'introduction' => self::textOrDefault($record['introduction'] ?? null, 'Service information is pending client approval.'),
+                'suitability' => self::textOrDefault($record['suitability'] ?? null, 'Suitability requires an individual clinical assessment.'),
+                'process' => self::textOrDefault($record['process'] ?? null, 'The clinical team will discuss appropriate next steps during consultation.'),
                 'benefits' => is_array($record['benefits'] ?? null) ? $record['benefits'] : [],
+                'technology' => self::textOrDefault($record['technology'] ?? null, 'Technology and materials require clinician confirmation.'),
                 'cta' => [
                     'label' => $ctaLabel !== '' ? $ctaLabel : 'Discuss this service',
                     'path' => str_starts_with($ctaPath, '/') ? $ctaPath : '/contact',
@@ -130,6 +135,17 @@ class PublicSite
             'details' => 'This profile is pending client approval.',
             'role' => 'Profile pending client approval',
             'approved' => false,
-        ], $record);
+        ], $record, [
+            'name' => self::textOrDefault($record['name'] ?? null, 'Team profile pending approval'),
+            'details' => self::textOrDefault($record['details'] ?? null, 'This profile is pending client approval.'),
+            'role' => self::textOrDefault($record['role'] ?? null, 'Profile pending client approval'),
+        ]);
+    }
+
+    private static function textOrDefault(mixed $value, string $default): string
+    {
+        $text = is_string($value) ? trim($value) : '';
+
+        return $text !== '' ? $text : $default;
     }
 }
