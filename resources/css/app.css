@@ -14,8 +14,8 @@
     --color-stone-warm-300: #ded4c0;
     --color-stone-warm-400: #ccbca2;
     --color-stone-warm-500: #b5a183;
-    --color-stone-warm-600: #998367;
-    --color-stone-warm-700: #7c6851;
+    --color-stone-warm-600: #806c54;
+    --color-stone-warm-700: #6b5740;
     --color-stone-warm-800: #645443;
     --color-stone-warm-900: #524538;
     --color-stone-warm-950: #2d251d;
@@ -26,7 +26,7 @@
 
     --color-brass-400: #d4af37;
     --color-brass-500: #c59b27;
-    --color-brass-600: #aa821c;
+    --color-brass-600: #8a6508;
 
     --color-sage-100: #eef2ee;
     --color-sage-500: #6f8272;
@@ -145,5 +145,10 @@ footer[data-variant-footer='editorial'] .border-stone-warm-300 {
         opacity: 1 !important;
         transform: none !important;
         transition-delay: 0ms !important;
+    }
+
+    [data-motion-interactive]:hover,
+    [data-motion-interactive]:active {
+        transform: none !important;
     }
 }
