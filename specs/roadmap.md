@@ -16,7 +16,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 | Phase 6 | Cross-Variant Polish, Accessibility & Presentation Audit | [Phase 6 Spec](2026-09-21-phase-6-cross-variant-polish-audit/) | AC-1 to AC-7 | Ready | In Progress (Partially Finished) | Pending |
 | Phase 7 | Global Animation Guidance Skill | [Phase 7 Spec](2026-09-21-phase-7-global-animation-guidance-skill/) | AC-1 to AC-6 | Ready | Implemented | Validated |
 | Phase 8 | Multi-Page Shared Foundation | [Phase 8 Spec](2026-09-21-phase-8-multi-page-shared-foundation/) | AC-1 to AC-8 | Ready | Implemented | Pending |
-| Phase 9 | Variant A Multi-Page Experience | [Phase 9 Spec](2026-09-21-phase-9-variant-a-multi-page-experience/) | AC-1 to AC-7 | Ready | Not Started | Pending |
+| Phase 9 | Variant A Multi-Page Experience | [Phase 9 Spec](2026-09-21-phase-9-variant-a-multi-page-experience/) | AC-1 to AC-7 | Ready | Implemented | Validated |
 | Phase 10 | Variant B Multi-Page Experience | [Phase 10 Spec](2026-09-21-phase-10-variant-b-multi-page-experience/) | AC-1 to AC-7 | Ready | Implemented | Validated |
 
 ---
@@ -122,10 +122,10 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 ### Phase 9: Variant A Multi-Page Experience
 - **Specification**: [specs/2026-09-21-phase-9-variant-a-multi-page-experience/](2026-09-21-phase-9-variant-a-multi-page-experience/)
 - **Acceptance Criteria**: AC-1 through AC-7
-- **Status**: Specification: Ready | Implementation: Not Started | Validation: Pending
-- [ ] **Task 9.1**: Compose all required informational, utility, service, team, review, and legal routes with reusable expressive Variant A components and the Phase 8 shared contracts.
-- [ ] **Task 9.2**: Extend settled expressive Motion Mini choreography, responsive treatment, and accessibility across every new Variant A page.
-- [ ] **Task 9.3**: Verify complete Variant A journeys, detail templates, reviews, mock contact form, variant switching, mobile, reduced-motion, and JavaScript-disabled flows.
+- **Status**: Specification: Ready | Implementation: Implemented | Validation: Validated
+- [x] **Task 9.1**: Compose all required informational, utility, service, team, review, and legal routes with reusable expressive Variant A components and the Phase 8 shared contracts.
+- [x] **Task 9.2**: Extend settled expressive Motion Mini choreography, responsive treatment, and accessibility across every new Variant A page.
+- [x] **Task 9.3**: Verify complete Variant A journeys, detail templates, reviews, mock contact form, variant switching, mobile, reduced-motion, and JavaScript-disabled flows (automated/QA evidence and manual acceptance complete).
 - **Deliverable / Verification**: Variant A is a complete expressive, layered, premium medical website without redesigning its existing homepage or diverging from shared facts.
 
 ### Phase 10: Variant B Multi-Page Experience

@@ -73,6 +73,11 @@ class PublicSite
     public static function view(Request $request, string $pageKey, ?string $slug = null): View
     {
         $contract = self::page($request, $pageKey, $slug);
+
+        if ($contract['variant'] === 'a' && view()->exists('variants.a.page')) {
+            return view('variants.a.page', $contract);
+        }
+
         $viewKey = str_replace('.', '-', $pageKey);
         $variantView = "variants.{$contract['variant']}.{$viewKey}";
 

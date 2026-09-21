@@ -13,7 +13,7 @@ This reference governs the mandatory Independent QA Investigator subagent, its b
 
 ## 2. Investigator Briefing Payload
 
-When invoking the independent QA investigator, pass a complete briefing:
+When invoking the initial independent QA investigator, pass a complete briefing:
 
 ```markdown
 ### QA Investigation Request
@@ -28,11 +28,13 @@ When invoking the independent QA investigator, pass a complete briefing:
 - Implementation Agent Test Summary: [Commands executed, pass/fail counts]
 ```
 
+For every remediation investigator, additionally pass `Prior Finding IDs`, the prior report, changed paths, regression-test commands, and a clear **Audit Scope: targeted remediation only** instruction.
+
 ---
 
-## 3. Independent QA Audit Checklist
+## 3. Initial Independent QA Audit Checklist
 
-The QA investigator executes the following inspections:
+The initial QA investigator executes the following inspections:
 
 1. **Source Requirements Ingestion**: Read the attached client resources (Priority 1) and specification files (`requirements.md`, `plan.md`, `validation.md`) directly.
 2. **Diff & Scope Inspection**: Inspect the full branch diff (`git diff main...HEAD`). Ensure every modified file is strictly relevant. Detect and flag unrelated refactoring or speculative edits.
@@ -42,6 +44,10 @@ The QA investigator executes the following inspections:
 6. **UI / Contract Consistency**: Verify that Blade templates, form submissions, and API contracts match desktop layout conventions and spec expectations.
 7. **Test Genuineness**: Scrutinize test assertions. Ensure tests genuinely reproduce the user failure scenario and cannot pass trivially or tautologically.
 8. **Engineering & Modularity Compliance**: Verify no file exceeds the **300-line** modularity constraint (strict cap 450 lines).
+
+### Targeted Remediation Audit Checklist
+
+After a failed initial audit, a fresh independent investigator verifies only the previously reported finding IDs. It must inspect each correction, the directly affected regression test, and the smallest relevant test command. It must not repeat the full branch scan, acceptance-criteria sweep, or full system suite unless the correction itself changes a wider contract. Its verdict must list each finding ID as `resolved`, `still failing`, or `newly exposed by the flagged correction`.
 
 ---
 
@@ -121,7 +127,7 @@ The independent QA report is **not advisory**. All findings must be addressed:
 4. **Strengthen Regression Coverage**: Add or update automated regression tests specifically reproducing the failure path identified by QA.
 5. **Re-run Test Suites**: Run focused tests and affected regression suites.
 6. **Commit Fixes**: Author a descriptive remediation commit on the feature branch.
-7. **Spawn Fresh Independent QA**: Invoke a new independent QA investigator. Pass the remediation history, new commit diff, and updated tests.
+7. **Spawn Fresh Independent QA**: Invoke a new independent QA investigator. Pass the remediation history, new commit diff, updated tests, and a targeted scope limited to the prior finding IDs.
 
 ### Prohibitions:
 - **DO NOT** ignore a finding because local tests pass.
@@ -138,4 +144,4 @@ If the implementation agent has clear evidence that a QA finding is invalid agai
 
 ### Final Success Condition:
 > [!CAUTION]
-> A feature is **NOT** considered implementation-complete until the agent has acted on all confirmed QA findings and a fresh independent QA investigator returns **`QA VERDICT: PASSED`**.
+> A feature is **NOT** considered implementation-complete until the agent has acted on all confirmed QA findings and a fresh independent QA investigator returns **`QA VERDICT: PASSED`** for each prior finding. The initial audit is comprehensive; remediation audits are targeted by design.

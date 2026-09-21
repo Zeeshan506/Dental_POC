@@ -80,6 +80,7 @@ Every successful `/implement-spec` run must finish with this structured report:
 
 ## Independent QA Investigator
 - **Final Verdict**: `QA VERDICT: PASSED`
+- **QA Audit Scope**: [Initial comprehensive audit / targeted remediation audit for QA-F1, QA-F2]
 - **QA Remediation History**:
   | Finding ID | Severity | Description | Action Taken | Rerun Verdict |
   |---|---|---|---|---|
