@@ -31,8 +31,12 @@
     role="article"
     aria-label="Patient review by {{ $name }}"
 >
-    <!-- Hidden full narrative container for client inspection -->
-    <div class="hidden" data-full-text-content>{!! nl2br(e($fullText)) !!}</div>
+    <details class="mt-4 text-sm text-stone-warm-700 leading-relaxed" data-review-fallback>
+        <summary class="cursor-pointer text-xs font-mono text-stone-warm-600 hover:text-charcoal-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 rounded-sm">
+            Read complete review
+        </summary>
+        <div class="mt-3" data-full-text-content>{!! nl2br(e($fullText)) !!}</div>
+    </details>
 
     <div>
         <!-- Editorial Header: Minimal Stars & Discipline -->

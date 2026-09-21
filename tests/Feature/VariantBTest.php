@@ -159,7 +159,21 @@ class VariantBTest extends TestCase
         $this->assertStringContainsString('headline: { distance: 12, duration: 0.72 }', $script);
         $this->assertStringContainsString('image: { distance: 10, duration: 0.76, scale: 1.02 }', $script);
         $this->assertStringContainsString('ease: profile.ease', $script);
-        $this->assertStringContainsString("window.matchMedia('(max-width: 639px)').matches", $script);
+        $this->assertStringContainsString("window.matchMedia('(max-width: 767px)').matches", $script);
+    }
+
+    public function test_review_full_text_has_a_progressive_enhancement_fallback(): void
+    {
+        $response = $this->get('/?variant=b');
+
+        $content = $response->getContent();
+
+        $response->assertSee('data-review-fallback', false);
+        $this->assertStringNotContainsString('class="hidden" data-review-fallback', $content);
+
+        foreach (config('clinic.reviews') as $review) {
+            $response->assertSee($review['full_text']);
+        }
     }
 
     public function test_keyboard_focus_indicators_cover_review_cards_and_carousel_track(): void

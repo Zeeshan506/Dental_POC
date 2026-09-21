@@ -41,7 +41,7 @@ const parseMilliseconds = (value) => {
 };
 
 const getStaggerDelay = (element) => {
-    if (window.matchMedia('(max-width: 639px)').matches) {
+    if (window.matchMedia('(max-width: 767px)').matches) {
         return 0;
     }
 
@@ -82,7 +82,7 @@ const getObserverTarget = (element) => {
 };
 
 const getDelay = (element) => {
-    if (window.matchMedia('(max-width: 639px)').matches) {
+    if (window.matchMedia('(max-width: 767px)').matches) {
         return 0;
     }
 

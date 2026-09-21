@@ -22,3 +22,11 @@
 ## Post-Implementation Comparison Target
 
 Variant B should feel slower, smaller, and quieter than Variant A while preserving its own calm editorial layout. Validation will compare local desktop and mobile full-scroll behavior to this rhythm, not to the reference's visual composition.
+
+## Post-Implementation Comparison Result
+
+**Compared:** 2026-09-21 at 1440×900 and 390×844 during the recorded local Playwright verification.
+
+- The local page retained the reference-informed rhythm: an already composed full-bleed hero, then quiet one-time grouped reveals during a full scroll rather than card fly-ins or looping movement.
+- At mobile width, the page read as a single column and retained direct manual controls; the hero and review controls did not introduce a continuous progression.
+- The implementation is deliberately distinct: it uses the clinic’s own content, imagery, clinical hierarchy, and navigation. The comparison evaluated pacing and interaction rhythm only, not reference layout or assets.
