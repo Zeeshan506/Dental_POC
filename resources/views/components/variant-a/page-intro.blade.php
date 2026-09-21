@@ -1,6 +1,6 @@
 @props(['page' => []])
 
-<section class="relative isolate overflow-hidden border-b border-stone-warm-200 bg-stone-warm-100 px-4 py-16 sm:px-6 sm:py-24 lg:px-8" data-motion="fade">
+<section class="relative isolate overflow-hidden border-b border-stone-warm-200 bg-stone-warm-100 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20" data-motion="fade">
     <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
         <div class="absolute -right-20 -top-24 h-72 w-72 rounded-[3rem] border border-stone-warm-300 bg-stone-warm-200/70"></div>
         <div class="absolute -bottom-20 left-[8%] h-40 w-40 rotate-12 border border-brass-500/40 bg-stone-warm-50"></div>

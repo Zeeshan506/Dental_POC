@@ -1,8 +1,8 @@
 @props(['page' => [], 'variant' => 'a'])
 
 @php($doctor = config('clinic.doctor'))
-<section class="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-    <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12 lg:items-center">
+<x-variant-a.page-shell>
+    <div class="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
         <div class="relative lg:col-span-5" data-motion="image">
             <div class="absolute inset-4 -z-10 rotate-3 rounded-3xl border border-stone-warm-300 bg-stone-warm-200" aria-hidden="true"></div>
             <figure class="overflow-hidden rounded-3xl border border-stone-warm-300 bg-stone-warm-100">
@@ -19,4 +19,4 @@
             <a href="{{ url('/team/dr-tariq-bhatti').'?variant='.$variant }}" class="mt-8 inline-flex min-h-[44px] items-center border border-charcoal-900 bg-charcoal-900 px-5 py-2 text-sm font-semibold text-stone-warm-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 focus-visible:ring-offset-2" data-motion="action" data-motion-delay="320" data-motion-interactive>View the clinical director profile</a>
         </div>
     </div>
-</section>
+</x-variant-a.page-shell>

@@ -2,15 +2,15 @@
 
 @php($isClinicalDirector = $member['slug'] === 'dr-tariq-bhatti')
 @php($doctor = config('clinic.doctor'))
-<section class="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-    <article class="mx-auto max-w-7xl">
+<x-variant-a.page-shell>
+    <article>
         @if($isClinicalDirector)
             <div class="grid overflow-hidden border border-stone-warm-300 bg-stone-warm-50 lg:grid-cols-12">
                 <div class="relative min-h-[25rem] bg-stone-warm-100 lg:col-span-5" data-motion="image">
                     <img src="{{ asset('images/variant-a/dentist-cutout.webp') }}" alt="{{ $doctor['name'] }}" class="absolute inset-0 h-full w-full object-contain object-bottom" />
                     <p class="absolute bottom-4 left-4 border border-stone-warm-300 bg-stone-warm-50 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-stone-warm-700">Portrait study · existing POC asset</p>
                 </div>
-                <div class="p-7 sm:p-10 lg:col-span-7">
+                <div class="p-7 sm:p-10 lg:col-span-7 lg:p-14">
                     <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brass-600" data-motion="rise">Clinical director</p>
                     <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-stone-warm-600" data-motion="copy">{{ $doctor['title'] }} · {{ $doctor['credentials'] }}</p>
                     <p class="mt-6 leading-relaxed text-stone-warm-700" data-motion="copy">{{ $doctor['bio'] }}</p>
@@ -21,7 +21,7 @@
                 </div>
             </div>
         @else
-            <div class="max-w-3xl border border-stone-warm-300 bg-stone-warm-50 p-7 sm:p-10" data-motion="card">
+            <div class="max-w-3xl border border-stone-warm-300 bg-stone-warm-50 p-7 sm:p-10 lg:p-14" data-motion="card">
                 <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brass-600">Placeholder profile</p>
                 <p class="mt-4 text-sm font-semibold uppercase tracking-wider text-stone-warm-600">{{ $member['role'] }}</p>
                 <p class="mt-7 leading-relaxed text-stone-warm-700">{{ $member['details'] }}</p>
@@ -30,4 +30,4 @@
             </div>
         @endif
     </article>
-</section>
+</x-variant-a.page-shell>

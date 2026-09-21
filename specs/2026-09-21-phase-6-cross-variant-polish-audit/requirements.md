@@ -11,7 +11,32 @@ This audit ensures:
 - 100% adherence to the repository's 300-line modularity cap.
 - High-quality client presentation and walkthrough documentation demonstrating the contrasting design languages and clinical positioning.
 
-**Lifecycle:** Specification: Ready | Implementation: In Progress (Partially Finished) | Validation: Pending.
+**Lifecycle:** Specification: Ready | Implementation: Implemented | Validation: Validated (Browser Evidence Waived).
+
+## Multi-Page Remediation Addition: Variant A Layout Polish
+
+### Context & Defect Analysis
+
+Phase 9 introduced Variant A public pages beyond the landing page. Manual review found those pages visually inconsistent with the settled landing-page composition: sections can feel crowded or disconnected, and their responsive rhythm does not consistently preserve the intended premium 2D-cutout hierarchy. This addition closes Phase 6 only after the non-landing Variant A layouts have a coherent container, spacing, typography, image, and responsive treatment.
+
+### In-Scope Remediation
+
+- [x] Audit and repair the layout of every non-landing Variant A public route: about, services and service details, team and team details, reviews, contact, FAQ, patient journey, and legal/information pages.
+- [x] Establish a consistent expressive page rhythm using reusable layout primitives or components: page-intro-to-content transition, maximum readable line lengths, intentional section gaps, card padding, and responsive image framing.
+- [x] Preserve the existing landing page, shared route/content contracts, approved copy, Variant A motion system, and accessible interaction behavior.
+- [x] Verify the remediated routes with automated rendering, build, formatting, and modularity evidence. Browser viewport verification was explicitly waived by the user at merge time because no browser harness is configured.
+
+### Out-of-Scope Remediation
+
+- Redesigning the Variant A landing page.
+- Adding routes, changing clinic facts/copy, or using unprovided client imagery.
+- Changing Variant B page composition except where a shared primitive requires a non-visual regression check.
+
+### New Acceptance Criteria
+
+- [x] **AC-8**: Given a visitor opens any non-landing Variant A public route, when the page renders, then its content uses a consistent expressive layout rhythm with deliberate page-intro spacing, readable measure, section separation, card padding, and balanced image/content compositions. Automated rendering coverage passed; browser evidence was explicitly waived by the user.
+- [x] **AC-9**: Given the full Variant A non-landing route map is rendered, then the shared layout uses overflow containment and responsive spacing classes. The required browser viewport sweep was explicitly waived by the user because no browser harness is configured.
+- [x] **AC-10**: Given the Variant A multi-page layout correction is applied, when the landing page and shared contracts are verified, then the landing page remains visually and behaviorally unchanged and the existing reduced-motion, keyboard-focus, and touch-target guarantees continue to hold.
 
 ## 2. Scope
 
