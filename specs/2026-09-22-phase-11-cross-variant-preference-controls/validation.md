@@ -7,9 +7,9 @@
 | AC-1 | Variant A site-wide expressive choreography | Rendered-hook tests and desktop/mobile full-scroll audit | Automated: PASS; Manual: Pending |
 | AC-2 | Variant B site-wide calm editorial choreography | Rendered-hook tests and desktop/mobile full-scroll audit | Automated: PASS; Manual: Pending |
 | AC-3 | Reduced-motion and no-JS safety | Browser emulation and JavaScript-disabled route checks | Automated: PASS; Manual: Pending |
-| AC-4 | Both named hero labels removed | Focused hero rendering tests | Automated: PASS; Manual: Pending |
-| AC-5 | Responsive rendered views and reachable controls | 320px, 375px, tablet, desktop browser audits | [ ] |
-| AC-6 | Mobile navigation disclosure accessibility | Keyboard/touch browser flow and rendered-markup tests | [ ] |
+| AC-4 | Both named hero labels removed | Focused hero rendering tests | Automated: PASS; Manual: PASS (user, 2026-09-22) |
+| AC-5 | Responsive rendered views and reachable controls | 320px, 375px, tablet, desktop browser audits | Automated: PASS; Manual: Pending |
+| AC-6 | Mobile navigation disclosure accessibility | Keyboard/touch browser flow and rendered-markup tests | Automated: PASS; Manual: Pending |
 | AC-7 | Four semantic color palettes | Preference tests, contrast audit, visual browser comparison | [ ] |
 | AC-8 | Two typography systems | Font/rendering tests and viewport comparison | [ ] |
 | AC-9 | Path-preserving preference switcher state | Feature query/session matrix and browser interaction flow | [ ] |
@@ -36,7 +36,16 @@
 - `php artisan test --compact`: PASS — 77 tests, 1,494 assertions.
 - `npm run check:line-counts`: PASS — 265 tracked text/code files at or below 300 lines.
 - `vendor/bin/pint --dirty --format agent`: PASS.
-- Manual review remains pending before Group 3 begins.
+- Manual review: PASS (user, 2026-09-22).
+
+### Group 3 Automated Evidence — 2026-09-22
+
+- `php artisan test --compact tests/Feature/ResponsiveNavigationTest.php tests/Feature/VariantResolutionTest.php tests/Feature/VariantAMultiPageTest.php tests/Feature/VariantBMultiPageTest.php tests/Feature/TestimonialsCarouselTest.php`: PASS — 33 tests, 788 assertions.
+- `php artisan test --compact`: PASS — 79 tests, 1,599 assertions.
+- `npm run build`: PASS.
+- `npm run check:line-counts`: PASS — 266 tracked text/code files at or below 300 lines.
+- `vendor/bin/pint --dirty --format agent`: PASS.
+- Browser viewport and interaction evidence is intentionally pending manual review before Group 4 begins.
 
 ## 3. Manual Verification Checklist
 

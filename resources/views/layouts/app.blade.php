@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="min-h-full flex flex-col font-sans selection:bg-stone-warm-300 selection:text-charcoal-900">
+<body class="min-h-full flex flex-col overflow-x-clip font-sans selection:bg-stone-warm-300 selection:text-charcoal-900">
     @yield('content')
     {{ $slot ?? '' }}
 

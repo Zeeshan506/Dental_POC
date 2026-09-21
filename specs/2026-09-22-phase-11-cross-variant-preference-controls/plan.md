@@ -18,14 +18,16 @@ Extend the current Blade, Tailwind token, Motion Mini, and route/session contrac
 ### Group 2: Hero Label Removal
 
 - [x] Task 2.1: Remove only the named decorative identifier badge from each landing hero, without changing the established headline, clinical copy, CTA sequence, or other meaningful labels.
-- [x] Task 2.2: Add rendering regression assertions that the strings are absent and each hero’s accessible heading and actions remain available in both variants.
+- [x] Task 2.2: Add rendering regression assertions that the strings are absent and each hero’s accessible heading and actions remain available in both variants. User manual test: PASS (2026-09-22).
 
 ### Group 3: Mobile-First Navigation & Rendered-View Refinement
 
-- [ ] Task 3.1: Refactor the shared header/primary-navigation boundary so the 320px header prioritizes brand and a labelled menu control; place direct contact action within the expanded mobile menu while retaining the desktop layout at the established breakpoint.
-- [ ] Task 3.2: Ensure the disclosure remains keyboard and touch operable without JavaScript, exposes active state and visible focus, keeps every target at least 44px, and closes/reflows safely on navigation and viewport changes.
-- [ ] Task 3.3: Audit all public routes in both variants at 320px, 375px, tablet, and desktop; correct overflow, clipping, dense header/fixed-switcher conflicts, image/map/form sizing, and hierarchy regressions without redesigning either direction.
-- [ ] Task 3.4: Add feature coverage for rendered navigation contracts and run browser route journeys covering menu, CTA, switcher, resource pages, forms, carousel/modal, and legal/footer links.
+- [x] Task 3.1: Refactor the shared header/primary-navigation boundary so the 320px header prioritizes brand and a labelled menu control; place direct contact action within the expanded mobile menu while retaining the desktop layout at the established breakpoint.
+- [x] Task 3.2: Ensure the disclosure remains keyboard and touch operable without JavaScript, exposes active state and visible focus, keeps every target at least 44px, and closes/reflows safely on navigation and viewport changes.
+- [x] Task 3.3: Complete the automated public-route rendering audit and add the global overflow guard. Browser viewport checks at 320px, 375px, tablet, and desktop remain pending manual review.
+- [ ] Task 3.4: Rendered navigation-contract coverage passes. Browser route journeys covering menu, CTA, switcher, resource pages, forms, carousel/modal, and legal/footer links remain pending manual review.
+
+> Deferred: Complete Group 3’s browser viewport and interaction checks during manual review; do not treat Task 3.4 as done yet.
 
 ### Group 4: Palette, Typography & Shared Preference Switcher
 

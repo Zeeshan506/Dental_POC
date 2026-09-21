@@ -34,11 +34,11 @@
                 </a>
             </div>
 
-            <div class="flex items-center gap-2 sm:gap-4">
+            <div class="flex items-center gap-2 lg:gap-4">
                 <x-shared.primary-navigation :variant="$variant ?? 'a'" />
                 <!-- Phone Direct Link -->
                 <a href="tel:{{ $clinic['contact']['phone_raw'] }}" @class([
-                    'hidden md:inline-flex items-center gap-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 rounded px-2 py-1 min-h-[44px]' => true,
+                    'hidden lg:inline-flex items-center gap-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 rounded px-2 py-1 min-h-[44px]' => true,
                     'text-stone-warm-100 hover:text-stone-warm-50 focus-visible:ring-stone-warm-50' => $isEditorial,
                     'text-charcoal-800 hover:text-charcoal-900 focus-visible:ring-charcoal-900' => ! $isEditorial,
                 ]) data-motion="action" data-motion-delay="80" data-motion-interactive>
@@ -50,7 +50,7 @@
 
                 <!-- Primary Consultation CTA -->
                 <a href="{{ $clinic['contact']['whatsapp_url'] }}" target="_blank" rel="noopener noreferrer" @class([
-                    'inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-full text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2' => true,
+                    'hidden lg:inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-full text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2' => true,
                     'bg-stone-warm-50 text-charcoal-900 hover:bg-stone-warm-200 focus-visible:ring-stone-warm-50 focus-visible:ring-offset-charcoal-900' => $isEditorial,
                     'bg-charcoal-900 text-stone-warm-50 hover:bg-charcoal-800 focus-visible:ring-charcoal-900' => ! $isEditorial,
                 ]) data-motion="action" data-motion-delay="160" data-motion-interactive>
