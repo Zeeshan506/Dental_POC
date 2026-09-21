@@ -16,7 +16,7 @@
             <div class="mx-auto max-w-4xl">
                 @if($page['key'] === 'services')
                     <div class="grid gap-4 sm:grid-cols-2">
-                        @foreach(config('site.services') as $service)
+                        @foreach($page['resources'] as $service)
                             <a href="{{ url('/services/'.$service['slug']).'?variant='.$variant }}" class="block min-h-[44px] border border-stone-warm-300 p-5 hover:border-charcoal-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900">
                                 <h2 class="font-serif text-2xl text-charcoal-900">{{ $service['name'] }}</h2>
                                 <p class="mt-2 text-sm leading-relaxed text-stone-warm-700">{{ $service['introduction'] }}</p>
@@ -33,7 +33,7 @@
                     </article>
                 @elseif($page['key'] === 'team')
                     <div class="grid gap-4 sm:grid-cols-2">
-                        @foreach(config('site.team') as $member)
+                        @foreach($page['resources'] as $member)
                             <a href="{{ url('/team/'.$member['slug']).'?variant='.$variant }}" class="block min-h-[44px] border border-stone-warm-300 p-5 hover:border-charcoal-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900"><h2 class="font-serif text-2xl text-charcoal-900">{{ $member['name'] }}</h2><p class="mt-2 text-sm text-stone-warm-700">{{ $member['role'] }}</p></a>
                         @endforeach
                     </div>

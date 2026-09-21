@@ -161,10 +161,24 @@ class MultiPageSharedFoundationTest extends TestCase
     {
         config(['site.services' => [['slug' => 'incomplete-service']]]);
 
+        $this->get('/services?variant=a')
+            ->assertOk()
+            ->assertSee('Service information pending approval')
+            ->assertSee('Service information is pending client approval.');
         $this->get('/services/incomplete-service?variant=a')
             ->assertOk()
             ->assertSee('Service information pending approval')
             ->assertSee('Suitability requires an individual clinical assessment.')
             ->assertSee('Technology and materials require clinician confirmation.');
+
+        config(['site.team' => [['slug' => 'incomplete-member']]]);
+
+        $this->get('/team?variant=b')
+            ->assertOk()
+            ->assertSee('Team profile pending approval')
+            ->assertSee('Profile pending client approval');
+        $this->get('/team/incomplete-member?variant=b')
+            ->assertOk()
+            ->assertSee('This profile is pending client approval.');
     }
 }

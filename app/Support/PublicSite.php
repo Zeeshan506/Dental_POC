@@ -36,6 +36,11 @@ class PublicSite
             'team.show' => self::resource('team', $slug),
             default => null,
         };
+        $resources = match ($pageKey) {
+            'services' => self::resources('services'),
+            'team' => self::resources('team'),
+            default => [],
+        };
 
         if ($resource !== null) {
             $page = [
@@ -57,7 +62,7 @@ class PublicSite
                 'description' => $page['description'] ?? config('clinic.description'),
                 'canonical_path' => $path,
             ],
-            'page' => array_merge($page, ['key' => $pageKey, 'resource' => $resource]),
+            'page' => array_merge($page, ['key' => $pageKey, 'resource' => $resource, 'resources' => $resources]),
         ];
     }
 
@@ -68,13 +73,26 @@ class PublicSite
      */
     private static function resource(string $type, ?string $slug): array
     {
-        foreach (config("site.{$type}", []) as $record) {
+        foreach (self::resources($type) as $record) {
             if (is_array($record) && ($record['slug'] ?? null) === $slug) {
-                return self::normalizeResource($type, $record);
+                return $record;
             }
         }
 
         abort(404);
+    }
+
+    /**
+     * Normalize the configured collection before either list or detail rendering.
+     *
+     * @return array<int, array<string, mixed>>
+     */
+    private static function resources(string $type): array
+    {
+        return array_values(array_map(
+            fn (mixed $record): array => self::normalizeResource($type, is_array($record) ? $record : []),
+            config("site.{$type}", []),
+        ));
     }
 
     /**
