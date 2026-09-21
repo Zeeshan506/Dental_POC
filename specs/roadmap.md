@@ -17,7 +17,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 | Phase 7 | Global Animation Guidance Skill | [Phase 7 Spec](2026-09-21-phase-7-global-animation-guidance-skill/) | AC-1 to AC-6 | Ready | Implemented | Validated |
 | Phase 8 | Multi-Page Shared Foundation | [Phase 8 Spec](2026-09-21-phase-8-multi-page-shared-foundation/) | AC-1 to AC-8 | Ready | Implemented | Pending |
 | Phase 9 | Variant A Multi-Page Experience | [Phase 9 Spec](2026-09-21-phase-9-variant-a-multi-page-experience/) | AC-1 to AC-7 | Ready | Not Started | Pending |
-| Phase 10 | Variant B Multi-Page Experience | [Phase 10 Spec](2026-09-21-phase-10-variant-b-multi-page-experience/) | AC-1 to AC-7 | Ready | Implemented | Pending |
+| Phase 10 | Variant B Multi-Page Experience | [Phase 10 Spec](2026-09-21-phase-10-variant-b-multi-page-experience/) | AC-1 to AC-7 | Ready | Implemented | Validated |
 
 ---
 
@@ -131,7 +131,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 ### Phase 10: Variant B Multi-Page Experience
 - **Specification**: [specs/2026-09-21-phase-10-variant-b-multi-page-experience/](2026-09-21-phase-10-variant-b-multi-page-experience/)
 - **Acceptance Criteria**: AC-1 through AC-7
-- **Status**: Specification: Ready | Implementation: Implemented | Validation: Pending
+- **Status**: Specification: Ready | Implementation: Implemented | Validation: Validated
 - [x] **Task 10.1**: Compose all required informational, utility, service, team, review, and legal routes with reusable calm Variant B components and the Phase 8 shared contracts.
 - [x] **Task 10.2**: Extend Phase 5’s restrained editorial Motion Mini profile, responsive treatment, and accessibility across every new Variant B page.
 - [x] **Task 10.3**: Verify complete Variant B journeys, detail templates, reviews, mock contact form, variant switching, mobile, reduced-motion, and JavaScript-disabled flows.
