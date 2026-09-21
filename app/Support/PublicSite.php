@@ -105,8 +105,8 @@ class PublicSite
     {
         if ($type === 'services') {
             $configuredCta = is_array($record['cta'] ?? null) ? $record['cta'] : [];
-            $ctaLabel = trim((string) ($configuredCta['label'] ?? ''));
-            $ctaPath = trim((string) ($configuredCta['path'] ?? ''));
+            $ctaLabel = is_string($configuredCta['label'] ?? null) ? trim($configuredCta['label']) : '';
+            $ctaPath = is_string($configuredCta['path'] ?? null) ? trim($configuredCta['path']) : '';
 
             return array_merge([
                 'name' => 'Service information pending approval',

@@ -167,7 +167,7 @@ class MultiPageSharedFoundationTest extends TestCase
             'suitability' => '',
             'process' => '',
             'technology' => '',
-            'cta' => ['label' => '', 'path' => ''],
+            'cta' => ['label' => 99, 'path' => 'javascript:invalid'],
         ]]]);
 
         $this->get('/services?variant=a')
