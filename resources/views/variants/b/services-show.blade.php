@@ -20,7 +20,6 @@
 
         <x-variant-b.page-header
             chapter="Clinical Discipline"
-            kicker="Calm editorial foundation"
             :heading="$service['name']"
             :intro="$service['introduction']"
         />

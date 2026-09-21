@@ -73,4 +73,40 @@ class ResponsiveNavigationTest extends TestCase
             }
         }
     }
+
+    public function test_variant_b_public_pages_omit_the_removed_editorial_foundation_badge(): void
+    {
+        $paths = [
+            '/about',
+            '/services',
+            '/services/'.config('site.services.0.slug'),
+            '/team',
+            '/team/'.config('site.team.0.slug'),
+            '/patient-journey',
+            '/reviews',
+            '/contact',
+            '/faq',
+            '/privacy',
+            '/terms',
+        ];
+
+        foreach ($paths as $path) {
+            $this->get($path.'?variant=b')
+                ->assertOk()
+                ->assertDontSee('Calm editorial foundation');
+        }
+    }
+
+    public function test_switcher_uses_a_compact_mobile_dock_and_descriptive_variant_links(): void
+    {
+        $content = $this->get('/?variant=a')
+            ->assertOk()
+            ->getContent();
+
+        $this->assertStringContainsString('bottom-3 right-3', $content);
+        $this->assertStringContainsString('sm:left-1/2', $content);
+        $this->assertStringContainsString('h-11 w-11', $content);
+        $this->assertStringContainsString('aria-label="Switch to Variant A: Expressive 2D"', $content);
+        $this->assertStringContainsString('aria-label="Switch to Variant B: Calm Editorial"', $content);
+    }
 }

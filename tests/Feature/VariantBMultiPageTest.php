@@ -28,7 +28,7 @@ class VariantBMultiPageTest extends TestCase
 
             $response->assertOk();
             $response->assertSessionHas('variant', 'b');
-            $response->assertSee('Calm editorial foundation');
+            $response->assertDontSee('Calm editorial foundation');
             $response->assertSee('<h1', false);
             $response->assertSee('data-testid="page-heading"', false);
             $response->assertSee($heading);

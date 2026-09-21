@@ -14,7 +14,6 @@
     <main class="flex-1 bg-stone-warm-50 pb-24">
         <x-variant-b.page-header
             chapter="04 / Inquiries"
-            kicker="Calm editorial foundation"
             :heading="$page['heading']"
             :intro="$page['intro']"
         />

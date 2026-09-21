@@ -47,6 +47,15 @@
 - `vendor/bin/pint --dirty --format agent`: PASS.
 - Browser viewport and interaction evidence is intentionally pending manual review before Group 4 begins.
 
+### Group 3 Review Remediation — 2026-09-22
+
+- Removed the decorative `Calm editorial foundation` page-header badge from every Variant B non-home page while preserving chapter labels and page headings.
+- Reworked the narrow-screen variant switcher into compact 44px A/B controls, retaining descriptive accessible labels and full labels at `sm` and above.
+- `php artisan test --compact tests/Feature/ResponsiveNavigationTest.php tests/Feature/VariantBMultiPageTest.php tests/Feature/MultiPageSharedFoundationTest.php tests/Feature/VariantResolutionTest.php`: PASS — 32 tests, 684 assertions.
+- `php artisan test --compact`: PASS — 81 tests, 1,628 assertions.
+- `npm run build`, `npm run check:line-counts`, and `vendor/bin/pint --dirty --format agent`: PASS.
+- Updated browser/manual confirmation remains pending.
+
 ## 3. Manual Verification Checklist
 
 1. Slowly scroll every route in both variants at desktop and mobile sizes; compare each sequence to its landing-page language and confirm once-only settling.

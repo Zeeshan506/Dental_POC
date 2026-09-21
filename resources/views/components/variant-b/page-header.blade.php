@@ -1,18 +1,11 @@
 @props([
     'chapter' => null,
-    'kicker' => 'Calm editorial foundation',
     'heading' => '',
     'intro' => '',
 ])
 
 <section class="border-b border-stone-warm-200 bg-stone-warm-50/80 px-4 py-16 sm:px-6 sm:py-24 lg:px-8" data-motion-profile="editorial" data-motion="fade">
     <div class="mx-auto max-w-4xl">
-        <!-- Eyebrow Badge -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-warm-300 bg-stone-warm-100 text-xs font-mono uppercase tracking-widest text-stone-warm-600 mb-6" data-motion="rise">
-            <span class="w-1.5 h-1.5 rounded-full bg-charcoal-900" aria-hidden="true"></span>
-            {{ $kicker }}
-        </div>
-
         @if($chapter)
             <div class="mb-4">
                 <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-500 block mb-2" data-motion="rise">{{ $chapter }}</span>

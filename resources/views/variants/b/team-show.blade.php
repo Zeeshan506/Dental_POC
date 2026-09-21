@@ -24,7 +24,6 @@
 
         <x-variant-b.page-header
             chapter="Practitioner Profile"
-            kicker="Calm editorial foundation"
             :heading="$member['name']"
             :intro="$member['role']"
         />
