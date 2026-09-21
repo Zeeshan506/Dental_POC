@@ -88,6 +88,7 @@ class MultiPageSharedFoundationTest extends TestCase
         foreach (config('site.services') as $service) {
             $response->assertSee($service['name']);
             $response->assertSee($service['introduction']);
+            $this->assertArrayHasKey('cta', $service);
         }
     }
 
@@ -169,7 +170,8 @@ class MultiPageSharedFoundationTest extends TestCase
             ->assertOk()
             ->assertSee('Service information pending approval')
             ->assertSee('Suitability requires an individual clinical assessment.')
-            ->assertSee('Technology and materials require clinician confirmation.');
+            ->assertSee('Technology and materials require clinician confirmation.')
+            ->assertSee('Discuss this service');
 
         config(['site.team' => [['slug' => 'incomplete-member']]]);
 

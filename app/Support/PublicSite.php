@@ -111,7 +111,11 @@ class PublicSite
                 'process' => 'The clinical team will discuss appropriate next steps during consultation.',
                 'benefits' => [],
                 'technology' => 'Technology and materials require clinician confirmation.',
-            ], $record, ['benefits' => is_array($record['benefits'] ?? null) ? $record['benefits'] : []]);
+                'cta' => ['label' => 'Discuss this service', 'path' => '/contact'],
+            ], $record, [
+                'benefits' => is_array($record['benefits'] ?? null) ? $record['benefits'] : [],
+                'cta' => array_merge(['label' => 'Discuss this service', 'path' => '/contact'], is_array($record['cta'] ?? null) ? $record['cta'] : []),
+            ]);
         }
 
         return array_merge([

@@ -30,6 +30,7 @@
                         <section><h2 class="font-serif text-2xl text-charcoal-900">Process</h2><p class="mt-2">{{ $service['process'] }}</p></section>
                         <section><h2 class="font-serif text-2xl text-charcoal-900">Benefits and considerations</h2><ul class="mt-2 list-disc space-y-1 pl-5">@foreach($service['benefits'] as $benefit)<li>{{ $benefit }}</li>@endforeach</ul></section>
                         <section><h2 class="font-serif text-2xl text-charcoal-900">Technology and materials</h2><p class="mt-2">{{ $service['technology'] }}</p></section>
+                        <a href="{{ url($service['cta']['path']).'?variant='.$variant }}" class="inline-flex min-h-[44px] items-center bg-charcoal-900 px-5 py-2 text-sm font-semibold text-stone-warm-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 focus-visible:ring-offset-2">{{ $service['cta']['label'] }}</a>
                     </article>
                 @elseif($page['key'] === 'team')
                     <div class="grid gap-4 sm:grid-cols-2">
