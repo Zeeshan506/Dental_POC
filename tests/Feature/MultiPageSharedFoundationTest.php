@@ -85,6 +85,11 @@ class MultiPageSharedFoundationTest extends TestCase
             $response->assertSee($item['label']);
         }
 
+        $this->get('/services/dental-implants?variant=a')
+            ->assertOk()
+            ->assertSee('What happens first?')
+            ->assertSee('/services/restorative-care?variant=a', false);
+
         foreach (config('site.services') as $service) {
             $response->assertSee($service['name']);
             $response->assertSee($service['introduction']);

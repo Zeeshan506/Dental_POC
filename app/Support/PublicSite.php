@@ -125,6 +125,8 @@ class PublicSite
                 'process' => 'The clinical team will discuss appropriate next steps during consultation.',
                 'benefits' => [],
                 'technology' => 'Technology and materials require clinician confirmation.',
+                'faqs' => [],
+                'related' => [],
                 'cta' => ['label' => 'Discuss this service', 'path' => '/contact'],
             ], $record, [
                 'name' => self::textOrDefault($record['name'] ?? null, 'Service information pending approval'),
@@ -133,6 +135,8 @@ class PublicSite
                 'process' => self::textOrDefault($record['process'] ?? null, 'The clinical team will discuss appropriate next steps during consultation.'),
                 'benefits' => self::benefits($record['benefits'] ?? []),
                 'technology' => self::textOrDefault($record['technology'] ?? null, 'Technology and materials require clinician confirmation.'),
+                'faqs' => self::faqs($record['faqs'] ?? []),
+                'related' => self::relatedServices($record['related'] ?? []),
                 'cta' => [
                     'label' => $ctaLabel !== '' ? $ctaLabel : 'Discuss this service',
                     'path' => str_starts_with($ctaPath, '/') ? $ctaPath : '/contact',
@@ -172,5 +176,39 @@ class PublicSite
             fn (mixed $benefit): string => self::textOrDefault($benefit, ''),
             $benefits,
         )));
+    }
+
+    /**
+     * @return array<int, array{question: string, answer: string}>
+     */
+    private static function faqs(mixed $faqs): array
+    {
+        if (! is_array($faqs)) {
+            return [];
+        }
+
+        $items = [];
+        foreach ($faqs as $question => $answer) {
+            $question = self::textOrDefault($question, '');
+            $answer = self::textOrDefault($answer, '');
+
+            if ($question !== '' && $answer !== '') {
+                $items[] = compact('question', 'answer');
+            }
+        }
+
+        return $items;
+    }
+
+    /**
+     * @return array<int, string>
+     */
+    private static function relatedServices(mixed $services): array
+    {
+        if (! is_array($services)) {
+            return [];
+        }
+
+        return array_values(array_filter($services, fn (mixed $slug): bool => is_string($slug) && preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/', $slug) === 1));
     }
 }
