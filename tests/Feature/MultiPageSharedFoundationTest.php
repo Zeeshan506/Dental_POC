@@ -102,6 +102,13 @@ class MultiPageSharedFoundationTest extends TestCase
         $response->assertSee('min-h-[44px]', false);
         $response->assertSee('focus-visible:ring-2', false);
         $response->assertDontSee('Dental Implants</a>', false);
+
+        $this->get('/services/dental-implants?variant=a')
+            ->assertOk()
+            ->assertSee('aria-current="page"', false);
+        $this->get('/team/dr-tariq-bhatti?variant=b')
+            ->assertOk()
+            ->assertSee('aria-current="page"', false);
     }
 
     public function test_placeholder_and_approval_requirements_are_explicit_without_a_review_destination(): void
@@ -113,7 +120,9 @@ class MultiPageSharedFoundationTest extends TestCase
         $reviews->assertOk()->assertSee(config('site.reviews.notice'));
         $reviews->assertSee('Placeholder review — approval required');
         $reviews->assertDontSee('maps.google.com', false);
-        $this->get('/?variant=a')->assertDontSee('maps.google.com', false);
+        $home = $this->get('/?variant=a');
+        $home->assertDontSee('maps.google.com', false);
+        $this->assertGreaterThanOrEqual(count(config('clinic.reviews')), substr_count($home->getContent(), 'Placeholder review — client approval required'));
         $team->assertOk()->assertSee('Profile pending client approval')->assertSee('Profile status: client approval required.');
         $privacy->assertOk()->assertSee(config('site.legal.notice'));
     }
@@ -146,5 +155,16 @@ class MultiPageSharedFoundationTest extends TestCase
         $response->assertDontSee('motion-pending', false);
         $this->assertSame(1, substr_count($script, 'new IntersectionObserver'));
         $this->assertStringContainsString('prefers-reduced-motion: reduce', file_get_contents(resource_path('css/app.css')));
+    }
+
+    public function test_incomplete_configured_resources_have_safe_metadata_and_detail_defaults(): void
+    {
+        config(['site.services' => [['slug' => 'incomplete-service']]]);
+
+        $this->get('/services/incomplete-service?variant=a')
+            ->assertOk()
+            ->assertSee('Service information pending approval')
+            ->assertSee('Suitability requires an individual clinical assessment.')
+            ->assertSee('Technology and materials require clinician confirmation.');
     }
 }

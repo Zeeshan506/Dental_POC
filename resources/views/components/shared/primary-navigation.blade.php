@@ -11,7 +11,9 @@
     <ul class="flex items-center gap-1">
         @foreach(config('site.navigation') as $item)
             @php
-                $isActive = $currentPath === $item['path'];
+                $isActive = $currentPath === $item['path']
+                    || ($item['path'] === '/services' && str_starts_with($currentPath, '/services/'))
+                    || ($item['path'] === '/team' && str_starts_with($currentPath, '/team/'));
                 $href = url($item['path']).'?'.http_build_query($query);
             @endphp
             <li>
@@ -35,7 +37,9 @@
         <ul class="grid gap-1">
             @foreach(config('site.navigation') as $item)
                 @php
-                    $isActive = $currentPath === $item['path'];
+                    $isActive = $currentPath === $item['path']
+                        || ($item['path'] === '/services' && str_starts_with($currentPath, '/services/'))
+                        || ($item['path'] === '/team' && str_starts_with($currentPath, '/team/'));
                     $href = url($item['path']).'?'.http_build_query($query);
                 @endphp
                 <li>

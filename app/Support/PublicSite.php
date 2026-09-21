@@ -70,10 +70,37 @@ class PublicSite
     {
         foreach (config("site.{$type}", []) as $record) {
             if (is_array($record) && ($record['slug'] ?? null) === $slug) {
-                return $record;
+                return self::normalizeResource($type, $record);
             }
         }
 
         abort(404);
+    }
+
+    /**
+     * Keep incomplete client configuration presentable without inventing claims.
+     *
+     * @param  array<string, mixed>  $record
+     * @return array<string, mixed>
+     */
+    private static function normalizeResource(string $type, array $record): array
+    {
+        if ($type === 'services') {
+            return array_merge([
+                'name' => 'Service information pending approval',
+                'introduction' => 'Service information is pending client approval.',
+                'suitability' => 'Suitability requires an individual clinical assessment.',
+                'process' => 'The clinical team will discuss appropriate next steps during consultation.',
+                'benefits' => [],
+                'technology' => 'Technology and materials require clinician confirmation.',
+            ], $record, ['benefits' => is_array($record['benefits'] ?? null) ? $record['benefits'] : []]);
+        }
+
+        return array_merge([
+            'name' => 'Team profile pending approval',
+            'details' => 'This profile is pending client approval.',
+            'role' => 'Profile pending client approval',
+            'approved' => false,
+        ], $record);
     }
 }

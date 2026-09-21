@@ -54,6 +54,7 @@
             <h4 class="font-serif text-sm font-bold text-charcoal-900">
                 {{ $name }}
             </h4>
+            <span class="block text-[10px] font-semibold uppercase tracking-wider text-stone-warm-600">Placeholder review — client approval required</span>
             @if($date)
                 <span class="text-[11px] font-mono text-stone-warm-500 block">
                     {{ $date }}
