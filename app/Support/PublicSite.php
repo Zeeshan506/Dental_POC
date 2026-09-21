@@ -104,6 +104,10 @@ class PublicSite
     private static function normalizeResource(string $type, array $record): array
     {
         if ($type === 'services') {
+            $configuredCta = is_array($record['cta'] ?? null) ? $record['cta'] : [];
+            $ctaLabel = trim((string) ($configuredCta['label'] ?? ''));
+            $ctaPath = trim((string) ($configuredCta['path'] ?? ''));
+
             return array_merge([
                 'name' => 'Service information pending approval',
                 'introduction' => 'Service information is pending client approval.',
@@ -114,7 +118,10 @@ class PublicSite
                 'cta' => ['label' => 'Discuss this service', 'path' => '/contact'],
             ], $record, [
                 'benefits' => is_array($record['benefits'] ?? null) ? $record['benefits'] : [],
-                'cta' => array_merge(['label' => 'Discuss this service', 'path' => '/contact'], is_array($record['cta'] ?? null) ? $record['cta'] : []),
+                'cta' => [
+                    'label' => $ctaLabel !== '' ? $ctaLabel : 'Discuss this service',
+                    'path' => str_starts_with($ctaPath, '/') ? $ctaPath : '/contact',
+                ],
             ]);
         }
 

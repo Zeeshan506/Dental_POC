@@ -160,7 +160,7 @@ class MultiPageSharedFoundationTest extends TestCase
 
     public function test_incomplete_configured_resources_have_safe_metadata_and_detail_defaults(): void
     {
-        config(['site.services' => [['slug' => 'incomplete-service']]]);
+        config(['site.services' => [['slug' => 'incomplete-service', 'cta' => ['label' => '', 'path' => '']]]]);
 
         $this->get('/services?variant=a')
             ->assertOk()
@@ -171,7 +171,8 @@ class MultiPageSharedFoundationTest extends TestCase
             ->assertSee('Service information pending approval')
             ->assertSee('Suitability requires an individual clinical assessment.')
             ->assertSee('Technology and materials require clinician confirmation.')
-            ->assertSee('Discuss this service');
+            ->assertSee('Discuss this service')
+            ->assertSee('/contact?variant=a', false);
 
         config(['site.team' => [['slug' => 'incomplete-member']]]);
 
