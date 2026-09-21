@@ -195,4 +195,24 @@ class MultiPageSharedFoundationTest extends TestCase
             ->assertSee('This profile is pending client approval.')
             ->assertSee('Team profile pending approval');
     }
+
+    public function test_malformed_resource_content_is_filtered_before_shared_rendering(): void
+    {
+        config(['site.services' => [[
+            'slug' => 'safe-service',
+            'benefits' => ['Clear discussion', ['unsafe'], '', 17],
+        ], ['name' => 'Missing slug']]]);
+        config(['site.team' => [['name' => 'Missing slug']]]);
+
+        $this->get('/services/safe-service?variant=a')
+            ->assertOk()
+            ->assertSee('Clear discussion')
+            ->assertDontSee('unsafe');
+        $this->get('/services?variant=a')
+            ->assertOk()
+            ->assertDontSee('/services/?variant', false);
+        $this->get('/team?variant=b')
+            ->assertOk()
+            ->assertDontSee('/team/?variant', false);
+    }
 }

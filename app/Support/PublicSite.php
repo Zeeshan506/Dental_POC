@@ -89,10 +89,20 @@ class PublicSite
      */
     private static function resources(string $type): array
     {
-        return array_values(array_map(
-            fn (mixed $record): array => self::normalizeResource($type, is_array($record) ? $record : []),
-            config("site.{$type}", []),
-        ));
+        $resources = [];
+
+        foreach (config("site.{$type}", []) as $record) {
+            $slug = is_array($record) && is_string($record['slug'] ?? null) ? trim($record['slug']) : '';
+
+            if (! preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/', $slug)) {
+                continue;
+            }
+
+            $record['slug'] = $slug;
+            $resources[] = self::normalizeResource($type, $record);
+        }
+
+        return $resources;
     }
 
     /**
@@ -121,7 +131,7 @@ class PublicSite
                 'introduction' => self::textOrDefault($record['introduction'] ?? null, 'Service information is pending client approval.'),
                 'suitability' => self::textOrDefault($record['suitability'] ?? null, 'Suitability requires an individual clinical assessment.'),
                 'process' => self::textOrDefault($record['process'] ?? null, 'The clinical team will discuss appropriate next steps during consultation.'),
-                'benefits' => is_array($record['benefits'] ?? null) ? $record['benefits'] : [],
+                'benefits' => self::benefits($record['benefits'] ?? []),
                 'technology' => self::textOrDefault($record['technology'] ?? null, 'Technology and materials require clinician confirmation.'),
                 'cta' => [
                     'label' => $ctaLabel !== '' ? $ctaLabel : 'Discuss this service',
@@ -147,5 +157,20 @@ class PublicSite
         $text = is_string($value) ? trim($value) : '';
 
         return $text !== '' ? $text : $default;
+    }
+
+    /**
+     * @return array<int, string>
+     */
+    private static function benefits(mixed $benefits): array
+    {
+        if (! is_array($benefits)) {
+            return [];
+        }
+
+        return array_values(array_filter(array_map(
+            fn (mixed $benefit): string => self::textOrDefault($benefit, ''),
+            $benefits,
+        )));
     }
 }
