@@ -32,22 +32,22 @@
 
                         <div class="lg:col-span-7 space-y-6">
                             <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block" data-motion="rise">Clinical Leadership</span>
-                            <h2 class="font-serif text-3xl sm:text-4xl font-light text-charcoal-900">
+                            <h2 class="font-serif text-3xl sm:text-4xl font-light text-charcoal-900" data-motion="headline" data-motion-delay="80">
                                 Dr. Tariq Bhatti
                             </h2>
-                            <p class="text-xs font-mono uppercase tracking-wider text-stone-warm-600">
+                            <p class="text-xs font-mono uppercase tracking-wider text-stone-warm-600" data-motion="copy" data-motion-delay="160">
                                 Clinical Director &amp; Principal Dentist &bull; DDS, FAGD, FICOI
                             </p>
 
-                            <blockquote class="font-serif text-lg sm:text-xl font-light italic text-charcoal-900 leading-relaxed border-l border-stone-warm-300 pl-6 py-1 my-4">
+                            <blockquote class="font-serif text-lg sm:text-xl font-light italic text-charcoal-900 leading-relaxed border-l border-stone-warm-300 pl-6 py-1 my-4" data-motion="copy" data-motion-delay="220">
                                 &ldquo;{{ config('clinic.doctor.philosophy') }}&rdquo;
                             </blockquote>
 
-                            <p class="text-stone-warm-700 font-light leading-relaxed text-sm sm:text-base">
+                            <p class="text-stone-warm-700 font-light leading-relaxed text-sm sm:text-base" data-motion="copy" data-motion-delay="280">
                                 {{ config('clinic.doctor.bio') }}
                             </p>
 
-                            <div class="pt-4 flex flex-wrap items-center gap-4">
+                            <div class="pt-4 flex flex-wrap items-center gap-4" data-motion="action" data-motion-delay="340">
                                 <a
                                     href="{{ url('/team/dr-tariq-bhatti?variant='.$variant) }}"
                                     class="inline-flex min-h-[44px] items-center px-6 py-3 rounded-full bg-charcoal-900 text-stone-warm-50 text-xs font-mono uppercase tracking-wider hover:bg-charcoal-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900"
@@ -68,13 +68,13 @@
                 </div>
 
                 <!-- Supporting Team Profiles Section -->
-                <div>
+                <div data-motion="group">
                     <div class="border-b border-stone-warm-200 pb-6 mb-8">
-                        <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block mb-2">Practice Colleagues</span>
-                        <h3 class="font-serif text-2xl sm:text-3xl font-light text-charcoal-900">
+                        <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block mb-2" data-motion="rise">Practice Colleagues</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-light text-charcoal-900" data-motion="headline" data-motion-delay="80">
                             Supporting Clinical Team
                         </h3>
-                        <p class="mt-2 text-sm text-stone-warm-700 font-light">
+                        <p class="mt-2 text-sm text-stone-warm-700 font-light" data-motion="copy" data-motion-delay="160">
                             Supporting team member profiles are displayed as unapproved placeholders until formal biographical and credential signoff is provided.
                         </p>
                     </div>

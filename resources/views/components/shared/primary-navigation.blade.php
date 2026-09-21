@@ -7,7 +7,7 @@
         ? 'text-stone-warm-200 hover:text-stone-warm-50 focus-visible:ring-stone-warm-50'
         : 'text-charcoal-800 hover:text-charcoal-900 focus-visible:ring-charcoal-900';
 @endphp
-<nav aria-label="Primary navigation" class="hidden lg:block">
+<nav aria-label="Primary navigation" class="hidden lg:block" data-motion="action" data-motion-delay="80">
     <ul class="flex items-center gap-1">
         @foreach(config('site.navigation') as $item)
             @php
@@ -29,11 +29,11 @@
     </ul>
 </nav>
 
-<details class="relative lg:hidden">
+<details class="relative lg:hidden" data-motion="action" data-motion-delay="80">
     <summary class="flex min-h-[44px] cursor-pointer list-none items-center rounded-sm px-3 text-xs font-semibold uppercase tracking-wider focus:outline-none focus-visible:ring-2 {{ $linkClass }}">
         Menu
     </summary>
-    <nav aria-label="Mobile primary navigation" class="absolute right-0 z-30 mt-2 w-64 border border-stone-warm-300 bg-stone-warm-50 p-2 shadow-xl">
+    <nav aria-label="Mobile primary navigation" class="absolute right-0 z-30 mt-2 w-64 border border-stone-warm-300 bg-stone-warm-50 p-2 shadow-xl" data-motion="group" data-motion-delay="40">
         <ul class="grid gap-1">
             @foreach(config('site.navigation') as $item)
                 @php
