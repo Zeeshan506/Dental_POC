@@ -42,6 +42,6 @@
 ## Validation Status Breakdown
 
 - **Automated Tests**: PASS — initial focused Variant A/B, testimonials, and variant-resolution suites passed (37 tests, 576 assertions); the focused remediation checks passed (2 tests, 14 assertions).
-- **Manual User Verification**: Passed — user confirmed manual verification on 2026-09-21.
+- **Manual User Acceptance**: Passed — user explicitly instructed merge to `main` on 2026-09-21.
 - **Independent QA Audit**: PASS — initial audit findings were remediated and a fresh limited audit passed on the three flagged paths.
-- **Overall Feature Status**: Implemented and Validated (do not merge without explicit approval).
+- **Overall Feature Status**: Validated & Merged.

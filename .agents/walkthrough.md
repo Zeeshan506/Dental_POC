@@ -36,6 +36,23 @@ Implemented the complete architectural foundation for the Dr. Bhatti & Associate
 
 ---
 
+# Walkthrough: Phase 5 Variant B Calm Editorial Motion Completion
+
+## Completion Record
+
+- **Feature Branch**: `fix/phase-5-variant-b-editorial-motion`
+- **Target Specification**: `specs/2026-09-21-phase-5-variant-b-editorial-motion/`
+- **Feature Completion Commits**: `307b4df` (editorial composition), `8c7cb83` (QA remediation), and `d70342d` (lifecycle evidence).
+- **Acceptance**: Manual user acceptance and a fresh limited independent QA verdict both passed.
+
+## Final Evidence
+
+- The focused Phase 5 regression suite passed with 37 tests and 576 assertions; the two QA-remediation checks passed with 14 assertions.
+- Production assets compiled, Pint completed, whitespace checks passed, and all affected files remain below 300 lines.
+- The feature branch was pushed to `origin` before the required non-fast-forward merge into `main`.
+
+---
+
 # Walkthrough: Phase 1 Variant A: Expressive / 2D Cutout Prototype Specification
 
 ## Context & Purpose

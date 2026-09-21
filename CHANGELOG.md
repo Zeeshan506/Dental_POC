@@ -21,7 +21,7 @@ between specification/planning changes and feature implementation.
 - Remediated the independent QA findings in commit `8c7cb83`: Variant B reviews now retain a no-JavaScript full-text fallback, mobile motion delays stop through 767px, and the audit records the post-implementation reference comparison. The two directly affected regression checks passed (14 assertions), and a fresh limited QA audit passed.
 
 ### ✅ Phase Completion
-- Manual user verification and independent QA are complete. Phase 5 is implemented and validated on `fix/phase-5-variant-b-editorial-motion`; do not merge without explicit approval.
+- Manual user acceptance and independent QA are complete. Phase 5 is validated and merged into `main`; its roadmap and feature validation lifecycle are synchronized.
 
 ---
 
