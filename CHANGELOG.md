@@ -11,11 +11,13 @@ between specification/planning changes and feature implementation.
 ## [Unreleased]
 
 ### 📋 Specification & Planning Changes
+- **Phase 6 — Variant A Multi-Page Layout Remediation**: Extended the Phase 6 contract through AC-10 for non-landing Variant A layout rhythm, responsive integrity, and landing-page regression protection; finalized it with an explicit user-accepted browser-evidence waiver.
 - **Phase 9 — Variant A Multi-Page Experience**: Completed and accepted the specification lifecycle for AC-1 through AC-7; synchronized its validation matrix and roadmap status to `Validated`.
 - **Phase 6 — Cross-Variant Polish, Accessibility & Presentation Audit**: Established formal audit specification under `specs/2026-09-21-phase-6-cross-variant-polish-audit/` (AC-1 through AC-7) covering WCAG 2.1 AA contrast, reduced motion, touch targets, keyboard focus, viewport overflow, modularity, and client presentation documentation.
 - **Phase 5 — Variant B Calm Editorial Motion**: Expanded the existing Phase 5 contract through AC-12 for the user-directed, original reference-informed composition; recorded the pre-code Playwright motion audit in [motion-audit.md](specs/2026-09-21-phase-5-variant-b-editorial-motion/motion-audit.md).
 
 ### 🚀 Feature Implementation & Code Changes
+- **Phase 6 — Variant A Multi-Page Layout Remediation**: Added a shared Variant A page shell and applied it exclusively to non-landing page compositions; standardized responsive section spacing, readable measures, content/image gaps, service and team card padding, and overflow containment without changing the landing page.
 - **Phase 9 — Variant A Multi-Page Experience**: Added a Variant A-specific public-page renderer with expressive information, services, team, reviews, contact, FAQ, journey, and legal compositions; retained the shared content contracts and explicit placeholder provenance.
 - **Phase 6: Cross-Variant Polish & Accessibility**:
   - Calibrated stone and brass color tokens in `resources/css/app.css` to achieve WCAG 2.1 AA compliance (>= 4.5:1 for normal text).
@@ -27,13 +29,14 @@ between specification/planning changes and feature implementation.
 - **Phase 5: Variant B Motion**: Added Variant B’s full-bleed, manually controlled three-image hero using project-owned clinical imagery, plus an editorial shared shell, darker finale, slower profile-specific motion, preserved review controls, and responsive no-JavaScript/reduced-motion behavior.
 
 ### 🧪 Testing & Quality Assurance
+- **Phase 6 — Variant A Multi-Page Layout Remediation**: Added focused rendering regressions; 72 tests / 1,278 assertions, Pint, production build, whitespace, and 260-file modularity audit passed. Initial QA reported QA-F1 for missing browser tooling; the user explicitly directed merge without adding it or requesting a targeted re-audit.
 - **Phase 9**: Added `VariantAMultiPageTest` and passed 62 tests / 976 assertions, Pint, production build, whitespace, and modularity checks. Independent QA returned `QA VERDICT: PASSED` across AC-1 through AC-7; stakeholder acceptance authorized the non-fast-forward merge to `main`.
 - Added automated feature tests in `tests/Feature/CrossVariantPolishAuditTest.php` covering AC-1 through AC-6 (6 tests, 44 assertions). Full test suite passes: 46 tests, 629 assertions.
 - Added `scripts/check-line-counts.mjs` (`pnpm check:line-counts`); 100% of tracked text and code files (219 files) strictly adhere to `<= 300` lines.
 - Independent QA investigator re-audit passed with `QA VERDICT: PASSED` across AC-1 through AC-7 with zero failures.
 
 ### ⏳ Phase Status
-- Phase 6 current work verified and checked off; kept pending in `In Progress (Partially Finished)` on branch `feat/phase-6-cross-variant-polish-audit` for subsequent feature additions before closing.
+- **Phase 6**: Implemented and merged with an explicit user-accepted browser-evidence waiver documented in its validation record.
 
 ---
 

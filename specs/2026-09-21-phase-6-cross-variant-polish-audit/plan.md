@@ -33,7 +33,7 @@ This phase executes a rigorous cross-variant audit across accessibility, reduced
 
 ### Group 5: Variant A Multi-Page Layout Remediation (AC-8, AC-9, AC-10)
 
-- [ ] Task 5.1: Inspect every non-landing Variant A page renderer and component against the settled landing-page visual language; identify the spacing, readable-measure, and image-framing gaps without redesigning the landing page.
-- [ ] Task 5.2: Implement reusable expressive layout primitives and apply them to Variant A information, service, team, review, contact, journey, FAQ, and legal pages; preserve the current shared content and motion contracts.
-- [ ] Task 5.3: Add focused feature coverage for the new layout contract and run browser checks across the specified widths, reduced-motion, keyboard, and no-JavaScript fallbacks.
-- [ ] Task 5.4: Run a comprehensive initial independent QA audit; remediate every finding, then request a fresh independent QA audit limited strictly to the finding IDs and their regression coverage.
+- [x] Task 5.1: Inspect every non-landing Variant A page renderer and component against the settled landing-page visual language; identify the spacing, readable-measure, and image-framing gaps without redesigning the landing page.
+- [x] Task 5.2: Implement reusable expressive layout primitives and apply them to Variant A information, service, team, review, contact, journey, FAQ, and legal pages; preserve the current shared content and motion contracts.
+- [x] Task 5.3: Add focused feature coverage for the new layout contract and run automated rendering, build, formatting, and modularity checks. Browser checks were explicitly waived by the user because no browser harness is configured.
+- [x] Task 5.4: Run a comprehensive initial independent QA audit. QA-F1 identified the missing browser harness; the user explicitly accepted that limitation and directed merge without adding tooling or performing a targeted re-audit.
