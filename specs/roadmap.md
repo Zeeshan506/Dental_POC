@@ -14,7 +14,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 | Phase 4 | Motion Foundation & Variant A Site-Wide Choreography | [Phase 4 Spec](2026-09-21-phase-4-motion-foundation-variant-a/) | AC-1 to AC-8 | Ready | Implemented | Validated |
 | Phase 5 | Variant B Calm Editorial Site-Wide Motion | [Phase 5 Spec](2026-09-21-phase-5-variant-b-editorial-motion/) | AC-1 to AC-12 | Ready | Implemented | Validated |
 | Phase 6 | Cross-Variant Polish, Accessibility & Presentation Audit | [Phase 6 Spec](2026-09-21-phase-6-cross-variant-polish-audit/) | AC-1 to AC-7 | Ready | In Progress (Partially Finished) | Pending |
-| Phase 7 | Global Animation Guidance Skill | [Phase 7 Spec](2026-09-21-phase-7-global-animation-guidance-skill/) | AC-1 to AC-6 | Ready | Implemented | Pending |
+| Phase 7 | Global Animation Guidance Skill | [Phase 7 Spec](2026-09-21-phase-7-global-animation-guidance-skill/) | AC-1 to AC-6 | Ready | Implemented | Validated |
 | Phase 8 | Multi-Page Shared Foundation | [Phase 8 Spec](2026-09-21-phase-8-multi-page-shared-foundation/) | AC-1 to AC-8 | Ready | Not Started | Pending |
 | Phase 9 | Variant A Multi-Page Experience | [Phase 9 Spec](2026-09-21-phase-9-variant-a-multi-page-experience/) | AC-1 to AC-7 | Ready | Not Started | Pending |
 | Phase 10 | Variant B Multi-Page Experience | [Phase 10 Spec](2026-09-21-phase-10-variant-b-multi-page-experience/) | AC-1 to AC-7 | Ready | Not Started | Pending |
@@ -104,7 +104,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 ### Phase 7: Global Animation Guidance Skill
 - **Specification**: [specs/2026-09-21-phase-7-global-animation-guidance-skill/](2026-09-21-phase-7-global-animation-guidance-skill/)
 - **Acceptance Criteria**: AC-1 through AC-6
-- **Status**: Specification: Ready | Implementation: Implemented | Validation: Pending
+- **Status**: Specification: Ready | Implementation: Implemented | Validation: Validated
 - [x] **Task 7.1**: Inspect the validated motion system and create a globally available Codex skill through `skill-creator`.
 - [x] **Task 7.2**: Encode distinct expressive and calm profiles, safe shared-component handling, and centralized architecture rules.
 - [x] **Task 7.3**: Validate discovery and dry-run guidance for Variant A, Variant B, and ambiguous shared components.

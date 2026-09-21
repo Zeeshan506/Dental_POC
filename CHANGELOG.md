@@ -34,6 +34,31 @@ between specification/planning changes and feature implementation.
 
 ---
 
+## [0.7.0] - 2026-09-21 - Phase 7: Global Animation Guidance Skill
+
+### 📋 Specification & Planning Changes
+- **Phase 7 Specification (Global Animation Guidance Skill)**: Established formal specification contract under [specs/2026-09-21-phase-7-global-animation-guidance-skill/](specs/2026-09-21-phase-7-global-animation-guidance-skill/):
+  - Defined business intent, inspect-first workflow, semantic profile parameters, architecture constraints, and acceptance criteria (AC-1 through AC-6) in `requirements.md`.
+  - Structured 3 task groups (Evidence Intake & Scope, Skill Authoring, Skill Validation) in `plan.md`.
+  - Created acceptance criteria verification matrix and dry-run checklist in `validation.md`.
+  - Synchronized [specs/roadmap.md](specs/roadmap.md) marking Phase 7 `Specification Status: Ready`, `Implementation Status: Implemented`, `Validation Status: Validated`.
+
+### 🚀 Feature Implementations & Skill Authoring
+- **Globally Installed Codex Skill**: Created and installed `site-motion-guidance` at `/home/zeshan6a/.codex/skills/site-motion-guidance` using `skill-creator`, with UI metadata in `agents/openai.yaml`.
+- **Repository-Tracked Skill**: Synchronized `.agents/skills/site-motion-guidance/`:
+  - `SKILL.md`: Main entrypoint defining 4-step inspect-first workflow (centralized engine, component context, data hooks, active variant profile), profile summaries, safeguards, and verification protocol.
+  - `references/profiles.md`: Exhaustive token values, timings, travel distances, easing, and interactive states for Expressive / 2D Cutout (Variant A) and Calm / Editorial (Variant B).
+  - `references/architecture-and-safeguards.md`: Centralized engine contracts (`resources/js/app.js`, `resources/css/app.css`), progressive enhancement / no-JS safety, reduced-motion mandates, 44px touch targets, zero gradients, zero loops, and modularity caps.
+  - `references/decision-tree.md`: Deterministic component routing, ambiguity resolution protocol with user escalation templates, and conflict handling.
+
+### 🧪 Automated Verification & Quality Assurance
+- **Tool Validation**: Ran `quick_validate.py` on both global and repo skill locations (`Skill is valid!`, exit code 0).
+- **Modularity Audit**: `pnpm check:line-counts` verified 100% adherence to `<= 300` lines across 229 tracked files.
+- **Independent QA Audit**: Completed by independent QA investigator (`QA VERDICT: PASSED` across AC-1 to AC-6).
+- **Merge & Acceptance**: Explicit user confirmation received; merged `feat/phase-7-global-animation-guidance-skill` into `main`.
+
+---
+
 ## [0.6.0] - 2026-09-21 - Phase 4: Motion Foundation & Variant A Site-Wide Choreography
 
 ### 📋 Specification & Planning Changes

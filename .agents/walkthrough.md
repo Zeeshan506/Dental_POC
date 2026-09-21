@@ -29,5 +29,5 @@ Prior phase walkthroughs are recorded in [.agents/walkthroughs/phase-0-to-5.md](
   - Workspace isolation: Zero modifications to `.tree/` or other worktrees.
 
 ## Lifecycle Status
-- **Phase 7 Status**: `Specification: Ready | Implementation: Implemented | Validation: Pending`.
-- **Merge Readiness**: Ready for manual acceptance / merge approval.
+- **Phase 7 Status**: `Specification: Ready | Implementation: Implemented | Validation: Validated`.
+- **Merge Completion**: User explicit approval received via `/finish-spec`. Merged `feat/phase-7-global-animation-guidance-skill` into `main` using `--no-ff`. Both local and remote `main` synchronized. All prior project files, content, and `.tree` workspaces preserved intact without overwrite.
