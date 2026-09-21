@@ -6,8 +6,8 @@
 - **Implementation / Validation Commits**: `b66355b`, `cf545f0`
 - **Quality Evidence**: 62 tests / 976 assertions, Pint, production build, whitespace, and 300-line checks passed; independent QA returned `QA VERDICT: PASSED` for AC-1 through AC-7.
 - **Lifecycle**: User explicitly approved finalization. Phase 9 is `Specification: Ready | Implementation: Implemented | Validation: Validated`.
-- **Worktree Isolation**: Phase 10 remains in its separate `/home/zeshan6a/Projects/dental_clinic` worktree on `feat/phase-10-variant-b-multi-page-experience`; no files in that worktree were changed by Phase 9 finalization.
-- **Merge Completion**: The non-fast-forward merge commit and remote `main` synchronization are recorded in the final handoff after this documentation commit.
+- **Worktree Isolation**: Phase 10 was finalized independently in `/home/zeshan6a/Projects/dental_clinic`; Phase 9 finalization did not change that worktree or overwrite its Variant B renderer.
+- **Merge Completion**: Merged Phase 9 on top of the independently finalized Phase 10 with non-fast-forward commit `0b5cf36`. The integrated suite passed 70 tests / 1,238 assertions before push to `main`.
 
 ## Context & Purpose
 Implemented and verified Phase 10 (Variant B Multi-Page Experience) in accordance with [specs/2026-09-21-phase-10-variant-b-multi-page-experience/](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-21-phase-10-variant-b-multi-page-experience/).
