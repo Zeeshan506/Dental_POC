@@ -13,8 +13,11 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 | Phase 3 | Dual-Variant Testimonials & Patient Reviews Carousel | [Phase 3 Spec](file:///home/zeshan6a/Projects/dental_clinic/specs/2026-09-21-phase-3-testimonials-carousel/) | AC-1 to AC-8 | Ready | Implemented | Validated |
 | Phase 4 | Motion Foundation & Variant A Site-Wide Choreography | [Phase 4 Spec](2026-09-21-phase-4-motion-foundation-variant-a/) | AC-1 to AC-8 | Ready | Implemented | Validated |
 | Phase 5 | Variant B Calm Editorial Site-Wide Motion | [Phase 5 Spec](2026-09-21-phase-5-variant-b-editorial-motion/) | AC-1 to AC-12 | Ready | Implemented | Validated |
-| Phase 6 | Cross-Variant Polish, Accessibility & Presentation Audit | TBD | TBD | Pending | Not Started | Pending |
+| Phase 6 | Cross-Variant Polish, Accessibility & Presentation Audit | [Phase 6 Spec](2026-09-21-phase-6-cross-variant-polish-audit/) | AC-1 to AC-7 | Ready | Not Started | Pending |
 | Phase 7 | Global Animation Guidance Skill | [Phase 7 Spec](2026-09-21-phase-7-global-animation-guidance-skill/) | AC-1 to AC-6 | Ready | Not Started | Pending |
+| Phase 8 | Multi-Page Shared Foundation | [Phase 8 Spec](2026-09-21-phase-8-multi-page-shared-foundation/) | AC-1 to AC-8 | Ready | Not Started | Pending |
+| Phase 9 | Variant A Multi-Page Experience | [Phase 9 Spec](2026-09-21-phase-9-variant-a-multi-page-experience/) | AC-1 to AC-7 | Ready | Not Started | Pending |
+| Phase 10 | Variant B Multi-Page Experience | [Phase 10 Spec](2026-09-21-phase-10-variant-b-multi-page-experience/) | AC-1 to AC-7 | Ready | Not Started | Pending |
 
 ---
 
@@ -88,12 +91,15 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 - **Deliverable / Verification**: Variant B is continuously but quietly animated, reference-informed without copying, and visibly slower/softer than Variant A.
 
 ### Phase 6: Cross-Variant Polish, Accessibility & Presentation Audit
-- [ ] **Task 6.1**: Validate strict `prefers-reduced-motion: reduce` behavior across both variants, verifying instantaneous or disabled animations.
-- [ ] **Task 6.2**: Audit color contrast ratios to ensure WCAG AA/AAA compliance across all text and interactive buttons.
-- [ ] **Task 6.3**: Verify responsive performance and touch targets (>= 44px) across mobile, tablet, and desktop viewports.
-- [ ] **Task 6.4**: Ensure all tracked files strictly adhere to the <= 300-line modularity constraint.
-- [ ] **Task 6.5**: Prepare client walkthrough documentation demonstrating key design differences and interaction principles.
-- **Deliverable / Verification**: Both variants pass all accessibility, modularity, and responsiveness checks, ready for client review.
+- **Specification**: [specs/2026-09-21-phase-6-cross-variant-polish-audit/](2026-09-21-phase-6-cross-variant-polish-audit/)
+- **Acceptance Criteria**: AC-1 through AC-7
+- **Status**: Specification: Ready | Implementation: Not Started | Validation: Pending
+- [ ] **Task 6.1**: Validate strict `prefers-reduced-motion: reduce` behavior across both variants, verifying instantaneous or disabled animations and transitions.
+- [ ] **Task 6.2**: Audit color contrast ratios to ensure WCAG 2.1 AA compliance across all text, interactive buttons, stone cards, and dark contrast bands.
+- [ ] **Task 6.3**: Verify responsive performance, zero horizontal overflow, and touch targets (>= 44px) across mobile, tablet, and desktop viewports.
+- [ ] **Task 6.4**: Ensure 100% of tracked text and code files strictly adhere to the <= 300-line modularity constraint.
+- [ ] **Task 6.5**: Prepare client walkthrough documentation demonstrating key design differences, interaction principles, and clinical positioning.
+- **Deliverable / Verification**: Both variants pass all accessibility, modularity, and responsiveness checks, with verified reduced-motion, color contrast, touch target, and client walkthrough documentation.
 
 ### Phase 7: Global Animation Guidance Skill
 - **Specification**: [specs/2026-09-21-phase-7-global-animation-guidance-skill/](2026-09-21-phase-7-global-animation-guidance-skill/)
@@ -103,3 +109,30 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 - [ ] **Task 7.2**: Encode distinct expressive and calm profiles, safe shared-component handling, and centralized architecture rules.
 - [ ] **Task 7.3**: Validate discovery and dry-run guidance for Variant A, Variant B, and ambiguous shared components.
 - **Deliverable / Verification**: Future Codex work can discover a global, inspect-first skill that selects the correct motion profile and enforces the validated safeguards.
+
+### Phase 8: Multi-Page Shared Foundation
+- **Specification**: [specs/2026-09-21-phase-8-multi-page-shared-foundation/](2026-09-21-phase-8-multi-page-shared-foundation/)
+- **Acceptance Criteria**: AC-1 through AC-8
+- **Status**: Specification: Ready | Implementation: Not Started | Validation: Pending
+- [ ] **Task 8.1**: Establish the shared public route map, resource-slug lookup, route-preserving `?variant=a|b` switching, and per-page metadata contract.
+- [ ] **Task 8.2**: Centralize editable content and placeholder/approval flags; implement reusable shared navigation, footer, metadata, detail, FAQ, review, contact, and client-only form contracts.
+- [ ] **Task 8.3**: Add route, metadata, content, navigation, form, no-JS, reduced-motion, and accessibility verification for both variants.
+- **Deliverable / Verification**: Every required pathname is routeable in both variants with shared content, honest placeholders, accessible IA, and frontend-only consultation behavior.
+
+### Phase 9: Variant A Multi-Page Experience
+- **Specification**: [specs/2026-09-21-phase-9-variant-a-multi-page-experience/](2026-09-21-phase-9-variant-a-multi-page-experience/)
+- **Acceptance Criteria**: AC-1 through AC-7
+- **Status**: Specification: Ready | Implementation: Not Started | Validation: Pending
+- [ ] **Task 9.1**: Compose all required informational, utility, service, team, review, and legal routes with reusable expressive Variant A components and the Phase 8 shared contracts.
+- [ ] **Task 9.2**: Extend settled expressive Motion Mini choreography, responsive treatment, and accessibility across every new Variant A page.
+- [ ] **Task 9.3**: Verify complete Variant A journeys, detail templates, reviews, mock contact form, variant switching, mobile, reduced-motion, and JavaScript-disabled flows.
+- **Deliverable / Verification**: Variant A is a complete expressive, layered, premium medical website without redesigning its existing homepage or diverging from shared facts.
+
+### Phase 10: Variant B Multi-Page Experience
+- **Specification**: [specs/2026-09-21-phase-10-variant-b-multi-page-experience/](2026-09-21-phase-10-variant-b-multi-page-experience/)
+- **Acceptance Criteria**: AC-1 through AC-7
+- **Status**: Specification: Ready | Implementation: Not Started | Validation: Pending
+- [ ] **Task 10.1**: Compose all required informational, utility, service, team, review, and legal routes with reusable calm Variant B components and the Phase 8 shared contracts.
+- [ ] **Task 10.2**: Extend Phase 5’s restrained editorial Motion Mini profile, responsive treatment, and accessibility across every new Variant B page.
+- [ ] **Task 10.3**: Verify complete Variant B journeys, detail templates, reviews, mock contact form, variant switching, mobile, reduced-motion, and JavaScript-disabled flows.
+- **Deliverable / Verification**: Variant B is a complete calm editorial clinic website, original and reference-informed without copying or diverging from shared facts.
