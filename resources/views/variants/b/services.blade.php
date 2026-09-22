@@ -6,9 +6,9 @@
     <main class="flex-1 bg-stone-warm-50 pb-24">
         <x-variant-b.page-header
             chapter="03 / Disciplines"
-            kicker="Calm editorial foundation"
             :heading="$page['heading']"
             :intro="$page['intro']"
+            hero-image="images/variant-b/landing-2.jpg"
         />
 
         <section class="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">

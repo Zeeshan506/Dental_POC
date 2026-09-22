@@ -12,7 +12,7 @@ class VariantATest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('data-testid="variant-a-hero"', false);
-        $response->assertSee('Expressive 2D Cutout');
+        $response->assertDontSee('Variant A &bull; Expressive 2D Cutout', false);
         $response->assertSee('Calm, architectural dentistry crafted for lifelong wellness.');
         $response->assertSee(config('clinic.description'));
         $response->assertSee('Book Initial Consultation');

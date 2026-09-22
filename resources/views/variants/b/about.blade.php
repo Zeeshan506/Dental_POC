@@ -6,9 +6,9 @@
     <main class="flex-1 bg-stone-warm-50 pb-24">
         <x-variant-b.page-header
             chapter="01 / Practice"
-            kicker="Calm editorial foundation"
             :heading="$page['heading']"
             :intro="$page['intro']"
+            hero-image="images/variant-b/landing-1.jpg"
         />
 
         <!-- Section 1: Asymmetric Editorial Narrative & Photography -->

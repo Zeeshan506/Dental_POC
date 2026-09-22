@@ -21,9 +21,22 @@ class PublicSite
     }
 
     /**
+     * Resolve and persist the safe visual preferences for the current request.
+     *
+     * @return array{palette: string, typeface: string}
+     */
+    public static function resolvePreferences(Request $request): array
+    {
+        return [
+            'palette' => self::resolvePreference($request, 'palette', 'palettes'),
+            'typeface' => self::resolvePreference($request, 'typeface', 'typefaces'),
+        ];
+    }
+
+    /**
      * Build the shared view contract for a public page.
      *
-     * @return array{variant: string, clinic: array<string, mixed>, metadata: array<string, string>, page: array<string, mixed>}
+     * @return array{variant: string, preferences: array{palette: string, typeface: string}, clinic: array<string, mixed>, metadata: array<string, string>, page: array<string, mixed>}
      */
     public static function page(Request $request, string $pageKey, ?string $slug = null): array
     {
@@ -57,6 +70,7 @@ class PublicSite
 
         return [
             'variant' => self::resolveVariant($request),
+            'preferences' => self::resolvePreferences($request),
             'clinic' => config('clinic'),
             'metadata' => [
                 'title' => ($page['title'] ?? config('clinic.name')).' | '.config('clinic.name'),
@@ -86,6 +100,24 @@ class PublicSite
         }
 
         return view('public.page', $contract);
+    }
+
+    /**
+     * Resolve a query/session/default preference from a configured option group.
+     */
+    private static function resolvePreference(Request $request, string $key, string $optionGroup): string
+    {
+        $options = config("design-preferences.{$optionGroup}", []);
+        $default = config("design-preferences.defaults.{$key}");
+
+        abort_unless(is_array($options) && is_string($default), 500);
+
+        $requestedValue = strtolower((string) $request->query($key, session($key, $default)));
+        $value = array_key_exists($requestedValue, $options) ? $requestedValue : $default;
+
+        session([$key => $value]);
+
+        return $value;
     }
 
     /**

@@ -68,7 +68,8 @@ class MultiPageSharedFoundationTest extends TestCase
             ->get('/about')
             ->assertOk()
             ->assertSessionHas('variant', 'b')
-            ->assertSee('Calm editorial foundation');
+            ->assertSee('data-motion-profile="editorial"', false)
+            ->assertDontSee('Calm editorial foundation');
     }
 
     public function test_structured_site_content_drives_navigation_metadata_and_public_resource_views(): void

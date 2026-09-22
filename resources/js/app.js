@@ -230,10 +230,26 @@ function initializeHeroGalleries() {
     });
 }
 
+function initializeResponsiveNavigation() {
+    const disclosure = document.querySelector('[data-mobile-navigation-disclosure]');
+    const desktopBreakpoint = window.matchMedia('(min-width: 1024px)');
+
+    if (!disclosure) {
+        return;
+    }
+
+    desktopBreakpoint.addEventListener('change', () => {
+        if (desktopBreakpoint.matches) {
+            disclosure.removeAttribute('open');
+        }
+    });
+}
+
 function initializeApp() {
     initTestimonials();
     initializeConsultationForms();
     initializeHeroGalleries();
+    initializeResponsiveNavigation();
     initializeMotion();
 }
 

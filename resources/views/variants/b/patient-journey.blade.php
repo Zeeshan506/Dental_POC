@@ -6,9 +6,9 @@
     <main class="flex-1 bg-stone-warm-50 pb-24">
         <x-variant-b.page-header
             chapter="02 / Protocol"
-            kicker="Calm editorial foundation"
             :heading="$page['heading']"
             :intro="$page['intro']"
+            hero-image="images/variant-b/landing-3.jpg"
         />
 
         <!-- Detailed Journey Timeline Section -->

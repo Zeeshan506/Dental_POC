@@ -14,9 +14,9 @@
     <main class="flex-1 bg-stone-warm-50 pb-24">
         <x-variant-b.page-header
             chapter="04 / Inquiries"
-            kicker="Calm editorial foundation"
             :heading="$page['heading']"
             :intro="$page['intro']"
+            hero-image="images/variant-b/landing-3.jpg"
         />
 
         <section class="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
@@ -25,11 +25,11 @@
                     <!-- Left: Consultation Form (Shared Contract) -->
                     <div class="lg:col-span-7 bg-stone-warm-100/30 border border-stone-warm-200 rounded-2xl p-6 sm:p-10" data-motion="group">
                         <div class="border-b border-stone-warm-200 pb-6 mb-8">
-                            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block mb-2">Private Consultation</span>
-                            <h2 class="font-serif text-2xl sm:text-3xl font-light text-charcoal-900">
+                            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block mb-2" data-motion="rise">Private Consultation</span>
+                            <h2 class="font-serif text-2xl sm:text-3xl font-light text-charcoal-900" data-motion="headline" data-motion-delay="80">
                                 Send a Consultation Inquiry
                             </h2>
-                            <p class="mt-2 text-sm text-stone-warm-700 font-light">
+                            <p class="mt-2 text-sm text-stone-warm-700 font-light" data-motion="copy" data-motion-delay="160">
                                 Share your care preferences and our clinical concierge will connect with you to arrange a suitable appointment.
                             </p>
                         </div>
@@ -40,9 +40,9 @@
                     <!-- Right: Location, Map & Schedule -->
                     <div class="lg:col-span-5 space-y-8" data-motion="group" data-motion-delay="160">
                         <!-- Location & Cartography -->
-                        <div class="border border-stone-warm-200 rounded-2xl bg-stone-warm-100/30 p-6 sm:p-8">
-                            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block mb-1">San Francisco</span>
-                            <h3 class="font-serif text-2xl font-light text-charcoal-900">
+                        <div class="border border-stone-warm-200 rounded-2xl bg-stone-warm-100/30 p-6 sm:p-8" data-motion="card">
+                            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block mb-1" data-motion="rise">San Francisco</span>
+                            <h3 class="font-serif text-2xl font-light text-charcoal-900" data-motion="headline" data-motion-delay="80">
                                 Clinic Location
                             </h3>
 
@@ -79,9 +79,9 @@
                         </div>
 
                         <!-- Schedule & Concierge -->
-                        <div class="border border-stone-warm-200 rounded-2xl bg-stone-warm-100/30 p-6 sm:p-8">
-                            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block mb-1">Weekly Schedule</span>
-                            <h3 class="font-serif text-2xl font-light text-charcoal-900">
+                        <div class="border border-stone-warm-200 rounded-2xl bg-stone-warm-100/30 p-6 sm:p-8" data-motion="card" data-motion-delay="80">
+                            <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block mb-1" data-motion="rise">Weekly Schedule</span>
+                            <h3 class="font-serif text-2xl font-light text-charcoal-900" data-motion="headline" data-motion-delay="80">
                                 Operating Hours
                             </h3>
 

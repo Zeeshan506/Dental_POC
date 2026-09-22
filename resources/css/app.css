@@ -33,6 +33,99 @@
     --color-sage-800: #354337;
 }
 
+html[data-typeface='newsreader-manrope'] {
+    --font-serif: 'Newsreader', Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+html[data-palette='porcelain-teal'] {
+    --palette-primary: #254e4a;
+    --palette-primary-hover: #1c3e3b;
+    --color-stone-warm-50: #f7f8f5;
+    --color-stone-warm-100: #eef2ef;
+    --color-stone-warm-200: #e4ebe7;
+    --color-stone-warm-300: #d1dbd6;
+    --color-stone-warm-400: #b8c9c2;
+    --color-stone-warm-500: #82908a;
+    --color-stone-warm-600: #5f6c67;
+    --color-stone-warm-700: #5f6c67;
+    --color-stone-warm-800: #17201f;
+    --color-stone-warm-900: #17201f;
+    --color-stone-warm-950: #17201f;
+    --color-charcoal-900: #17201f;
+    --color-charcoal-800: #1c3e3b;
+    --color-charcoal-700: #5f6c67;
+    --color-brass-400: #e8d8c9;
+    --color-brass-500: #b98252;
+    --color-brass-600: #b98252;
+    --color-sage-100: #e4ebe7;
+    --color-sage-500: #78978d;
+    --color-sage-800: #254e4a;
+}
+
+html[data-palette='ivory-rosewood'] {
+    --palette-primary: #704a46;
+    --palette-primary-hover: #593936;
+    --color-stone-warm-50: #fbf8f4;
+    --color-stone-warm-100: #f3ece6;
+    --color-stone-warm-200: #ebded5;
+    --color-stone-warm-300: #dccec4;
+    --color-stone-warm-400: #d3b9ac;
+    --color-stone-warm-500: #95877f;
+    --color-stone-warm-600: #6f615a;
+    --color-stone-warm-700: #6f615a;
+    --color-stone-warm-800: #241e1b;
+    --color-stone-warm-900: #241e1b;
+    --color-stone-warm-950: #241e1b;
+    --color-charcoal-900: #241e1b;
+    --color-charcoal-800: #593936;
+    --color-charcoal-700: #6f615a;
+    --color-brass-400: #ebe0cb;
+    --color-brass-500: #b69a69;
+    --color-brass-600: #b69a69;
+    --color-sage-100: #ebded5;
+    --color-sage-500: #a27b70;
+    --color-sage-800: #704a46;
+}
+
+html[data-palette='mineral-blue'] {
+    --palette-primary: #365f69;
+    --palette-primary-hover: #294b53;
+    --color-stone-warm-50: #f8fafa;
+    --color-stone-warm-100: #eef3f4;
+    --color-stone-warm-200: #e1eaec;
+    --color-stone-warm-300: #cddadc;
+    --color-stone-warm-400: #bdd0d4;
+    --color-stone-warm-500: #82949a;
+    --color-stone-warm-600: #5e7077;
+    --color-stone-warm-700: #5e7077;
+    --color-stone-warm-800: #182125;
+    --color-stone-warm-900: #182125;
+    --color-stone-warm-950: #182125;
+    --color-charcoal-900: #182125;
+    --color-charcoal-800: #294b53;
+    --color-charcoal-700: #5e7077;
+    --color-brass-400: #e8dfd1;
+    --color-brass-500: #b99b72;
+    --color-brass-600: #b99b72;
+    --color-sage-100: #e1eaec;
+    --color-sage-500: #7899a1;
+    --color-sage-800: #365f69;
+}
+
+html[data-palette] .bg-charcoal-900 {
+    background-color: var(--palette-primary, var(--color-charcoal-900));
+}
+
+html[data-palette] .hover\:bg-charcoal-800:hover {
+    background-color: var(--palette-primary-hover, var(--color-charcoal-800));
+}
+
+.text-stone-warm-500 {
+    color: var(--color-stone-warm-600);
+}
+
 @keyframes cutout-settle {
     from {
         opacity: 0;

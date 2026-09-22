@@ -64,8 +64,9 @@ class VariantResolutionTest extends TestCase
         $response->assertSee('data-testid="variant-switcher"', false);
         $response->assertSee('data-testid="switcher-variant-a"', false);
         $response->assertSee('data-testid="switcher-variant-b"', false);
-        $response->assertSee('Variant A: Expressive 2D');
-        $response->assertSee('Variant B: Calm Editorial');
+        $response->assertSee('Expressive 2D');
+        $response->assertSee('Calm Editorial');
+        $response->assertSee('Design preferences');
     }
 
     public function test_clinic_config_has_complete_structure(): void

@@ -24,9 +24,9 @@
 
         <x-variant-b.page-header
             chapter="Practitioner Profile"
-            kicker="Calm editorial foundation"
             :heading="$member['name']"
             :intro="$member['role']"
+            hero-image="images/variant-b/landing-1.jpg"
         />
 
         <section class="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
@@ -52,16 +52,16 @@
                             </div>
 
                             <div class="md:col-span-7 space-y-6">
-                                <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block">Practitioner Overview</span>
-                                <h2 class="font-serif text-2xl sm:text-3xl font-light text-charcoal-900">
+                                <span class="text-xs font-mono uppercase tracking-widest text-stone-warm-600 block" data-motion="rise">Practitioner Overview</span>
+                                <h2 class="font-serif text-2xl sm:text-3xl font-light text-charcoal-900" data-motion="headline" data-motion-delay="80">
                                     {{ $doctor['title'] }}
                                 </h2>
 
-                                <blockquote class="font-serif text-lg sm:text-xl font-light italic text-charcoal-900 leading-relaxed border-l border-stone-warm-300 pl-5">
+                                <blockquote class="font-serif text-lg sm:text-xl font-light italic text-charcoal-900 leading-relaxed border-l border-stone-warm-300 pl-5" data-motion="copy" data-motion-delay="160">
                                     &ldquo;{{ $doctor['philosophy'] }}&rdquo;
                                 </blockquote>
 
-                                <div class="space-y-4 text-stone-warm-700 font-light leading-relaxed text-sm sm:text-base">
+                                <div class="space-y-4 text-stone-warm-700 font-light leading-relaxed text-sm sm:text-base" data-motion="copy" data-motion-delay="220">
                                     <p>{{ $doctor['bio'] }}</p>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                         </div>
 
                         <!-- Status Notice & Consultation CTA -->
-                        <div class="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-t border-stone-warm-200">
+                        <div class="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-t border-stone-warm-200" data-motion="action" data-motion-delay="80">
                             <p class="text-xs font-mono text-stone-warm-600">
                                 Established POC content is displayed on the homepage. Final biography and credentials require client review.
                             </p>
