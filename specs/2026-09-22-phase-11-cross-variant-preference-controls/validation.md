@@ -74,6 +74,16 @@
 - `php artisan test --compact`: PASS — 88 tests, 1,757 assertions.
 - `npm run build`, `npm run check:line-counts`, and `git diff --check`: PASS.
 
+### Independent QA Remediation — 2026-09-22
+
+- QA-F1 (AC-7): Kept muted color tokens available for decorative use but centrally maps rendered `text-stone-warm-500` utilities to the compliant secondary-text token. Added four-palette contrast assertions; all supplied secondary-text/background pairs meet WCAG AA.
+- QA-F2 (AC-6): Added a responsive-navigation initializer that closes the native mobile disclosure when the `lg` breakpoint is reached, preserving the no-JavaScript disclosure behavior. Added a regression assertion for the breakpoint reset contract.
+- Strengthened preference coverage to prove valid query values override existing session preferences.
+- `php artisan test --compact`: PASS — 90 tests, 1,775 assertions.
+- `npm run build`, `npm run check:line-counts`, `vendor/bin/pint --dirty --format agent`, and `git diff --check`: PASS.
+- Playwright Chromium visual checks: PASS at 1440×900 for Variant B About with Porcelain/Newsreader and 375×812 for Variant B Contact with Mineral/Newsreader, after motion settled.
+- Fresh targeted independent QA for QA-F1 and QA-F2 is pending.
+
 ## 3. Manual Verification Checklist
 
 1. Slowly scroll every route in both variants at desktop and mobile sizes; compare each sequence to its landing-page language and confirm once-only settling.

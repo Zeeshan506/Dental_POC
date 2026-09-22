@@ -45,6 +45,17 @@ class VisualPreferenceTest extends TestCase
         $response->assertSessionHas('typeface', 'newsreader-manrope');
     }
 
+    public function test_valid_preference_queries_take_precedence_over_existing_session_values(): void
+    {
+        $response = $this->withSession(['palette' => 'warm-stone', 'typeface' => 'source-work'])
+            ->get('/?palette=mineral-blue&typeface=newsreader-manrope');
+
+        $response->assertSee('data-palette="mineral-blue"', false);
+        $response->assertSee('data-typeface="newsreader-manrope"', false);
+        $response->assertSessionHas('palette', 'mineral-blue');
+        $response->assertSessionHas('typeface', 'newsreader-manrope');
+    }
+
     public function test_invalid_preference_queries_fall_back_to_safe_defaults(): void
     {
         $response = $this->withSession(['palette' => 'mineral-blue', 'typeface' => 'newsreader-manrope'])
@@ -84,11 +95,38 @@ class VisualPreferenceTest extends TestCase
             foreach ($palette['tokens'] as $token) {
                 $this->assertStringContainsString(strtolower($token), $styles);
             }
+
+            $this->assertGreaterThanOrEqual(4.5, self::contrastRatio(
+                $palette['tokens']['background'],
+                $palette['tokens']['secondary_text'],
+            ));
         }
 
+        $this->assertStringContainsString('.text-stone-warm-500', $styles);
+        $this->assertStringContainsString('color: var(--color-stone-warm-600)', $styles);
         $this->assertStringContainsString("html[data-typeface='newsreader-manrope']", $styles);
         $this->assertStringContainsString("bunny('Newsreader'", $viteConfig);
         $this->assertStringContainsString("bunny('Manrope'", $viteConfig);
         $this->assertStringNotContainsString('Cormorant Garamond', $viteConfig);
+    }
+
+    private static function contrastRatio(string $background, string $text): float
+    {
+        $backgroundLuminance = self::relativeLuminance($background);
+        $textLuminance = self::relativeLuminance($text);
+
+        return (max($backgroundLuminance, $textLuminance) + 0.05) / (min($backgroundLuminance, $textLuminance) + 0.05);
+    }
+
+    private static function relativeLuminance(string $hex): float
+    {
+        $channels = str_split(ltrim($hex, '#'), 2);
+        $linearChannels = array_map(function (string $channel): float {
+            $value = hexdec($channel) / 255;
+
+            return $value <= 0.04045 ? $value / 12.92 : (($value + 0.055) / 1.055) ** 2.4;
+        }, $channels);
+
+        return (0.2126 * $linearChannels[0]) + (0.7152 * $linearChannels[1]) + (0.0722 * $linearChannels[2]);
     }
 }

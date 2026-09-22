@@ -35,6 +35,7 @@ class ResponsiveNavigationTest extends TestCase
             ->getContent();
 
         $this->assertStringContainsString('data-testid="mobile-navigation-disclosure"', $content);
+        $this->assertStringContainsString('data-mobile-navigation-disclosure', $content);
         $this->assertStringContainsString('aria-label="Open primary navigation"', $content);
         $this->assertStringContainsString('id="mobile-primary-navigation"', $content);
         $this->assertStringContainsString('data-testid="mobile-navigation-contact"', $content);
@@ -42,6 +43,15 @@ class ResponsiveNavigationTest extends TestCase
         $this->assertStringContainsString('min-h-[44px]', $content);
         $this->assertStringContainsString('w-[min(20rem,calc(100vw-2rem))]', $content);
         $this->assertStringContainsString('hidden lg:inline-flex', $content);
+    }
+
+    public function test_mobile_navigation_resets_an_open_disclosure_at_the_desktop_breakpoint(): void
+    {
+        $script = (string) file_get_contents(resource_path('js/app.js'));
+
+        $this->assertStringContainsString('initializeResponsiveNavigation', $script);
+        $this->assertStringContainsString("matchMedia('(min-width: 1024px)')", $script);
+        $this->assertStringContainsString("disclosure.removeAttribute('open')", $script);
     }
 
     public function test_all_public_routes_render_the_global_overflow_guard_and_reachable_switcher(): void

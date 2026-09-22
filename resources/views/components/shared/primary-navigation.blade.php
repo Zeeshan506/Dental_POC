@@ -30,7 +30,7 @@
     </ul>
 </nav>
 
-<details class="relative lg:hidden" data-testid="mobile-navigation-disclosure" data-motion="action" data-motion-delay="80">
+<details class="relative lg:hidden" data-mobile-navigation-disclosure data-testid="mobile-navigation-disclosure" data-motion="action" data-motion-delay="80">
     <summary class="flex min-h-[44px] cursor-pointer list-none items-center rounded-sm px-3 text-xs font-semibold uppercase tracking-wider focus:outline-none focus-visible:ring-2 {{ $linkClass }}" aria-controls="mobile-primary-navigation" aria-label="Open primary navigation" data-testid="mobile-navigation-toggle">
         Menu
     </summary>

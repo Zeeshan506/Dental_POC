@@ -122,6 +122,10 @@ html[data-palette] .hover\:bg-charcoal-800:hover {
     background-color: var(--palette-primary-hover, var(--color-charcoal-800));
 }
 
+.text-stone-warm-500 {
+    color: var(--color-stone-warm-600);
+}
+
 @keyframes cutout-settle {
     from {
         opacity: 0;
