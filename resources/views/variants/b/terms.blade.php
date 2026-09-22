@@ -8,6 +8,7 @@
             chapter="Legal &bull; Terms"
             :heading="$page['heading']"
             :intro="$page['intro']"
+            hero-image="images/variant-b/landing-3.jpg"
         />
 
         <section class="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">

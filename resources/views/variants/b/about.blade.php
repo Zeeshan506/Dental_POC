@@ -8,6 +8,7 @@
             chapter="01 / Practice"
             :heading="$page['heading']"
             :intro="$page['intro']"
+            hero-image="images/variant-b/landing-1.jpg"
         />
 
         <!-- Section 1: Asymmetric Editorial Narrative & Photography -->

@@ -22,6 +22,7 @@
             chapter="Clinical Discipline"
             :heading="$service['name']"
             :intro="$service['introduction']"
+            hero-image="images/variant-b/landing-2.jpg"
         />
 
         <section class="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">

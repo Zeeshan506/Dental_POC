@@ -8,6 +8,7 @@
             chapter="02 / Protocol"
             :heading="$page['heading']"
             :intro="$page['intro']"
+            hero-image="images/variant-b/landing-3.jpg"
         />
 
         <!-- Detailed Journey Timeline Section -->

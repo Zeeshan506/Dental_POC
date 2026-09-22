@@ -36,6 +36,31 @@ class VariantBMultiPageTest extends TestCase
         }
     }
 
+    public function test_every_non_home_variant_b_page_uses_an_existing_editorial_landing_image_as_its_hero(): void
+    {
+        $routes = [
+            '/about' => 'images/variant-b/landing-1.jpg',
+            '/services' => 'images/variant-b/landing-2.jpg',
+            '/services/dental-implants' => 'images/variant-b/landing-2.jpg',
+            '/team' => 'images/variant-b/landing-1.jpg',
+            '/team/dr-tariq-bhatti' => 'images/variant-b/landing-1.jpg',
+            '/team/supporting-team-member' => 'images/variant-b/landing-1.jpg',
+            '/patient-journey' => 'images/variant-b/landing-3.jpg',
+            '/reviews' => 'images/variant-b/landing-3.jpg',
+            '/contact' => 'images/variant-b/landing-3.jpg',
+            '/faq' => 'images/variant-b/landing-3.jpg',
+            '/privacy' => 'images/variant-b/landing-3.jpg',
+            '/terms' => 'images/variant-b/landing-3.jpg',
+        ];
+
+        foreach ($routes as $path => $heroImage) {
+            $this->get($path.'?variant=b')
+                ->assertSee('data-testid="variant-b-page-hero"', false)
+                ->assertSee('data-testid="variant-b-page-hero-image"', false)
+                ->assertSee($heroImage);
+        }
+    }
+
     public function test_about_and_patient_journey_render_editorial_pacing_and_original_assets(): void
     {
         $about = $this->get('/about?variant=b');

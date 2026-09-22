@@ -26,6 +26,7 @@
             chapter="Practitioner Profile"
             :heading="$member['name']"
             :intro="$member['role']"
+            hero-image="images/variant-b/landing-1.jpg"
         />
 
         <section class="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">

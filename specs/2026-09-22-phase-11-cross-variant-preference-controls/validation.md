@@ -67,6 +67,13 @@
 - `npm run build`, `npm run check:line-counts`, `vendor/bin/pint --dirty --format agent`, and `git diff --check`: PASS.
 - Browser comparison in both variants across all palettes/typefaces remains intentionally pending manual review.
 
+### Variant B Editorial Hero Follow-up — 2026-09-22
+
+- Reused the three approved Variant B landing images as the full-width, overlaid editorial hero for every non-home Variant B route.
+- `php artisan test --compact tests/Feature/VariantBMultiPageTest.php tests/Feature/CrossVariantMotionTest.php tests/Feature/ResponsiveNavigationTest.php tests/Feature/VisualPreferenceTest.php`: PASS — 24 tests, 739 assertions.
+- `php artisan test --compact`: PASS — 88 tests, 1,757 assertions.
+- `npm run build`, `npm run check:line-counts`, and `git diff --check`: PASS.
+
 ## 3. Manual Verification Checklist
 
 1. Slowly scroll every route in both variants at desktop and mobile sizes; compare each sequence to its landing-page language and confirm once-only settling.

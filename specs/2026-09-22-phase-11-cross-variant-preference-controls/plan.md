@@ -29,7 +29,7 @@ Extend the current Blade, Tailwind token, Motion Mini, and route/session contrac
 
 > Deferred: Complete Group 3’s browser viewport and interaction checks during manual review; do not treat Task 3.4 as done yet.
 
-> Review remediation: Removed the repeated Variant B page-header badge and changed the narrow-screen switcher to a compact A/B dock. Updated browser/manual confirmation remains pending.
+> Review remediation: Removed the repeated Variant B page-header badge and changed the narrow-screen switcher to a compact A/B dock. Follow-up: every non-home Variant B route now reuses an approved landing image as its overlaid editorial page hero. Updated browser/manual confirmation remains pending.
 
 ### Group 4: Palette, Typography & Shared Preference Switcher
 
