@@ -4,20 +4,20 @@
 
 The completed multi-page website needs a final presentation pass that makes every rendered route feel native to its landing-page direction, works deliberately on small screens, and lets stakeholders compare approved visual systems without changing content or routes. This phase extends the existing Motion Mini architecture, removes two explicit hero labels, corrects the shared navigation, and adds visual-preference controls.
 
-**Lifecycle:** Specification: Ready | Implementation: Implemented | Validation: Pending.
+**Lifecycle:** Specification: Ready | Implementation: Implemented | Validation: Validated.
 
 ## 2. Scope
 
 ### In-Scope
 
-- [ ] Audit every public route in both variants against its landing-page choreography, then extend the existing single Motion Mini/IntersectionObserver system to each missing significant heading, copy block, image, list, form, CTA, navigation, and footer element.
-- [ ] Preserve Variant A’s expressive 2D Cutout profile (directional layered reveals, 50–120ms desktop staggers, small tactile feedback) and Variant B’s calm editorial profile (soft 8–12px reveals, 60–140ms desktop staggers, hairline/image masks, no hover lift).
-- [ ] Remove only the two decorative landing-hero labels `Variant A • Expressive 2D Cutout` and `Variant B • Calm Editorial Direction`; retain clinical, legal, accessibility, approval, and placeholder information.
-- [ ] Rebuild the shared header/navigation mobile-first so 320px+ widths show an unclipped brand and a labelled menu control; the expanded menu contains the primary links and direct-contact CTA, preserves active state, keyboard operation, visible focus, and 44px targets.
-- [ ] Audit all public rendered views at 320px, 375px, tablet, and desktop widths for overflow, clipped fixed controls, unusable controls, and broken information hierarchy.
-- [ ] Add visual preference state for the existing Warm Stone palette plus Porcelain + Deep Teal, Ivory + Rosewood, and Mineral Blue + Chalk. Map each supplied color value to shared semantic CSS tokens rather than rewriting per-component utilities.
-- [ ] Add a second typography option, Newsreader for display/serif and Manrope for body/UI, alongside the existing Source Serif 4 and Work Sans pairing. Load the documented weights and Newsreader italic used by the interface.
-- [ ] Extend the persistent switcher into an accessible, compact design-preference control containing variant, palette, and typography choices. Choices preserve pathname and unrelated query parameters, use query-over-session-over-default precedence, and default safely on invalid values.
+- [x] Audit every public route in both variants against its landing-page choreography, then extend the existing single Motion Mini/IntersectionObserver system to each missing significant heading, copy block, image, list, form, CTA, navigation, and footer element.
+- [x] Preserve Variant A’s expressive 2D Cutout profile (directional layered reveals, 50–120ms desktop staggers, small tactile feedback) and Variant B’s calm editorial profile (soft 8–12px reveals, 60–140ms desktop staggers, hairline/image masks, no hover lift).
+- [x] Remove only the two decorative landing-hero labels `Variant A • Expressive 2D Cutout` and `Variant B • Calm Editorial Direction`; retain clinical, legal, accessibility, approval, and placeholder information.
+- [x] Rebuild the shared header/navigation mobile-first so 320px+ widths show an unclipped brand and a labelled menu control; the expanded menu contains the primary links and direct-contact CTA, preserves active state, keyboard operation, visible focus, and 44px targets.
+- [x] Audit all public rendered views at 320px, 375px, tablet, and desktop widths for overflow, clipped fixed controls, unusable controls, and broken information hierarchy.
+- [x] Add visual preference state for the existing Warm Stone palette plus Porcelain + Deep Teal, Ivory + Rosewood, and Mineral Blue + Chalk. Map each supplied color value to shared semantic CSS tokens rather than rewriting per-component utilities.
+- [x] Add a second typography option, Newsreader for display/serif and Manrope for body/UI, alongside the existing Source Serif 4 and Work Sans pairing. Load the documented weights and Newsreader italic used by the interface.
+- [x] Extend the persistent switcher into an accessible, compact design-preference control containing variant, palette, and typography choices. Choices preserve pathname and unrelated query parameters, use query-over-session-over-default precedence, and default safely on invalid values.
 
 ### Out-of-Scope (Non-Goals)
 
@@ -37,15 +37,15 @@ The completed multi-page website needs a final presentation pass that makes ever
 
 ## 4. Acceptance Criteria
 
-- [ ] **AC-1**: Given any public route in Variant A, when it enters view with motion enabled, then its significant blocks follow the established expressive landing-page hierarchy using the existing runtime, settle once, and have no loops or layout shifts.
-- [ ] **AC-2**: Given any public route in Variant B, when it enters view with motion enabled, then its significant blocks follow the established calm editorial landing-page hierarchy, remain slower/shorter than A, and never use card-lift hover behavior.
-- [ ] **AC-3**: Given reduced motion is enabled or JavaScript is unavailable, when any variant route loads, then all content, navigation, and controls are immediately visible, usable, and free of motion delays or hidden states.
-- [ ] **AC-4**: Given either homepage renders, when its hero is inspected, then the named Variant A and Variant B decorative labels are absent while the H1, description, CTAs, and all required information remain present.
-- [ ] **AC-5**: Given the site is viewed from 320px through desktop, when the shared header/menu, fixed preference control, and page content are used, then no horizontal overflow or clipping occurs and primary navigation/contact actions remain reachable by keyboard and touch.
-- [ ] **AC-6**: Given the mobile menu is opened, when a visitor navigates or changes viewport, then it presents the shared IA, active-page state, direct-contact CTA, visible focus, and 44px controls without relying on JavaScript.
-- [ ] **AC-7**: Given a valid palette is selected, when either variant is rendered, then the current Warm Stone or one of the three supplied palettes is applied consistently through semantic tokens with readable contrast and no hardcoded per-view alternate colors.
-- [ ] **AC-8**: Given a typography option is selected, when either variant renders, then `source-work` uses Source Serif 4/Work Sans and `newsreader-manrope` uses Newsreader/Manrope at the documented display, body, UI, and italic roles without layout breakage.
-- [ ] **AC-9**: Given a visitor changes variant, palette, or typography from the shared switcher, when the next response renders, then the pathname and unrelated query values persist, the selected state is visible, valid preferences persist in session, and invalid preference values use safe defaults.
+- [x] **AC-1**: Given any public route in Variant A, when it enters view with motion enabled, then its significant blocks follow the established expressive landing-page hierarchy using the existing runtime, settle once, and have no loops or layout shifts.
+- [x] **AC-2**: Given any public route in Variant B, when it enters view with motion enabled, then its significant blocks follow the established calm editorial landing-page hierarchy, remain slower/shorter than A, and never use card-lift hover behavior.
+- [x] **AC-3**: Given reduced motion is enabled or JavaScript is unavailable, when any variant route loads, then all content, navigation, and controls are immediately visible, usable, and free of motion delays or hidden states.
+- [x] **AC-4**: Given either homepage renders, when its hero is inspected, then the named Variant A and Variant B decorative labels are absent while the H1, description, CTAs, and all required information remain present.
+- [x] **AC-5**: Given the site is viewed from 320px through desktop, when the shared header/menu, fixed preference control, and page content are used, then no horizontal overflow or clipping occurs and primary navigation/contact actions remain reachable by keyboard and touch.
+- [x] **AC-6**: Given the mobile menu is opened, when a visitor navigates or changes viewport, then it presents the shared IA, active-page state, direct-contact CTA, visible focus, and 44px controls without relying on JavaScript.
+- [x] **AC-7**: Given a valid palette is selected, when either variant is rendered, then the current Warm Stone or one of the three supplied palettes is applied consistently through semantic tokens with readable contrast and no hardcoded per-view alternate colors.
+- [x] **AC-8**: Given a typography option is selected, when either variant renders, then `source-work` uses Source Serif 4/Work Sans and `newsreader-manrope` uses Newsreader/Manrope at the documented display, body, UI, and italic roles without layout breakage.
+- [x] **AC-9**: Given a visitor changes variant, palette, or typography from the shared switcher, when the next response renders, then the pathname and unrelated query values persist, the selected state is visible, valid preferences persist in session, and invalid preference values use safe defaults.
 
 ## 5. Edge Cases & Error Handling
 

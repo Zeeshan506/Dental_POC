@@ -11,12 +11,15 @@ between specification/planning changes and feature implementation.
 ## [Unreleased]
 
 ### 📋 Specification & Planning Changes
+- **Phase 11 — Cross-Variant Motion, Navigation & Preferences**: Finalized AC-1 through AC-9 after independent QA and explicit user merge acceptance; synchronized its requirements, plan, validation matrix, and roadmap to `Validated`.
 - **Phase 6 — Variant A Multi-Page Layout Remediation**: Extended the Phase 6 contract through AC-10 for non-landing Variant A layout rhythm, responsive integrity, and landing-page regression protection; finalized it with an explicit user-accepted browser-evidence waiver.
 - **Phase 9 — Variant A Multi-Page Experience**: Completed and accepted the specification lifecycle for AC-1 through AC-7; synchronized its validation matrix and roadmap status to `Validated`.
 - **Phase 6 — Cross-Variant Polish, Accessibility & Presentation Audit**: Established formal audit specification under `specs/2026-09-21-phase-6-cross-variant-polish-audit/` (AC-1 through AC-7) covering WCAG 2.1 AA contrast, reduced motion, touch targets, keyboard focus, viewport overflow, modularity, and client presentation documentation.
 - **Phase 5 — Variant B Calm Editorial Motion**: Expanded the existing Phase 5 contract through AC-12 for the user-directed, original reference-informed composition; recorded the pre-code Playwright motion audit in [motion-audit.md](specs/2026-09-21-phase-5-variant-b-editorial-motion/motion-audit.md).
 
 ### 🚀 Feature Implementation & Code Changes
+- **Production URL & Railway Handoff**: Centrally force HTTPS URL generation in production and HTTP in non-production environments; added Railway build, pre-deploy, start-command, and variable instructions in `deployment.md`.
+- **Phase 11 — Cross-Variant Motion, Navigation & Preferences**: Completed site-wide motion alignment, responsive navigation, hero-label removal, four semantic palettes, two typography systems, persistent preference switching, and Variant B editorial page heroes.
 - **Phase 6 — Variant A Multi-Page Layout Remediation**: Added a shared Variant A page shell and applied it exclusively to non-landing page compositions; standardized responsive section spacing, readable measures, content/image gaps, service and team card padding, and overflow containment without changing the landing page.
 - **Phase 9 — Variant A Multi-Page Experience**: Added a Variant A-specific public-page renderer with expressive information, services, team, reviews, contact, FAQ, journey, and legal compositions; retained the shared content contracts and explicit placeholder provenance.
 - **Phase 6: Cross-Variant Polish & Accessibility**:
@@ -29,6 +32,8 @@ between specification/planning changes and feature implementation.
 - **Phase 5: Variant B Motion**: Added Variant B’s full-bleed, manually controlled three-image hero using project-owned clinical imagery, plus an editorial shared shell, darker finale, slower profile-specific motion, preserved review controls, and responsive no-JavaScript/reduced-motion behavior.
 
 ### 🧪 Testing & Quality Assurance
+- **Production URL Configuration**: Added `UrlSchemeTest` to verify HTTPS URL generation in production and HTTP URL generation outside production.
+- **Phase 11**: Independent QA passed after remediation, including Playwright desktop/mobile visual checks; explicit user merge acceptance finalized the phase.
 - **Phase 6 — Variant A Multi-Page Layout Remediation**: Added focused rendering regressions; 72 tests / 1,278 assertions, Pint, production build, whitespace, and 260-file modularity audit passed. Initial QA reported QA-F1 for missing browser tooling; the user explicitly directed merge without adding it or requesting a targeted re-audit.
 - **Phase 9**: Added `VariantAMultiPageTest` and passed 62 tests / 976 assertions, Pint, production build, whitespace, and modularity checks. Independent QA returned `QA VERDICT: PASSED` across AC-1 through AC-7; stakeholder acceptance authorized the non-fast-forward merge to `main`.
 - Added automated feature tests in `tests/Feature/CrossVariantPolishAuditTest.php` covering AC-1 through AC-6 (6 tests, 44 assertions). Full test suite passes: 46 tests, 629 assertions.

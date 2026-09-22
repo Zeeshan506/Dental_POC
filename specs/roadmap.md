@@ -18,7 +18,7 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 | Phase 8 | Multi-Page Shared Foundation | [Phase 8 Spec](2026-09-21-phase-8-multi-page-shared-foundation/) | AC-1 to AC-8 | Ready | Implemented | Pending |
 | Phase 9 | Variant A Multi-Page Experience | [Phase 9 Spec](2026-09-21-phase-9-variant-a-multi-page-experience/) | AC-1 to AC-7 | Ready | Implemented | Validated |
 | Phase 10 | Variant B Multi-Page Experience | [Phase 10 Spec](2026-09-21-phase-10-variant-b-multi-page-experience/) | AC-1 to AC-7 | Ready | Implemented | Validated |
-| Phase 11 | Cross-Variant Motion, Navigation & Preferences | [Phase 11 Spec](2026-09-22-phase-11-cross-variant-preference-controls/) | AC-1 to AC-9 | Ready | Implemented | Pending |
+| Phase 11 | Cross-Variant Motion, Navigation & Preferences | [Phase 11 Spec](2026-09-22-phase-11-cross-variant-preference-controls/) | AC-1 to AC-9 | Ready | Implemented | Validated |
 
 ---
 
@@ -143,9 +143,9 @@ The development of the Dr. Bhatti & Associates Dental Clinic POC follows a Spec-
 ### Phase 11: Cross-Variant Motion, Navigation & Preferences
 - **Specification**: [specs/2026-09-22-phase-11-cross-variant-preference-controls/](2026-09-22-phase-11-cross-variant-preference-controls/)
 - **Acceptance Criteria**: AC-1 through AC-9
-- **Status**: Specification: Ready | Implementation: Implemented | Validation: Pending
-- [ ] **Task 11.1**: Extend the existing landing-page motion languages across all public views using the one centralized Motion Mini runtime, while retaining no-JS and reduced-motion safety. Automated implementation is complete; browser/manual review is pending.
+- **Status**: Specification: Ready | Implementation: Implemented | Validation: Validated
+- [x] **Task 11.1**: Extend the existing landing-page motion languages across all public views using the one centralized Motion Mini runtime, while retaining no-JS and reduced-motion safety.
 - [x] **Task 11.2**: Remove the two named landing-hero identifier labels without changing meaningful content or controls.
-- [ ] **Task 11.3**: Make shared navigation and every rendered view deliberately mobile-first, accessible, and free of overflow from 320px through desktop. Automated implementation is complete; browser/manual review is pending.
-- [ ] **Task 11.4**: Add path-preserving palette and typography preference state plus an accessible shared visual switcher for the current and supplied design systems. Automated implementation is complete; browser/manual review is pending.
+- [x] **Task 11.3**: Make shared navigation and every rendered view deliberately mobile-first, accessible, and free of overflow from 320px through desktop.
+- [x] **Task 11.4**: Add path-preserving palette and typography preference state plus an accessible shared visual switcher for the current and supplied design systems.
 - **Deliverable / Verification**: Stakeholders can compare both visual directions, four palettes, and two type systems on every responsive route while the site remains accessible, stable, and content-equivalent.
