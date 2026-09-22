@@ -4,7 +4,7 @@
 
 The completed multi-page website needs a final presentation pass that makes every rendered route feel native to its landing-page direction, works deliberately on small screens, and lets stakeholders compare approved visual systems without changing content or routes. This phase extends the existing Motion Mini architecture, removes two explicit hero labels, corrects the shared navigation, and adds visual-preference controls.
 
-**Lifecycle:** Specification: Ready | Implementation: In Progress | Validation: Pending.
+**Lifecycle:** Specification: Ready | Implementation: Implemented | Validation: Pending.
 
 ## 2. Scope
 

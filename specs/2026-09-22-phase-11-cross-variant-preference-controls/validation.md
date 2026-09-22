@@ -4,15 +4,22 @@
 
 | AC ID | Description | Verification Method | Pass / Fail |
 |---|---|---|---|
-| AC-1 | Variant A site-wide expressive choreography | Rendered-hook tests and desktop/mobile full-scroll audit | Automated: PASS; Manual: Pending |
-| AC-2 | Variant B site-wide calm editorial choreography | Rendered-hook tests and desktop/mobile full-scroll audit | Automated: PASS; Manual: Pending |
-| AC-3 | Reduced-motion and no-JS safety | Browser emulation and JavaScript-disabled route checks | Automated: PASS; Manual: Pending |
-| AC-4 | Both named hero labels removed | Focused hero rendering tests | Automated: PASS; Manual: PASS (user, 2026-09-22) |
-| AC-5 | Responsive rendered views and reachable controls | 320px, 375px, tablet, desktop browser audits | Automated: PASS; Manual: Pending |
-| AC-6 | Mobile navigation disclosure accessibility | Keyboard/touch browser flow and rendered-markup tests | Automated: PASS; Manual: Pending |
-| AC-7 | Four semantic color palettes | Preference tests, contrast audit, visual browser comparison | Automated: PASS; Manual: Pending |
-| AC-8 | Two typography systems | Font/rendering tests and viewport comparison | Automated: PASS; Manual: Pending |
-| AC-9 | Path-preserving preference switcher state | Feature query/session matrix and browser interaction flow | Automated: PASS; Manual: Pending |
+| AC-1 | Variant A site-wide expressive choreography | Rendered-hook tests and desktop/mobile full-scroll audit | Automated: PASS; Independent QA: PASS; Manual: Pending |
+| AC-2 | Variant B site-wide calm editorial choreography | Rendered-hook tests and desktop/mobile full-scroll audit | Automated: PASS; Independent QA: PASS; Manual: Pending |
+| AC-3 | Reduced-motion and no-JS safety | Browser emulation and JavaScript-disabled route checks | Automated: PASS; Independent QA: PASS; Manual: Pending |
+| AC-4 | Both named hero labels removed | Focused hero rendering tests | Automated: PASS; Independent QA: PASS; Manual: PASS (user, 2026-09-22) |
+| AC-5 | Responsive rendered views and reachable controls | 320px, 375px, tablet, desktop browser audits | Automated: PASS; Independent QA: PASS; Manual: Pending |
+| AC-6 | Mobile navigation disclosure accessibility | Keyboard/touch browser flow and rendered-markup tests | Automated: PASS; Independent QA: PASS; Manual: Pending |
+| AC-7 | Four semantic color palettes | Preference tests, contrast audit, visual browser comparison | Automated: PASS; Independent QA: PASS; Manual: Pending |
+| AC-8 | Two typography systems | Font/rendering tests and viewport comparison | Automated: PASS; Independent QA: PASS; Manual: Pending |
+| AC-9 | Path-preserving preference switcher state | Feature query/session matrix and browser interaction flow | Automated: PASS; Independent QA: PASS; Manual: Pending |
+
+## Validation Status Breakdown
+
+- **Automated Tests**: PASS
+- **Independent QA Audit**: PASS
+- **Manual User Acceptance**: Pending
+- **Overall Feature Status**: Implemented (Pending Acceptance)
 
 ## 2. Automated Test Suite
 
@@ -82,7 +89,7 @@
 - `php artisan test --compact`: PASS — 90 tests, 1,775 assertions.
 - `npm run build`, `npm run check:line-counts`, `vendor/bin/pint --dirty --format agent`, and `git diff --check`: PASS.
 - Playwright Chromium visual checks: PASS at 1440×900 for Variant B About with Porcelain/Newsreader and 375×812 for Variant B Contact with Mineral/Newsreader, after motion settled.
-- Fresh targeted independent QA for QA-F1 and QA-F2 is pending.
+- Fresh targeted independent QA: PASS — QA-F1 and QA-F2 verified resolved. Focused verification: 14 tests, 255 assertions; related preference/variant regression: 21 tests, 294 assertions; production build, line-count, Pint, JavaScript syntax, and whitespace diff checks passed.
 
 ## 3. Manual Verification Checklist
 
