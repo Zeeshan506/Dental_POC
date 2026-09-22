@@ -62,7 +62,7 @@ class CrossVariantPolishAuditTest extends TestCase
 
         // Variant switcher
         $this->assertStringContainsString('data-testid="variant-switcher"', $content);
-        $this->assertStringContainsString('max-w-[calc(100vw-1rem)]', $content);
+        $this->assertStringContainsString('max-w-[calc(100vw-1.5rem)]', $content);
     }
 
     /**

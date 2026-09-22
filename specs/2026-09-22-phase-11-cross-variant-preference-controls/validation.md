@@ -10,9 +10,9 @@
 | AC-4 | Both named hero labels removed | Focused hero rendering tests | Automated: PASS; Manual: PASS (user, 2026-09-22) |
 | AC-5 | Responsive rendered views and reachable controls | 320px, 375px, tablet, desktop browser audits | Automated: PASS; Manual: Pending |
 | AC-6 | Mobile navigation disclosure accessibility | Keyboard/touch browser flow and rendered-markup tests | Automated: PASS; Manual: Pending |
-| AC-7 | Four semantic color palettes | Preference tests, contrast audit, visual browser comparison | [ ] |
-| AC-8 | Two typography systems | Font/rendering tests and viewport comparison | [ ] |
-| AC-9 | Path-preserving preference switcher state | Feature query/session matrix and browser interaction flow | [ ] |
+| AC-7 | Four semantic color palettes | Preference tests, contrast audit, visual browser comparison | Automated: PASS; Manual: Pending |
+| AC-8 | Two typography systems | Font/rendering tests and viewport comparison | Automated: PASS; Manual: Pending |
+| AC-9 | Path-preserving preference switcher state | Feature query/session matrix and browser interaction flow | Automated: PASS; Manual: Pending |
 
 ## 2. Automated Test Suite
 
@@ -55,6 +55,17 @@
 - `php artisan test --compact`: PASS — 81 tests, 1,628 assertions.
 - `npm run build`, `npm run check:line-counts`, and `vendor/bin/pint --dirty --format agent`: PASS.
 - Updated browser/manual confirmation remains pending.
+
+### Group 4 Automated Evidence — 2026-09-22
+
+- Added four structured palette records, two structured typeface records, safe query/session/default resolution, and root `data-palette` / `data-typeface` attributes.
+- Added a normal-link, mobile-collapsible preference disclosure that preserves the path, variant, selected preference, and unrelated query values.
+- Added `Newsreader` (400/500/600 normal and italic) and `Manrope` (400/500/600/700) to the Vite font bundle; no Cormorant font was added.
+- Verified secondary text contrast against each supplied light background: Porcelain 5.15:1, Ivory 5.61:1, Mineral 4.94:1.
+- `php artisan test --compact tests/Feature/VisualPreferenceTest.php tests/Feature/VariantResolutionTest.php tests/Feature/MultiPageSharedFoundationTest.php`: PASS — 24 tests, 369 assertions.
+- `php artisan test --compact`: PASS — 87 tests, 1,721 assertions.
+- `npm run build`, `npm run check:line-counts`, `vendor/bin/pint --dirty --format agent`, and `git diff --check`: PASS.
+- Browser comparison in both variants across all palettes/typefaces remains intentionally pending manual review.
 
 ## 3. Manual Verification Checklist
 

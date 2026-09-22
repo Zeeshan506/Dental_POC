@@ -69,7 +69,7 @@ class ResponsiveNavigationTest extends TestCase
 
                 $this->assertStringContainsString('overflow-x-clip', $content);
                 $this->assertStringContainsString('data-testid="variant-switcher"', $content);
-                $this->assertStringContainsString('max-w-[calc(100vw-1rem)]', $content);
+                $this->assertStringContainsString('max-w-[calc(100vw-1.5rem)]', $content);
             }
         }
     }
@@ -97,16 +97,17 @@ class ResponsiveNavigationTest extends TestCase
         }
     }
 
-    public function test_switcher_uses_a_compact_mobile_dock_and_descriptive_variant_links(): void
+    public function test_switcher_uses_a_compact_mobile_preference_disclosure_with_descriptive_choices(): void
     {
         $content = $this->get('/?variant=a')
             ->assertOk()
             ->getContent();
 
         $this->assertStringContainsString('bottom-3 right-3', $content);
-        $this->assertStringContainsString('sm:left-1/2', $content);
-        $this->assertStringContainsString('h-11 w-11', $content);
-        $this->assertStringContainsString('aria-label="Switch to Variant A: Expressive 2D"', $content);
-        $this->assertStringContainsString('aria-label="Switch to Variant B: Calm Editorial"', $content);
+        $this->assertStringContainsString('aria-label="Open design preferences"', $content);
+        $this->assertStringContainsString('min-h-11', $content);
+        $this->assertStringContainsString('data-testid="switcher-variant-a"', $content);
+        $this->assertStringContainsString('data-testid="switcher-palette-porcelain-teal"', $content);
+        $this->assertStringContainsString('data-testid="switcher-typeface-newsreader-manrope"', $content);
     }
 }

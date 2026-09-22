@@ -1,52 +1,63 @@
-@props(['activeVariant' => 'a'])
-@php
-    $currentVariant = in_array(strtolower($activeVariant), ['a', 'b'], true) ? strtolower($activeVariant) : 'a';
-    $urlVariantA = request()->fullUrlWithQuery(['variant' => 'a']);
-    $urlVariantB = request()->fullUrlWithQuery(['variant' => 'b']);
-@endphp
-<div
-    class="fixed bottom-3 right-3 z-50 max-w-[calc(100vw-1rem)] transition-transform duration-200 motion-reduce:transition-none sm:bottom-6 sm:left-1/2 sm:right-auto sm:-translate-x-1/2"
-    role="region"
-    aria-label="Design Variant Switcher"
-    data-testid="variant-switcher"
-    data-motion="rise"
-    data-motion-delay="180"
->
-    <nav class="flex items-center gap-1 rounded-2xl border border-charcoal-700 bg-charcoal-900 p-1.5 shadow-2xl" aria-label="Variant Navigation">
-        <!-- Variant A Pill -->
-        <a
-            href="{{ $urlVariantA }}"
-            @class([
-                'inline-flex h-11 w-11 items-center justify-center rounded-xl text-xs font-semibold transition-colors motion-reduce:transition-none focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-warm-200 sm:w-auto sm:px-4',
-                'bg-stone-warm-50 text-charcoal-900 font-semibold shadow-sm' => $currentVariant === 'a',
-                'text-stone-warm-300 hover:text-stone-warm-50 hover:bg-charcoal-800' => $currentVariant !== 'a',
-            ])
-            aria-current="{{ $currentVariant === 'a' ? 'page' : 'false' }}"
-            aria-label="Switch to Variant A: Expressive 2D"
-            data-testid="switcher-variant-a"
-            data-motion-interactive
-        >
-            <span class="hidden h-2 w-2 rounded-full sm:inline-block sm:mr-2 {{ $currentVariant === 'a' ? 'bg-brass-500' : 'bg-charcoal-700' }}" aria-hidden="true"></span>
-            <span class="sm:hidden" aria-hidden="true">A</span>
-            <span class="hidden sm:inline">Variant A: Expressive 2D</span>
-        </a>
+@props(['activeVariant' => 'a', 'activePalette' => 'warm-stone', 'activeTypeface' => 'source-work'])
 
-        <!-- Variant B Pill -->
-        <a
-            href="{{ $urlVariantB }}"
-            @class([
-                'inline-flex h-11 w-11 items-center justify-center rounded-xl text-xs font-semibold transition-colors motion-reduce:transition-none focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-warm-200 sm:w-auto sm:px-4',
-                'bg-stone-warm-50 text-charcoal-900 font-semibold shadow-sm' => $currentVariant === 'b',
-                'text-stone-warm-300 hover:text-stone-warm-50 hover:bg-charcoal-800' => $currentVariant !== 'b',
-            ])
-            aria-current="{{ $currentVariant === 'b' ? 'page' : 'false' }}"
-            aria-label="Switch to Variant B: Calm Editorial"
-            data-testid="switcher-variant-b"
-            data-motion-interactive
-        >
-            <span class="hidden h-2 w-2 rounded-full sm:inline-block sm:mr-2 {{ $currentVariant === 'b' ? 'bg-brass-500' : 'bg-charcoal-700' }}" aria-hidden="true"></span>
-            <span class="sm:hidden" aria-hidden="true">B</span>
-            <span class="hidden sm:inline">Variant B: Calm Editorial</span>
-        </a>
-    </nav>
+@php
+    $currentVariant = in_array($activeVariant, ['a', 'b'], true) ? $activeVariant : 'a';
+    $palettes = config('design-preferences.palettes', []);
+    $typefaces = config('design-preferences.typefaces', []);
+    $urlFor = fn (string $key, string $value): string => request()->fullUrlWithQuery([$key => $value]);
+@endphp
+
+<div class="fixed bottom-3 right-3 z-50 max-w-[calc(100vw-1.5rem)] sm:bottom-6 sm:right-6" data-testid="variant-switcher">
+    <details class="group relative">
+        <summary class="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-xl bg-charcoal-900 px-3 text-xs font-semibold text-stone-warm-50 shadow-lg transition-colors motion-reduce:transition-none hover:bg-charcoal-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 focus-visible:ring-offset-2" aria-label="Open design preferences">
+            <span aria-hidden="true">Design</span>
+            <span class="hidden text-stone-warm-300 sm:inline">{{ strtoupper($currentVariant) }} · {{ $palettes[$activePalette]['label'] ?? 'Warm Stone' }}</span>
+        </summary>
+
+        <div class="absolute bottom-full right-0 mb-2 w-[min(20rem,calc(100vw-1.5rem))] rounded-2xl border border-stone-warm-300 bg-stone-warm-50 p-4 text-charcoal-900 shadow-xl" aria-label="Design preferences">
+            <div class="mb-3 flex items-center justify-between gap-3">
+                <p class="text-sm font-semibold">Design preferences</p>
+                <p class="text-xs text-stone-warm-600">Links preserve this page</p>
+            </div>
+
+            <fieldset class="border-t border-stone-warm-200 pt-3">
+                <legend class="px-0 text-xs font-semibold uppercase tracking-wider text-stone-warm-600">Variant</legend>
+                <div class="mt-2 grid grid-cols-2 gap-2">
+                    @foreach (['a' => 'Expressive 2D', 'b' => 'Calm Editorial'] as $value => $label)
+                        <a href="{{ $urlFor('variant', $value) }}" @class([
+                            'flex min-h-11 items-center justify-center rounded-lg border px-3 text-center text-xs font-semibold transition-colors motion-reduce:transition-none focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 focus-visible:ring-offset-2',
+                            'border-charcoal-900 bg-charcoal-900 text-stone-warm-50' => $currentVariant === $value,
+                            'border-stone-warm-300 hover:bg-stone-warm-100' => $currentVariant !== $value,
+                        ]) aria-current="{{ $currentVariant === $value ? 'true' : 'false' }}" data-testid="switcher-variant-{{ $value }}">{{ $label }}</a>
+                    @endforeach
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-4 border-t border-stone-warm-200 pt-3">
+                <legend class="px-0 text-xs font-semibold uppercase tracking-wider text-stone-warm-600">Palette</legend>
+                <div class="mt-2 grid grid-cols-2 gap-2">
+                    @foreach ($palettes as $value => $palette)
+                        <a href="{{ $urlFor('palette', $value) }}" @class([
+                            'flex min-h-11 items-center rounded-lg border px-3 text-xs font-medium transition-colors motion-reduce:transition-none focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 focus-visible:ring-offset-2',
+                            'border-charcoal-900 bg-stone-warm-100 font-semibold' => $activePalette === $value,
+                            'border-stone-warm-300 hover:bg-stone-warm-100' => $activePalette !== $value,
+                        ]) aria-current="{{ $activePalette === $value ? 'true' : 'false' }}" data-testid="switcher-palette-{{ $value }}">{{ $palette['label'] }}</a>
+                    @endforeach
+                </div>
+            </fieldset>
+
+            <fieldset class="mt-4 border-t border-stone-warm-200 pt-3">
+                <legend class="px-0 text-xs font-semibold uppercase tracking-wider text-stone-warm-600">Typography</legend>
+                <div class="mt-2 grid gap-2">
+                    @foreach ($typefaces as $value => $typeface)
+                        <a href="{{ $urlFor('typeface', $value) }}" @class([
+                            'flex min-h-11 items-center rounded-lg border px-3 text-xs font-medium transition-colors motion-reduce:transition-none focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-900 focus-visible:ring-offset-2',
+                            'border-charcoal-900 bg-stone-warm-100 font-semibold' => $activeTypeface === $value,
+                            'border-stone-warm-300 hover:bg-stone-warm-100' => $activeTypeface !== $value,
+                        ]) aria-current="{{ $activeTypeface === $value ? 'true' : 'false' }}" data-testid="switcher-typeface-{{ $value }}">{{ $typeface['label'] }}</a>
+                    @endforeach
+                </div>
+            </fieldset>
+        </div>
+    </details>
 </div>
