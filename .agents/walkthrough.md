@@ -59,3 +59,13 @@ Prior phase walkthroughs are recorded in [.agents/walkthroughs/phase-0-to-5.md](
 ## Lifecycle Status
 - **Phase 10 Status**: `Specification: Ready | Implementation: Implemented | Validation: Validated`.
 - **Merge Completion**: User explicit approval received via `/finish-spec`. Merged `feat/phase-10-variant-b-multi-page-experience` into `main` using `--no-ff`. Both local and remote `main` synchronized. All prior project files, content, and `.tree` workspaces preserved intact without overwrite.
+
+## Phase 11 Finalization — Cross-Variant Motion, Navigation & Preferences
+
+- **Feature Branch**: `fix/phase-11-cross-variant-preference-controls`
+- **Final Feature Commit**: `9350b9e`
+- **Merge Commit**: `aa97cc3`
+- **Implementation**: Completed cross-variant motion, mobile navigation, named hero-label removal, four palettes, two typography systems, accessible preference state, and shared Variant B editorial heroes.
+- **Production Configuration**: `AppServiceProvider` centrally forces HTTPS URLs for `APP_ENV=production` and HTTP URLs for all other environments. Railway variables and commands are in `deployment.md`.
+- **Quality Evidence**: 92 tests / 1,777 assertions, production build, Pint, line-count, and whitespace checks passed. Independent QA passed after remediation, including Playwright desktop/mobile visual checks.
+- **Lifecycle**: Explicit user merge acceptance finalized Phase 11 as `Specification: Ready | Implementation: Implemented | Validation: Validated`.
